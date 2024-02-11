@@ -1,0 +1,59 @@
+import './assets/styles/main.css'
+import './assets/styles/index.css'
+
+import { createApp } from 'vue'
+import { createHead } from '@unhead/vue'
+import App from './App.vue'
+
+import ServiceStackVue, { useConfig } from "@servicestack/vue"
+import { createRouter, createWebHistory } from 'vue-router/auto'
+import { setupLayouts } from 'virtual:generated-layouts'
+import { createPinia } from "pinia"
+import meta from "virtual:meta"
+
+import LiteYoutube from "@/components/LiteYouTube"
+import { routes, configRouter} from "@/routing"
+import { client } from "@/api"
+
+const app = createApp(App)
+const head = createHead()
+
+export const router = configRouter(createRouter({
+    history: createWebHistory(),
+    scrollBehavior(to, _from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        }
+        if (to.hash) {
+            return { el: to.hash, behavior: 'smooth' }
+        } else {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 1)
+        }
+    },
+    extendRoutes(routes:any) {
+        routes.forEach((route:any) => {
+            // Force all pages in /admin to use /layout/admin.vue
+            if (route.path.startsWith('/admin')) {
+                (route.children ?? []).forEach((child:any) => {
+                    child.meta ??= {}
+                    child.meta.layout = 'admin'
+                })
+            }
+        })
+        return setupLayouts(routes)
+    },
+}))
+
+const pinia = createPinia()
+
+app
+    .use(head)
+    .use(router)
+    .use(pinia)
+    .use(ServiceStackVue)
+    .provide('client', client)
+    .provide('meta', meta)
+    .component('LiteYouTube', LiteYoutube)
+    .mount('#app')
