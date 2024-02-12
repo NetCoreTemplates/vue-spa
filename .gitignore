@@ -8,6 +8,7 @@ dist/
 coverage/
 package-lock.json
 App_Data/
+wwwroot/
 
 # User-specific files
 *.suo
