@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using MyApp.Data;
 using MyApp.ServiceInterface;
 
+AppHost.RegisterKey();
+
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
