@@ -11,10 +11,8 @@ public class IntegrationTest
     const string BaseUri = "http://localhost:2000/";
     private readonly ServiceStackHost appHost;
 
-    class AppHost : AppSelfHostBase
+    class AppHost() : AppSelfHostBase(nameof(IntegrationTest), typeof(MyServices).Assembly)
     {
-        public AppHost() : base(nameof(IntegrationTest), typeof(MyServices).Assembly) { }
-
         public override void Configure(Container container)
         {
         }
