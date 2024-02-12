@@ -43,14 +43,13 @@
   </Target>
 
   <ItemGroup>
-    <DirsToClean Include="wwwroot" />
     <CopyDist Include="../MyApp.Client/dist/**/*.*" />
   </ItemGroup>
   
   <Target Name="CreateAppDataFolder" AfterTargets="AfterPublish">
     <MakeDir Directories="$(PublishDir)App_Data" Condition="!Exists('$(PublishDir)App_Data')" />
     <Exec Command="npm run build" WorkingDirectory="../MyApp.Client" />
-    <RemoveDir Directories="@(DirsToClean)" />
+    <RemoveDir Directories="$(PublishDir)wwwroot" />
     <Copy SourceFiles="@(CopyDist)" DestinationFolder="$(PublishDir)wwwroot\%(RecursiveDir)" />
   </Target>
 
