@@ -118,8 +118,6 @@
 
 <script setup lang="ts">
 import type { Post, Author } from "@/meta"
-import AuthorLinks from "@/components/AuthorLinks.vue"
-import MarkdownComponent from "@/components/MarkdownComponent.vue"
 import { inject, computed, onMounted } from "vue"
 import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
 import { useHead } from "@unhead/vue"

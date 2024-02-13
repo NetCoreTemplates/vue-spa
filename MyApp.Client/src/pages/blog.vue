@@ -138,7 +138,6 @@
 
 <script setup lang="ts">
 import type { Post } from "@/meta"
-import FollowLinks from "@/components/FollowLinks.vue"
 import Logo from "@/assets/img/logo.svg"
 import { inject } from "vue"
 import { useHead } from "@unhead/vue"

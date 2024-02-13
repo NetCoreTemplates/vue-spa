@@ -56,7 +56,6 @@ import { computed, ref, watch, onMounted } from "vue"
 import { useClient, useAuth, useFormatters } from "@servicestack/vue"
 import { Booking, QueryBookings } from "@/dtos"
 import MdiChevronRight from "@/assets/img/mdi/chevron-right.svg"
-import SrcVuePage from "@/components/SrcVuePage.vue"
 import { useHead } from "@unhead/vue"
 useHead({ title: 'Bookings DataGrid' })
 

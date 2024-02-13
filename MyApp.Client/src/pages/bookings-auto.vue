@@ -97,7 +97,6 @@
 </template>
 
 <script setup lang="ts">
-import SrcVuePage from "@/components/SrcVuePage.vue"
 import MdiChevronRight from "@/assets/img/mdi/chevron-right.svg"
 import { ref } from "vue"
 import { useClient, useFormatters } from "@servicestack/vue"

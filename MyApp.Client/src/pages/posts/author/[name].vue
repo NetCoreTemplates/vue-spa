@@ -19,8 +19,6 @@
 
 <script setup lang="ts">
 import type { Author, Post } from "@/meta"
-import BlogTitle from "@/components/BlogTitle.vue"
-import BlogPosts from "@/components/BlogPosts.vue"
 import { inject } from "vue"
 import { generateSlug } from "@/utils"
 import { useHead } from "@unhead/vue"

@@ -66,7 +66,6 @@ import MdiCheckCircle from "@/assets/img/mdi/check-circle.svg"
 import MdiTrashCanOutline from "@/assets/img/mdi/trash-can-outline.svg"
 import MdiCheckboxBlankCircleOutline from "@/assets/img/mdi/checkbox-blank-circle-outline.svg"
 import NotoPineapple from "@/assets/img/noto/pineapple.svg"
-import SrcVuePage from "@/components/SrcVuePage.vue"
 
 const store = useTodosStore()
 store.refreshTodos()

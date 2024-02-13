@@ -50,8 +50,3 @@
   </div>
 
 </template>
-
-<script setup lang="ts">
-import GettingStarted from "@/components/GettingStarted.vue"
-import VideoGroup from "@/components/VideoGroup.vue"
-</script>

@@ -26,8 +26,6 @@
 
 <script setup lang="ts">
 import type { Post } from "@/meta"
-import BlogTitle from "@/components/BlogTitle.vue"
-import BlogPosts from "@/components/BlogPosts.vue"
 import { inject, computed, onMounted } from "vue"
 import { useHead } from "@unhead/vue"
 import { useRoute } from "vue-router"
