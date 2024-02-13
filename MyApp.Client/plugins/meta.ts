@@ -15,8 +15,8 @@ export default function() {
         },
         load(id:string) {
             if (id === resolvedVirtualModuleId) {
-                const videos = markdownVideos.loadFrom('./_videos')
-                const posts = markdownPosts.loadFrom('./_posts')
+                const videos = markdownVideos.loadFrom('./src/_videos')
+                const posts = markdownPosts.loadFrom('./src/_posts')
 
                 const videoComponents = markdownVideos.generateComponents(videos)
                 const postComponents = markdownPosts.generateComponents(posts)
