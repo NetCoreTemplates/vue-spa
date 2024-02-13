@@ -5,14 +5,14 @@ import { createApp } from 'vue'
 import { createHead } from '@unhead/vue'
 import App from './App.vue'
 
-import ServiceStackVue, { useConfig } from "@servicestack/vue"
+import ServiceStackVue from "@servicestack/vue"
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from "pinia"
 import meta from "virtual:meta"
 
 import LiteYoutube from "@/components/LiteYouTube"
-import { routes, configRouter} from "@/routing"
+import { configRouter} from "@/routing"
 import { client } from "@/api"
 
 const app = createApp(App)

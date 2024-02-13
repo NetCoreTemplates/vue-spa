@@ -1,20 +1,20 @@
 import fs from 'fs'
 import path from 'path'
-import { createDoc, createRenderer } from "./markdown"
+import { createDoc } from "./utils"
+import { Options } from "./index"
 
-export function loadFrom(fromDir:string) {
+export function loadFrom(fromDir:string, options: Options = {}) {
     const groups :{[key:string]:any[]} = {}
     
     const dirs = fs.readdirSync(fromDir).filter(x => fs.statSync(path.join(fromDir, x)).isDirectory())
-    console.log(`Found ${dirs.length} video directories`)
-    const markdown = createRenderer()
+    if (!options.quiet) console.log(`Found ${dirs.length} video directories`)
 
     dirs.forEach(dir => {
         const group = dir
         fs.readdirSync(path.join(fromDir, dir)).forEach(file => {
             const filePath = path.join(fromDir, dir, file)
             if (!groups[group]) groups[group] = []
-            const doc = createDoc(markdown, filePath)
+            const doc = createDoc(filePath, options)
             if (process.env.NODE_ENV != 'development' && doc.draft) {
                 return
             }

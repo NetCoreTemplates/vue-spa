@@ -52,9 +52,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, inject } from "vue"
 import GettingStarted from "@/components/GettingStarted.vue"
 import VideoGroup from "@/components/VideoGroup.vue"
-const meta = inject('meta')
-const inputValue = ref('Vue.js')
 </script>

@@ -2,13 +2,6 @@ import { attrs, loading } from "./auth"
 import type { NavigationGuardNext, RouteLocationNormalized, Router } from "vue-router"
 import { nextTick, watchEffect } from "vue"
 
-// import Index from "@/pages/Index.vue"
-// import TodoMvc from "@/pages/TodoMvc.vue"
-// import Profile from "@/pages/Profile.vue"
-// import Admin from "@/pages/Admin.vue"
-// import Bookings from "@/pages/Bookings.vue"
-// import BookingsCrud from "@/pages/bookings-crud/Index.vue"
-
 // Typed Routes used in Components
 export const Routes = {
     signin: (redirectTo?:string) => redirectTo ? `/signin?redirect=${redirectTo}` : `/signin`,
@@ -17,7 +10,7 @@ export const Routes = {
 
 // Use Route Guards to guard against access to pages 
 type RouteGuard = { path:string, attr:string }
-export const routes:RouteGuard[] = [
+const routes:RouteGuard[] = [
     { path:'/profile',       attr:'auth' },
     { path:'/admin',         attr:'role:Admin' },
     { path:'/bookings',      attr:'role:Employee' },
