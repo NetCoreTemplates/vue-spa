@@ -43,7 +43,7 @@
           <SrcVuePage path="pages/bookings-data.vue" />
         </div>
         <div>
-          <RouterLink class="text-gray-400 hover:text-gray-600" to="/bookings">Bookings AutoQueryGrid</RouterLink>
+          <RouterLink class="text-gray-400 hover:text-gray-600" to="/bookings-auto">Bookings AutoQueryGrid</RouterLink>
           <MdiChevronRight class="text-gray-400 w-6 h-6 inline" aria-hidden="true"/>
         </div>
       </div>

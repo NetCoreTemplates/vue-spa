@@ -20,7 +20,7 @@
               <RouterLink to="/weather" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">Weather</RouterLink>
             </li>
             <li class="relative flex flex-wrap just-fu-start m-0">
-              <RouterLink to="/bookings" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">Bookings</RouterLink>
+              <RouterLink to="/bookings-auto" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">Bookings</RouterLink>
             </li>
             <li class="relative flex flex-wrap just-fu-start m-0">
               <RouterLink to="/todomvc" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">Todos</RouterLink>
