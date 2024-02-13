@@ -1,11 +1,11 @@
 <template>
   <div>
     <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-      <div v-for="stat in stats" @click="$emit('nav',stat.label)"
-           class="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 overflow-hidden rounded-lg bg-white dark:bg-black px-4 py-5 shadow sm:p-6 dark:border-2 dark:border-pink-600 dark:hover:border-blue-600">
+      <RouterLink v-for="stat in stats" :key="stat.label" :to="`/admin/${stat.label.toLowerCase()}`"
+           class="block cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 overflow-hidden rounded-lg bg-white dark:bg-black px-4 py-5 shadow sm:p-6 dark:border-2 dark:border-pink-600 dark:hover:border-blue-600">
         <dt class="truncate text-sm font-medium text-gray-500">Total {{humanize(stat.label)}}</dt>
         <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-50">{{formatNumber(stat.total)}}</dd>
-      </div>
+      </RouterLink>
     </dl>
     <p class="mt-8 text-sm font-semibold leading-6">
       Go to <RouterLink to="/" class="text-indigo-600">Home <span aria-hidden="true">&rarr;</span></RouterLink>
