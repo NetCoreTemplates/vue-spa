@@ -50,7 +50,7 @@
         </div>
         <div>
           <RouterLink class="text-gray-400 hover:text-gray-600" to="/bookings-data">Bookings DataGrid</RouterLink>
-          <MdiChevronRight class="text-gray-400 w-6 h-6 inline" aria-hidden="true"/>
+          <Iconify icon="mdi:chevron-right" class="text-gray-400 w-6 h-6 inline" aria-hidden="true" />
         </div>
       </div>
     </div>
@@ -97,7 +97,6 @@
 </template>
 
 <script setup lang="ts">
-import MdiChevronRight from "@/assets/img/mdi/chevron-right.svg"
 import { ref } from "vue"
 import { useClient, useFormatters } from "@servicestack/vue"
 import { QueryCoupons } from "@/dtos"

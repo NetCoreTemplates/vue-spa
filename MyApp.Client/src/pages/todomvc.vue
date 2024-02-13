@@ -12,14 +12,14 @@
         <li v-for="todo in store.filteredTodos" :key="todo.id" class="px-6 py-4">
           <div class="relative flex items-start" @click="store.toggleTodo(todo.id)">
             <div class="flex items-center h-6">
-              <MdiCheckCircle v-if="todo.isFinished" class="text-green-600" />
-              <MdiCheckboxBlankCircleOutline v-else />
+              <Iconify v-if="todo.isFinished" icon="mdi:check-circle" class="text-green-600" />
+              <Iconify v-else icon="mdi/checkbox-blank-circle-outline" />
             </div>
             <div class="ml-3 flex-grow">
               <label :class="{'line-through':todo.isFinished}">{{ todo.text }}</label>
             </div>
             <div>
-              <MdiTrashCanOutline v-if="todo.isFinished" class="cursor-pointer" @click="store.removeTodo(todo.id)" />
+              <Iconify v-if="todo.isFinished" icon="mdi:trash-can-outline" class="cursor-pointer" @click="store.removeTodo(todo.id)" />
             </div>
           </div>
         </li>
@@ -52,7 +52,7 @@
 
     <div class="mt-4 text-center text-gray-400 flex justify-center -ml-6">
       <SrcLink href="/MyApp.Client/src/stores/todos.ts">
-        <NotoPineapple class="w-5 h-5 inline-flex" />
+        <Iconify icon="noto:pineapple" class="w-5 h-5 inline-flex" />
       </SrcLink>
       <SrcVuePage path="pages/todomvc.vue" />
     </div>
@@ -62,10 +62,6 @@
 <script setup lang="ts">
 import { h, type SetupContext } from "vue"
 import { type Filter, useTodosStore } from "@/stores/todos"
-import MdiCheckCircle from "@/assets/img/mdi/check-circle.svg"
-import MdiTrashCanOutline from "@/assets/img/mdi/trash-can-outline.svg"
-import MdiCheckboxBlankCircleOutline from "@/assets/img/mdi/checkbox-blank-circle-outline.svg"
-import NotoPineapple from "@/assets/img/noto/pineapple.svg"
 
 const store = useTodosStore()
 store.refreshTodos()

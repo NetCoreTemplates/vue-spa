@@ -7,11 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AppBreadcrumb: typeof import('./src/components/AppBreadcrumb.vue')['default']
-    AppPage: typeof import('./src/components/AppPage.vue')['default']
+    Author: typeof import('./src/components/Author.vue')['default']
+    AuthorLinks: typeof import('./src/components/AuthorLinks.vue')['default']
+    BlogPosts: typeof import('./src/components/BlogPosts.vue')['default']
+    BlogTitle: typeof import('./src/components/BlogTitle.vue')['default']
+    FollowLinks: typeof import('./src/components/FollowLinks.vue')['default']
     GettingStarted: typeof import('./src/components/GettingStarted.vue')['default']
-    HelloApi: typeof import('./src/components/HelloApi.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    MarkdownComponent: typeof import('./src/components/MarkdownComponent.vue')['default']
     MarkdownPage: typeof import('./src/components/MarkdownPage.vue')['default']
     NavFooter: typeof import('./src/components/NavFooter.vue')['default']
     NavHeader: typeof import('./src/components/NavHeader.vue')['default']
@@ -21,5 +23,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ShellCommand: typeof import('./src/components/ShellCommand.vue')['default']
     SrcLink: typeof import('./src/components/SrcLink.vue')['default']
+    SrcVuePage: typeof import('./src/components/SrcVuePage.vue')['default']
+    VideoGroup: typeof import('./src/components/VideoGroup.vue')['default']
   }
 }

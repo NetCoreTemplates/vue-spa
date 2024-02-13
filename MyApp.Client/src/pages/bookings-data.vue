@@ -44,7 +44,7 @@
         </div>
         <div>
           <RouterLink class="text-gray-400 hover:text-gray-600" to="/bookings-auto">Bookings AutoQueryGrid</RouterLink>
-          <MdiChevronRight class="text-gray-400 w-6 h-6 inline" aria-hidden="true"/>
+          <Iconify icon="mdi:chevron-right" class="text-gray-400 w-6 h-6 inline" aria-hidden="true" />
         </div>
       </div>
     </div>
@@ -55,7 +55,6 @@
 import { computed, ref, watch, onMounted } from "vue"
 import { useClient, useAuth, useFormatters } from "@servicestack/vue"
 import { Booking, QueryBookings } from "@/dtos"
-import MdiChevronRight from "@/assets/img/mdi/chevron-right.svg"
 import { useHead } from "@unhead/vue"
 useHead({ title: 'Bookings DataGrid' })
 

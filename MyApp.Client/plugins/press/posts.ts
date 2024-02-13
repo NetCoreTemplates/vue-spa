@@ -2,8 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { leftPart, rightPart, lastLeftPart } from "@servicestack/client"
 import { createDoc, generateSlug } from "./utils"
-import { Post, Author } from "./types"
-import { Options } from "./index"
+import { Options, Post, Author } from "./types"
 
 export function loadFrom(fromDir:string, options: Options = {}) {
     const authorSlugs : {[name:string]:Author} = {}

@@ -12,7 +12,7 @@
     <div v-if="successText" class="absolute right-0 -mr-28 -mt-3 rounded-md bg-green-50 p-3">
       <div class="flex">
         <div class="flex-shrink-0">
-          <MdiCheckCircle class="h-5 w-5 text-green-400" />
+          <Iconify icon="mdi:check-circle" class="h-5 w-5 text-green-400" />
         </div>
         <div class="ml-3">
           <p class="text-sm font-medium text-green-800">
@@ -25,7 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import MdiCheckCircle from "@/assets/img/mdi/check-circle.svg"
 import { ref } from "vue"
 
 let successText = ref('')

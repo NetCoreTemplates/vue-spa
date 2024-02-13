@@ -1,8 +1,7 @@
 import fs from "fs"
 import matter from "front-matter"
 import { leftPart, lastRightPart } from "@servicestack/client"
-import { Doc } from "./types"
-import { Options } from "./index"
+import { Doc, Options } from "./types"
 
 function padInt(n: number) { 
     return n < 10 ? '0' + n : n 

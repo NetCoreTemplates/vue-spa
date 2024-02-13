@@ -12,6 +12,7 @@ productivity and performance.
 | [Tailwindcss](https://tailwindcss.com)                                     | Productive responsive-first utility-based css framework with growing [rich component ecosystem](https://tailwindcomponents.com) |
 | [TypeScript](https://www.typescriptlang.org)                               | Advanced type-safety, static analysis and richer IDE tooling                                                                    |
 | [Markdown](https://github.com/markdown-it/markdown-it)                     | Native Markdown integration with advanced featureset supporting embedding of HTML & Vue Components                              |
+| [Iconify](https://iconify.design)                                          | Unified registry to access 100k+ high quality SVG icons from 100+ icon sets                                                     |
 | [tailwind/typography](https://tailwindcss-typography.vercel.app)           | Beautiful css typography for markdown articles & blog posts                                                                     |
 | [tailwind/forms](https://github.com/tailwindlabs/tailwindcss-forms)        | Beautiful css form & input styles that's easy to override with utilities                                                        |
 | [plugin/vue-router](https://github.com/posva/unplugin-vue-router)          | Conventional file system based routing for Vue 3 on Vite                                                                        |
@@ -41,6 +42,20 @@ Components({
 })
 ```
 
+### [Iconify for Vue](https://iconify.design/docs/icon-components/vue/)
+
+For accessing [thousands of Iconfigy's SVG icons](https://icon-sets.iconify.design) as Vue components **on-demand** universally.
+
+```ts
+import { Icon } from '@iconify/vue'
+```
+
+#### Usage
+
+```html
+<Icon icon="mdi-light:home" />
+```
+
 ### [unplugin-vue-router](https://github.com/posva/unplugin-vue-router)
 
 For auto generating vue routing configurations for each Vue 3 component from 
@@ -52,7 +67,7 @@ VueRouter({
 })
 ```
 
-### [vite-plugin-md](https://github.com/antfu/vite-plugin-md)
+### [unplugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown)
 
 For enabling Markdown Support by converting each `.md` document into a Vue Component that's rendered using 
 [markdown-it](https://github.com/markdown-it/markdown-it).

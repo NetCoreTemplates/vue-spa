@@ -10,9 +10,7 @@ import meta from "./plugins/press"
 import Vue from '@vitejs/plugin-vue'
 import matter from "front-matter"
 import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
 import VueRouter from 'unplugin-vue-router/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'unplugin-vue-markdown/vite'
 import svgLoader from 'vite-svg-loader'
@@ -113,24 +111,6 @@ export default defineConfig({
         Layouts(),
         svgLoader(),
 
-        // https://github.com/antfu/unplugin-auto-import
-        AutoImport({
-            imports: [
-                'vue',
-                '@vueuse/core',
-                VueRouterAutoImports,
-                {
-                    // add any other imports you were relying on
-                    'vue-router/auto': ['useLink'],
-                },
-            ],
-            dts: true,
-            dirs: [
-                './src/composables',
-            ],
-            vueTemplate: true,
-        }),
-
         // https://github.com/unplugin/unplugin-vue-markdown
         Markdown({
             // default options passed to markdown-it
@@ -147,7 +127,7 @@ export default defineConfig({
             },            
         }),
 
-        // https://github.com/antfu/vite-plugin-components
+        // https://github.com/unplugin/unplugin-vue-components
         Components({
             // allow auto load markdown components under `./src/components/`
             extensions: ['vue', 'md'],
@@ -155,7 +135,8 @@ export default defineConfig({
             // allow auto import and register components used in markdown
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
 
-            dts: 'src/components.d.ts',
+            //dts: 'src/components.d.ts',
+            dts:true,
         }),
     ],
     resolve: {

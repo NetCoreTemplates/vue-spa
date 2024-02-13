@@ -12,7 +12,7 @@
             <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
               <div class="text-center font-extrabold flex items-center justify-center mb-2">
                 <div class="text-4xl text-blue-400 my-3">
-                  <LogosVue class="w-12 h-12" />
+                  <Iconify icon="logos:vue" class="w-12 h-12" />
                 </div>
               </div>
               <div class="text-xl font-medium text-gray-700">Vue SPA</div>
@@ -34,8 +34,6 @@
 </template>
 
 <script setup lang="ts">
-import LogosVue from "@/assets/img/logos/vue.svg"
-import ShellCommand from "@/components/ShellCommand.vue"
 import { ref, computed } from "vue"
 
 defineProps<{

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { createDoc } from "./utils"
-import { Options } from "./index"
+import { Options } from "./types"
 
 export function loadFrom(fromDir:string, options: Options = {}) {
     const groups :{[key:string]:any[]} = {}

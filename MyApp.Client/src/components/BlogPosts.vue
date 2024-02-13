@@ -67,6 +67,6 @@ function author(name:string) : Author | undefined {
   return name ? meta.posts.authors.find((x:Author) => x.name.toLowerCase() == name.toLowerCase()) : undefined 
 }
 function authorProfileUrl(name:string) {
-  return author(name)?.profileUrl ?? "/img/profiles/user1.svg"
+  return author(name)?.profileUrl!
 }
 </script>

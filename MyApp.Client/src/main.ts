@@ -10,6 +10,7 @@ import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from "pinia"
 import meta from "virtual:meta"
+import { Icon } from '@iconify/vue'
 
 import LiteYoutube from "@/components/LiteYouTube"
 import { configRouter} from "@/routing"
@@ -56,4 +57,5 @@ app
     .provide('client', client)
     .provide('meta', meta)
     .component('LiteYouTube', LiteYoutube)
+    .component('Iconify', Icon)
     .mount('#app')
