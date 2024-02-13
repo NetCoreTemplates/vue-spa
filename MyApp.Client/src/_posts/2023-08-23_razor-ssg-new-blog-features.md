@@ -6,6 +6,11 @@ image: https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy
 author: Lucy Bates
 ---
 
+<script setup lang="ts">
+import ChartJs from "./components/ChartJs";
+import FileLayout from "./components/FileLayout.vue";
+</script>
+
 ## New Blogging features in Razor SSG
 
 [Razor SSG](https://razor-ssg.web-templates.io) is our Free Project Template for creating fast, statically generated Websites and Blogs with

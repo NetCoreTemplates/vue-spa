@@ -6,13 +6,16 @@ image: https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?crop=entropy
 author: Gayle Smith
 ---
 
+<script setup lang="ts">
+import Counter from "./components/Counter.vue";
+import BlazorVueTemplate from "./components/BlazorVueTemplate.vue";
+</script>
+
 The best way to find out what's new in .NET 8 Blazor is to watch the excellent 
 [Full stack web UI with Blazor in .NET 8](https://www.youtube.com/watch?v=QD2-DwuOfKM) presentation by Daniel Roth and Steve Sanderson, 
 which covers how Blazor has become a Full Stack UI Web Technology for developing any kind of .NET Web App.
 
-<div class="flex justify-center">
-    <lite-youtube class="w-full mx-4 my-4" width="560" height="315" videoid="YwZdtLEtROA" style="background-image: url('https://img.youtube.com/vi/YwZdtLEtROA/maxresdefault.jpg')"></lite-youtube>
-</div>
+<LiteYouTube id="YwZdtLEtROA" title="Full stack web UI with Blazor in .NET 8 | .NET Conf 2023" />
 
 ## Your first .NET 8 Blazor App
 
@@ -430,7 +433,7 @@ Vue.js to and the [Vue Components](/vue/) library.
     Blazor Vue Template
 </h3></div>
 <div class="py-8 max-w-7xl mx-auto px-4 sm:px-6">
-    <lite-youtube class="w-full mx-4 my-4" width="560" height="315" videoid="ujbTGn4IwFs" style="background-image: url('https://img.youtube.com/vi/ujbTGn4IwFs/maxresdefault.jpg')"></lite-youtube>
+    <LiteYouTube id="ujbTGn4IwFs" title="Blazor Vue Template" />    
 </div>
 </div>
 
