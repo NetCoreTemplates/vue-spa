@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-vue-layouts/client" />
+/// <reference types="vite-plugin-press/client" />
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
@@ -15,8 +16,3 @@ declare module '*.md' {
   export default component
 }
 
-declare module 'virtual:meta' {
-  // eslint-disable-next-line
-  const component: any;
-  export default component;
-}

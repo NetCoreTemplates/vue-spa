@@ -33,13 +33,13 @@
 </template>
 
 <script setup lang="ts">
-import type { Post, Author } from "@/meta"
+import type { VirtualPress, Post } from "vite-plugin-press"
 import { inject } from 'vue'
 import {generateSlug} from "@/utils"
 
-const meta = inject('meta') as any
-const blogDescription = meta.posts.config.blogDescription
-const allPosts:Post[] = meta.posts.posts
+const press:VirtualPress = inject('press')!
+const blogDescription = press.posts.config.blogDescription
+const allPosts:Post[] = press.posts.posts
 const allYears = [...new Set(allPosts.map((x:any) => new Date(x.date).getFullYear()) as number[])]
 const allTags = [...new Set(allPosts.flatMap((x:any) => x.tags) as string[])]
 const tagCounts: {[tag:string]: number} = {}

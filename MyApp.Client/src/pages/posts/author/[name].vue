@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Author, Post } from "@/meta"
+import type { VirtualPress, Post, Author } from "vite-plugin-press"
 import { inject } from "vue"
 import { generateSlug } from "@/utils"
 import { useHead } from "@unhead/vue"
@@ -27,9 +27,9 @@ import { useRoute } from "vue-router"
 const route = useRoute()
 const name = (route.params as any)?.name
 
-const meta = inject('meta') as any
+const meta:VirtualPress = inject('meta')!
 
-const author:Author = meta.posts.authors.find((x:any) => generateSlug(x.name) == name)
+const author = meta.posts.authors.find((x:any) => generateSlug(x.name) == name)
 const authorPosts:Post[] = author ? meta.posts.posts.filter((x:any) => x.author.toLowerCase() == author.name.toLowerCase()) : []
 
 if (author) {

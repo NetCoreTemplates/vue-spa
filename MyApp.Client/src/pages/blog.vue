@@ -137,17 +137,17 @@
 </template>
 
 <script setup lang="ts">
-import type { Post } from "@/meta"
+import type { VirtualPress, Post } from "virtual:press"
 import Logo from "@/assets/img/logo.svg"
 import { inject } from "vue"
 import { useHead } from "@unhead/vue"
 import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
 
-const meta = inject('meta') as any
-useHead({ title: meta.posts.config.blogTitle })
+const press:VirtualPress = inject('press')!
+useHead({ title: press.posts.config.blogTitle })
 
 function authorLink(name:any) {
-  return name && meta.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase()) 
+  return name && press.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase()) 
       ? `/posts/author/${generateSlug(name)}` 
       : null
 }
@@ -155,13 +155,13 @@ function postLink(post:any) {
   return `/posts/${post.slug}`
 }
 function author(name:string) {
-  return name && meta.posts.authors.filter((x:any) => x.name.toLowerCase() == name.toLowerCase())[0]
+  return name ? press.posts.authors.filter((x:any) => x.name.toLowerCase() == name.toLowerCase())[0] : null
 }
 function authorProfileUrl(name:string) {
   return author(name)?.profileUrl ?? "/img/profiles/user1.svg"
 }
 
-const posts:Post[] = meta.posts.posts
+const posts:Post[] = press.posts.posts
 const primaryPost:Post = posts[0]
 const postAuthor = primaryPost.author
 const gridPosts = posts.slice(1, 7)

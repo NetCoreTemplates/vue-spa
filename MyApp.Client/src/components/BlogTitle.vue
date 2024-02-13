@@ -8,11 +8,12 @@
 
 <script setup lang="ts">
 import { inject } from 'vue'
+import type { VirtualPress } from 'vite-plugin-press'
 defineProps<{
   heading: string
 }>()
 
-const meta = inject('meta') as any
-const blogTitle = meta.posts.config.blogTitle
+const press:VirtualPress = inject('press')!
+const blogTitle = press.posts.config.blogTitle
 </script>
 

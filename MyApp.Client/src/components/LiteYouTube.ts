@@ -108,7 +108,7 @@ export default defineComponent({
         poster: {
             type: String as PropType<ImageResolution>,
             required: false,
-            default: 'hqdefault',
+            default: 'maxresdefault',
         },
         wrapperClass: {
             type: String,

@@ -9,7 +9,7 @@ import ServiceStackVue from "@servicestack/vue"
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from "pinia"
-import meta from "virtual:meta"
+import press from "virtual:press"
 import { Icon } from '@iconify/vue'
 
 import LiteYoutube from "@/components/LiteYouTube"
@@ -55,7 +55,7 @@ app
     .use(pinia)
     .use(ServiceStackVue)
     .provide('client', client)
-    .provide('meta', meta)
+    .provide('press', press)
     .component('LiteYouTube', LiteYoutube)
     .component('Iconify', Icon)
     .mount('#app')

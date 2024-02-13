@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import type {Post, Author, Meta} from "@/meta"
+import type { VirtualPress, Post, Author } from "vite-plugin-press"
 import { ref, inject } from "vue"
 import { useHead } from "@unhead/vue"
 import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
@@ -52,11 +52,11 @@ defineProps<{
   posts: Post[]
 }>()
 
-const meta = inject('meta') as Meta
-useHead({ title: meta.posts.config.blogTitle })
+const press:VirtualPress = inject('press')!
+useHead({ title: press.posts.config.blogTitle })
 
 function authorLink(name:any) {
-  return name && meta.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
+  return name && press.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
       ? `/posts/author/${generateSlug(name)}`
       : null
 }
@@ -64,7 +64,7 @@ function postLink(post:Post) {
   return `/posts/${post.slug}`
 }
 function author(name:string) : Author | undefined {
-  return name ? meta.posts.authors.find((x:Author) => x.name.toLowerCase() == name.toLowerCase()) : undefined 
+  return name ? press.posts.authors.find((x:Author) => x.name.toLowerCase() == name.toLowerCase()) : undefined 
 }
 function authorProfileUrl(name:string) {
   return author(name)?.profileUrl!

@@ -6,6 +6,7 @@ export default {
   darkMode: 'class',
   content: [
     "./index.html",
+    './*.ts',
     "./src/**/*.{vue,js,ts,jsx,tsx,md}",
     "./node_modules/@servicestack/vue/dist/servicestack-vue.mjs",
   ],

@@ -6,9 +6,8 @@ import child_process from 'child_process'
 import { env } from 'process'
 
 import { defineConfig } from 'vite'
-import meta from "./plugins/press"
 import Vue from '@vitejs/plugin-vue'
-import matter from "front-matter"
+import Press, { matter } from 'vite-plugin-press'
 import Components from 'unplugin-vue-components/vite'
 import VueRouter from 'unplugin-vue-router/vite'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -76,10 +75,37 @@ export function configureMarkdown(md:MarkdownIt) {
             }
         })
     }
+    function alert({title,cls}:any) {
+        return ({
+            render(tokens:any, idx:any) {
+                const token = tokens[idx]
+                if (token.nesting === 1) {
+                    return `<div class="${cls||'tip'} custom-block">
+                                <p class="custom-block-title">${title||'TIP'}</p>`
+                } else {
+                    return `</div>`
+                }
+            }
+        })
+    }
+    
     md.linkify.set({ fuzzyLink: false })
     md.use(prism)
+    md.use(container, 'tip', alert({}))
+    md.use(container, 'info', alert({title:'INFO',cls:'info'}))
+    md.use(container, 'warning', alert({title:'WARNING',cls:'warning'}))
+    md.use(container, 'danger', alert({title:'DANGER',cls:'danger'}))
     md.use(container, 'copy', copy({cls:'not-prose copy cp', icon:'bg-sky-500'}))
     md.use(container, 'sh', copy({cls:'not-prose sh-copy cp', box:'bg-gray-800', icon:'bg-green-600', txt:'whitespace-pre text-base text-gray-100'}))
+    md.use(container, 'dynamic', {
+        validate: () => true,
+        render: function (tokens:any, idx:any) {
+            const token = tokens[idx];
+            return token.nesting === 1
+                ? '<div class="' + token.info.trim().replace(/[{}.]/g,'') + '">'
+                : '</div>';
+        },
+    })
     return md
 }
 
@@ -87,7 +113,6 @@ export function configureMarkdown(md:MarkdownIt) {
 export default defineConfig({
     define: { API_URL: `"${target}"` },
     plugins: [
-        meta(),
         // https://github.com/posva/unplugin-vue-router
         VueRouter({
             extensions: ['.vue', '.md'],
@@ -108,6 +133,7 @@ export default defineConfig({
             include: [/\.vue$/, /\.md$/],
         }),
 
+        Press(),
         Layouts(),
         svgLoader(),
 

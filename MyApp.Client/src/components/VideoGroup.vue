@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Video } from "@/meta"
+import type { VirtualPress, Video } from "vite-plugin-press"
 import MarkdownComponent from "@/components/MarkdownComponent.vue"
 import { inject, computed } from "vue"
 import { lastRightPart } from "@servicestack/client"
@@ -62,6 +62,6 @@ function dateFmt(date: string) {
   return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
-const meta = inject('meta') as any
-const videos = computed<Video[]>(() => meta.videos[props.group])
+const press:VirtualPress = inject('press')!
+const videos = computed(() => press.videos[props.group])
 </script>

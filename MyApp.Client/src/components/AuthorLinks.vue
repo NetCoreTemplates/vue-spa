@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Author } from "@/meta"
+import type { Author } from "vite-plugin-press"
 defineProps<{
   author: Author
 }>()
