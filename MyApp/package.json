@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "dtos": "x mjs",
     "dev": "dotnet watch",
     "migrate": "dotnet run --AppTasks=migrate",
     "revert:last": "dotnet run --AppTasks=migrate.revert:last",
