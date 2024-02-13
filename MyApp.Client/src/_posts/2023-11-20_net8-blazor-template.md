@@ -6,7 +6,7 @@ image: https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy
 author: Lucy Bates
 ---
 
-<script setup lang="ts">
+<script setup>
 import BlazorTemplate from "./components/BlazorTemplate.vue";
 </script>
 
@@ -44,7 +44,7 @@ We’ll also discuss the project's structure, usage of **ASP.NET Core Identity**
             Create a new Blazor Tailwind project with your preferred project name:
         </p>
     </div>
-    <BlazorTemplate repo="NetCoreTemplates/blazor" name="Blazor" />
+    <BlazorTemplate />
 </div>
 
 ## ASP.NET Core Identity Integration

@@ -6,7 +6,7 @@ image: https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?crop=entropy
 author: Gayle Smith
 ---
 
-<script setup lang="ts">
+<script setup>
 import Counter from "./components/Counter.vue";
 import BlazorVueTemplate from "./components/BlazorVueTemplate.vue";
 </script>
@@ -444,7 +444,7 @@ Vue.js to and the [Vue Components](/vue/) library.
             Create a new Blazor Vue Tailwind project with your preferred project name:
         </p>
     </div>
-    <blazor-vue-template repo="NetCoreTemplates/blazor-vue" name="Blazor Vue"></blazor-vue-template>
+    <BlazorVueTemplate repo="NetCoreTemplates/blazor-vue" name="Blazor Vue" />
 </div>
 
 #### Faster iterative development

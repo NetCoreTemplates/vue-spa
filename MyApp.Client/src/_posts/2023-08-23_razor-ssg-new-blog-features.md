@@ -6,7 +6,7 @@ image: https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy
 author: Lucy Bates
 ---
 
-<script setup lang="ts">
+<script setup>
 import ChartJs from "./components/ChartJs";
 import FileLayout from "./components/FileLayout.vue";
 </script>
@@ -14,7 +14,7 @@ import FileLayout from "./components/FileLayout.vue";
 ## New Blogging features in Razor SSG
 
 [Razor SSG](https://razor-ssg.web-templates.io) is our Free Project Template for creating fast, statically generated Websites and Blogs with
-Markdown & C# Razor Pages. A benefit of using Razor SSG to maintain this 
+Markdown & C# Razor Pages. A benefit of using Razor SSG to maintain this
 [servicestack.net(github)](https://github.com/ServiceStack/servicestack.net) website is that any improvements added
 to our website end up being rolled into the Razor SSG Project Template for everyone else to enjoy.
 
@@ -41,7 +41,7 @@ and notify them as they're published with their favorite RSS reader:
 
 ### Meta Headers support for Twitter cards and SEO
 
-Blog Posts and Pages now include additional `<meta>` HTML Headers to enable support for 
+Blog Posts and Pages now include additional `<meta>` HTML Headers to enable support for
 [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) in both
 Twitter and Meta's new [threads.net](https://threads.net), e.g:
 
@@ -62,7 +62,7 @@ the same Blog Author, including links to connect to their preferred social netwo
 
 ### Posts can include Vue Components
 
-Blog Posts can now embed any global Vue Components directly in its Markdown, e.g: 
+Blog Posts can now embed any global Vue Components directly in its Markdown, e.g:
 
 ```html
 <getting-started template="razor-ssg"></getting-started>
@@ -80,12 +80,12 @@ Just like Pages and Docs they can also include specific JavaScript **.mjs** or *
 which will only be loaded for that post:
 
 <file-layout :files="{
-    wwwroot: { 
-        posts: { _: ['<slug>.mjs','<slug>.css'] },
-    }
+wwwroot: {
+posts: { _: ['<slug>.mjs','<slug>.css'] },
+}
 }"></file-layout>
 
-Now posts that need it can dynamically load large libraries like [Chart.js](https://www.chartjs.org) and use it 
+Now posts that need it can dynamically load large libraries like [Chart.js](https://www.chartjs.org) and use it
 inside a custom Vue component by creating a custom `/posts/<slug>.mjs` that exports what components and features
 your blog post needs, e.g:
 
@@ -136,7 +136,7 @@ export default {
 }
 ```
 
-Which allows this post to embed Chart.js charts using the above custom `<chart-js>` Vue component and a JS Object literal, e.g: 
+Which allows this post to embed Chart.js charts using the above custom `<chart-js>` Vue component and a JS Object literal, e.g:
 
 ```html
 <chart-js :data="{
@@ -153,60 +153,60 @@ Which the [Bulk Insert Performance](https://servicestack.net/posts/bulk-insert-p
 Chart.js Bar charts:
 
 <chart-js :data="{
-    labels: [
-        '10,000 Rows',
-        '100,000 Rows'
-    ],
-    datasets: [
-        {
-            label: 'SQLite Memory',
-            backgroundColor: 'rgba(201, 203, 207, 0.2)',
-            borderColor: 'rgb(201, 203, 207)',
-            borderWidth: 1,
-            data: [17.066, 166.747]
-        },
-        {
-            label: 'SQLite Disk',
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgb(255, 99, 132)',
-            borderWidth: 1,
-            data: [20.224, 199.697]
-        },
-        {
-            label: 'PostgreSQL',
-            backgroundColor: 'rgba(153, 102, 255, 0.2)',
-            borderColor: 'rgb(153, 102, 255)',
-            borderWidth: 1,
-            data: [14.389, 115.645]
-        },
-        {
-            label: 'MySQL',
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgb(54, 162, 235)',
-            borderWidth: 1,
-            data: [64.389, 310.966]
-        },
-        {
-            label: 'MySqlConnector',
-            backgroundColor: 'rgba(255, 159, 64, 0.2)',
-            borderColor: 'rgb(255, 159, 64)',
-            borderWidth: 1,
-            data: [64.427, 308.574]
-        },
-        {
-            label: 'SQL Server',
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgb(255, 99, 132)',
-            borderWidth: 1,
-            data: [89.821, 835.181]
-        }
-    ]
+labels: [
+'10,000 Rows',
+'100,000 Rows'
+],
+datasets: [
+{
+label: 'SQLite Memory',
+backgroundColor: 'rgba(201, 203, 207, 0.2)',
+borderColor: 'rgb(201, 203, 207)',
+borderWidth: 1,
+data: [17.066, 166.747]
+},
+{
+label: 'SQLite Disk',
+backgroundColor: 'rgba(255, 99, 132, 0.2)',
+borderColor: 'rgb(255, 99, 132)',
+borderWidth: 1,
+data: [20.224, 199.697]
+},
+{
+label: 'PostgreSQL',
+backgroundColor: 'rgba(153, 102, 255, 0.2)',
+borderColor: 'rgb(153, 102, 255)',
+borderWidth: 1,
+data: [14.389, 115.645]
+},
+{
+label: 'MySQL',
+backgroundColor: 'rgba(54, 162, 235, 0.2)',
+borderColor: 'rgb(54, 162, 235)',
+borderWidth: 1,
+data: [64.389, 310.966]
+},
+{
+label: 'MySqlConnector',
+backgroundColor: 'rgba(255, 159, 64, 0.2)',
+borderColor: 'rgb(255, 159, 64)',
+borderWidth: 1,
+data: [64.427, 308.574]
+},
+{
+label: 'SQL Server',
+backgroundColor: 'rgba(255, 99, 132, 0.2)',
+borderColor: 'rgb(255, 99, 132)',
+borderWidth: 1,
+data: [89.821, 835.181]
+}
+]
 }"></chart-js>
 
 ### New Markdown Containers
 
-[Custom Containers](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md) 
-are a popular method for implementing Markdown Extensions for enabling rich, wrist-friendly consistent 
+[Custom Containers](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md)
+are a popular method for implementing Markdown Extensions for enabling rich, wrist-friendly consistent
 content in your Markdown documents.
 
 Most of [VitePress Markdown Containers](https://vitepress.dev/guide/markdown#custom-containers)
@@ -254,7 +254,7 @@ This is a dangerous warning.
 Copy Me!
 :::
 
-See Razor Press's [Markdown Containers docs](https://razor-press.web-templates.io/containers) for the complete list of available containers and examples on how to 
+See Razor Press's [Markdown Containers docs](https://razor-press.web-templates.io/containers) for the complete list of available containers and examples on how to
 implement your own [Custom Markdown containers](https://razor-press.web-templates.io/containers#implementing-block-containers).
 
 ### Support for Includes
@@ -325,9 +325,9 @@ The social links for Blog Post Authors can now include [threads.net](https://thr
 
 ## Feature Requests Welcome
 
-Most of Razor SSG's features are currently being driven by requirements from the new 
-[Websites built with Razor SSG](https://razor-ssg.web-templates.io/#showcase) and features we want available in our Blogs, 
-we welcome any requests for missing features in other popular Blogging Platforms you'd like to see in Razor SSG to help 
+Most of Razor SSG's features are currently being driven by requirements from the new
+[Websites built with Razor SSG](https://razor-ssg.web-templates.io/#showcase) and features we want available in our Blogs,
+we welcome any requests for missing features in other popular Blogging Platforms you'd like to see in Razor SSG to help
 make it a high quality blogging solution built with our preferred C#/.NET Technology Stack, by submitting them to:
 
 :::{.text-indigo-600 .text-3xl .text-center}
@@ -337,6 +337,6 @@ make it a high quality blogging solution built with our preferred C#/.NET Techno
 ### SSG or Dynamic Features
 
 Whilst statically generated websites and blogs are generally limited to features that can be generated at build time, we're able to
-add any dynamic features we need in [CreatorKit](https://servicestack.net/creatorkit/) - a Free companion self-host .NET App Mailchimp and Disqus 
-alternative which powers any dynamic functionality in Razor SSG Apps like the blogs comments and Mailing List features 
+add any dynamic features we need in [CreatorKit](https://servicestack.net/creatorkit/) - a Free companion self-host .NET App Mailchimp and Disqus
+alternative which powers any dynamic functionality in Razor SSG Apps like the blogs comments and Mailing List features
 in this Blog Post.

@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 defineProps<{
-  label: string
+  label: string|any
   contents: any
   depth?: number
 }>()
