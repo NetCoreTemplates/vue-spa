@@ -7,12 +7,12 @@ author: Brandon Foley
 ---
 
 <script setup>
-import Hello from "/_posts/components/Hello.vue";
-import Counter from "/_posts/components/Counter.vue";
-import Plugin from "/_posts/components/Plugin.vue";
-import HelloApi from "/_posts/components/HelloApi.vue";
-import VueComponentGallery from "/_posts/components/VueComponentGallery.vue";
-import VueComponentLibrary from "/_posts/components/VueComponentLibrary.vue";
+import Hello from "./components/Hello.vue";
+import Counter from "./components/Counter.vue";
+import Plugin from "./components/Plugin.vue";
+import HelloApi from "./components/HelloApi.vue";
+import VueComponentGallery from "./components/VueComponentGallery.vue";
+import VueComponentLibrary from "./components/VueComponentLibrary.vue";
 </script>
 
 <svg class="sm:float-left mr-8 w-24 h-24" style="margin-top:0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">

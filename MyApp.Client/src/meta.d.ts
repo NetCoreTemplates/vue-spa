@@ -1,5 +1,6 @@
 import { DefineComponent } from 'vue'
 
+const component: DefineComponent<{}, {}, any>
 type VideoGroups = { [key:string]:Video[] }
 type Posts = { config: any, authors: Author[], posts: Post[], authorSlugs: {[name:string]:Author}, tagSlugs: {[name:string]:string} }
 type VideoComponents = { [key:string]: {[group:string]:() => Promise<component>} }

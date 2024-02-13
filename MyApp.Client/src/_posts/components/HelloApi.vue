@@ -19,7 +19,7 @@ let client = useClient()
 async function update() {
   let api = await client.api(new Hello({ name:name.value }))
   if (api.succeeded) {
-    result.value = api.response.result
+    result.value = api.response!.result
   }
 }
 update()
