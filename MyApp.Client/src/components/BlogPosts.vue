@@ -53,10 +53,10 @@ defineProps<{
 }>()
 
 const press:VirtualPress = inject('press')!
-useHead({ title: press.posts.config.blogTitle })
+useHead({ title: press.blog.config.blogTitle })
 
 function authorLink(name:any) {
-  return name && press.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
+  return name && press.blog.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
       ? `/posts/author/${generateSlug(name)}`
       : null
 }
@@ -64,7 +64,7 @@ function postLink(post:Post) {
   return `/posts/${post.slug}`
 }
 function author(name:string) : Author | undefined {
-  return name ? press.posts.authors.find((x:Author) => x.name.toLowerCase() == name.toLowerCase()) : undefined 
+  return name ? press.blog.authors.find((x:Author) => x.name.toLowerCase() == name.toLowerCase()) : undefined 
 }
 function authorProfileUrl(name:string) {
   return author(name)?.profileUrl!

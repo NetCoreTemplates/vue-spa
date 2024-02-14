@@ -66,6 +66,7 @@ declare module 'vue-router/auto/routes' {
     '/todomvc': RouteRecordInfo<'/todomvc', '/todomvc', Record<never, never>, Record<never, never>>,
     '/videos': RouteRecordInfo<'/videos', '/videos', Record<never, never>, Record<never, never>>,
     '/weather': RouteRecordInfo<'/weather', '/weather', Record<never, never>, Record<never, never>>,
+    '/whatsnew': RouteRecordInfo<'/whatsnew', '/whatsnew', Record<never, never>, Record<never, never>>,
   }
 }
 

@@ -26,6 +26,9 @@
               <RouterLink to="/todomvc" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">Todos</RouterLink>
             </li>
             <li class="relative flex flex-wrap just-fu-start m-0">
+              <RouterLink to="/whatsnew" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">What's New</RouterLink>
+            </li>
+            <li class="relative flex flex-wrap just-fu-start m-0">
               <RouterLink to="/blog" class="p-4 flex items-center justify-start mw-full hover:text-sky-500 dark:hover:text-sky-400" ActiveClass="text-blue-700 dark:text-blue-300">Blog</RouterLink>
             </li>
             <li class="relative flex flex-wrap just-fu-start m-0">

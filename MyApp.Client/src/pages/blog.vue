@@ -144,10 +144,10 @@ import { useHead } from "@unhead/vue"
 import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
 
 const press:VirtualPress = inject('press')!
-useHead({ title: press.posts.config.blogTitle })
+useHead({ title: press.blog.config.blogTitle })
 
 function authorLink(name:any) {
-  return name && press.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase()) 
+  return name && press.blog.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase()) 
       ? `/posts/author/${generateSlug(name)}` 
       : null
 }
@@ -155,13 +155,13 @@ function postLink(post:any) {
   return `/posts/${post.slug}`
 }
 function author(name:string) {
-  return name ? press.posts.authors.filter((x:any) => x.name.toLowerCase() == name.toLowerCase())[0] : null
+  return name ? press.blog.authors.filter((x:any) => x.name.toLowerCase() == name.toLowerCase())[0] : null
 }
 function authorProfileUrl(name:string) {
   return author(name)?.profileUrl ?? "/img/profiles/user1.svg"
 }
 
-const posts:Post[] = press.posts.posts
+const posts:Post[] = press.blog.posts
 const primaryPost:Post = posts[0]
 const postAuthor = primaryPost.author
 const gridPosts = posts.slice(1, 7)

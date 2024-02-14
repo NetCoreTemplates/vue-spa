@@ -36,8 +36,8 @@ const tag = computed(() => (route.params as any)?.tag)
 
 const press:VirtualPress = inject('press')!
 
-const selectedTag = computed(() => press.posts.tagSlugs[tag.value])
-const allPosts:Post[] = press.posts.posts
+const selectedTag = computed(() => press.blog.tagSlugs[tag.value])
+const allPosts:Post[] = press.blog.posts
 const taggedPosts = computed<Post[]>(() => selectedTag ? allPosts.filter((x:any) => x.tags.includes(selectedTag.value)) : [])
 const allTags = [...new Set(allPosts.flatMap((x:any) => x.tags) as string[])]
 const tagCounts: {[tag:string]: number} = {}

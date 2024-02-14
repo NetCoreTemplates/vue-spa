@@ -34,7 +34,7 @@ const route = useRoute()
 const forYear = computed(() => parseInt((route.params as any)?.year ?? 0))
 
 const press:VirtualPress = inject('press')!
-const allPosts:Post[] = press.posts.posts
+const allPosts:Post[] = press.blog.posts
 const allYears = [...new Set(allPosts.map((x:any) => new Date(x.date).getFullYear()) as number[])]
 allYears.sort((a:number, b:number) => b - a)
 const yearPosts = computed<Post[]>(() => {

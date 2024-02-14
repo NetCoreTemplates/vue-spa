@@ -38,8 +38,8 @@ import { inject } from 'vue'
 import {generateSlug} from "@/utils"
 
 const press:VirtualPress = inject('press')!
-const blogDescription = press.posts.config.blogDescription
-const allPosts:Post[] = press.posts.posts
+const blogDescription = press.blog.config.blogDescription
+const allPosts:Post[] = press.blog.posts
 const allYears = [...new Set(allPosts.map((x:any) => new Date(x.date).getFullYear()) as number[])]
 const allTags = [...new Set(allPosts.flatMap((x:any) => x.tags) as string[])]
 const tagCounts: {[tag:string]: number} = {}

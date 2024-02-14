@@ -37,7 +37,7 @@
         </div>
         <div class="max-w-3xl mx-auto">
           <div id="post" class="prose lg:prose-xl max-w-none mb-32">
-            <MarkdownComponent type="posts" :doc="post" />
+            <MarkdownComponent type="blog" :doc="post" />
           </div>
         </div>
       </article>
@@ -126,10 +126,10 @@ import { useRoute } from "vue-router"
 const route = useRoute()
 const press:VirtualPress = inject('press')!
 const slug = computed(() => (route.params as any)?.slug)
-const allPosts:Post[] = press.posts.posts
+const allPosts:Post[] = press.blog.posts
 const post = computed(() => allPosts.find((x:any) => x.slug == slug.value) as Post)
 
-const author = computed(() => post.value ? press.posts.authors.find((x:any) => x.name.toLowerCase() == post.value.author?.toLowerCase()) : null)
+const author = computed(() => post.value ? press.blog.authors.find((x:any) => x.name.toLowerCase() == post.value.author?.toLowerCase()) : null)
 const authorPosts = computed<Post[]>(() => author.value ? allPosts.filter((x:any) => x.author?.toLowerCase() == author.value!.name.toLowerCase()).slice(0,4) : [])
 const authorProfileUrl = computed(() => author.value?.profileUrl ?? "/img/profiles/user1.svg")
 const authorHref = computed(() => author.value ? `/posts/author/${generateSlug(author.value.name)}` : null)
@@ -141,7 +141,7 @@ function tagLink(tag:string) {
   return `/posts/tagged/${generateSlug(tag)}`
 }
 function authorLink(name:any) {
-  return name && press.posts.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
+  return name && press.blog.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
       ? `/posts/author/${generateSlug(name)}`
       : null
 }

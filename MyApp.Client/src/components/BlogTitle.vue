@@ -14,6 +14,6 @@ defineProps<{
 }>()
 
 const press:VirtualPress = inject('press')!
-const blogTitle = press.posts.config.blogTitle
+const blogTitle = press.blog.config.blogTitle
 </script>
 
