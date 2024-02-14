@@ -137,7 +137,7 @@
 </template>
 
 <script setup lang="ts">
-import type { VirtualPress, Post } from "virtual:press"
+import type { VirtualPress, Post } from "vite-plugin-press"
 import Logo from "@/assets/img/logo.svg"
 import { inject } from "vue"
 import { useHead } from "@unhead/vue"
