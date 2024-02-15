@@ -31,7 +31,7 @@
     <Loading v-else>loading...</Loading>
 
     <div class="mt-8 flex justify-center gap-x-4">
-      <SrcVuePage path="pages/weather.vue" />
+      <SrcPage path="pages/weather.vue" />
     </div>
 
   </div>

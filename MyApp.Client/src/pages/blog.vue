@@ -132,7 +132,7 @@
   </div>
 
   <div class="my-8 flex justify-center gap-x-4">
-    <SrcVuePage path="pages/blog.vue" />
+    <SrcPage path="pages/blog.vue" />
   </div>
 </template>
 

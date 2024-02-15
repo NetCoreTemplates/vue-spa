@@ -15,7 +15,7 @@
       learnMore="https://docs.servicestack.net/vue/" />
 
   <div class="my-8 flex justify-center gap-x-4">
-    <SrcVuePage path="pages/videos.vue" />
+    <SrcPage path="pages/videos.vue" />
   </div>
   
 </template>
