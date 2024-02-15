@@ -27,10 +27,10 @@ import { useRoute } from "vue-router"
 const route = useRoute()
 const name = (route.params as any)?.name
 
-const meta:VirtualPress = inject('meta')!
+const press:VirtualPress = inject('press')!
 
-const author = meta.posts.authors.find((x:any) => generateSlug(x.name) == name)
-const authorPosts:Post[] = author ? meta.posts.posts.filter((x:any) => x.author.toLowerCase() == author.name.toLowerCase()) : []
+const author = press.blog.authors.find((x:any) => generateSlug(x.name) == name)
+const authorPosts:Post[] = author ? press.blog.posts.filter((x:any) => x.author.toLowerCase() == author.name.toLowerCase()) : []
 
 if (author) {
   useHead({ title: `${author.name} posts` })
