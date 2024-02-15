@@ -15,7 +15,7 @@
             <p class="text-xl font-semibold text-gray-900 dark:text-gray-50 whitespace-nowrap overflow-hidden text-ellipsis" :title="post.title">
               {{post.title}}
             </p>
-            <p class="mt-3 text-base text-gray-500">{{post.summary}}</p>
+            <p class="mt-3 text-base text-gray-500 dark:text-gray-400">{{post.summary}}</p>
           </a>
         </div>
         <div class="mt-6 flex items-center">
@@ -26,11 +26,11 @@
             </a>
           </div>
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">
+            <p class="text-sm font-medium text-gray-900 dark:text-gray-50">
               <RouterLink v-if="authorLink(post.author)" :to="authorLink(post.author)!" class="hover:underline">{{post.author}}</RouterLink>
               <span v-else>{{post.author}}</span>
             </p>
-            <div class="flex space-x-1 text-sm text-gray-500">
+            <div class="flex space-x-1 text-sm text-gray-500 dark:text-gray-400">
               <time :datetime="dateTimestamp(post.date)">{{dateLabel(post.date)}}</time>
               <span class="px-1" aria-hidden="true">&middot;</span>
               <span>{{post.minutesToRead}} min read</span>

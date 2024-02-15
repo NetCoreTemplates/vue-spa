@@ -15,7 +15,7 @@
                   <Iconify icon="logos:vue" class="w-12 h-12" />
                 </div>
               </div>
-              <div class="text-xl font-medium text-gray-700">Vue SPA</div>
+              <div class="text-xl font-medium text-gray-700 dark:text-gray-300">Vue SPA</div>
               <div class="flex justify-center h-8"></div>
               <span class="archive-name px-4 pb-2 text-blue-600 dark:text-indigo-400">{{ projectZip }}</span>
               <div class="count mt-1 text-gray-400 text-sm"></div>

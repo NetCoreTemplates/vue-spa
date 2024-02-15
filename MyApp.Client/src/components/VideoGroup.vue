@@ -14,8 +14,8 @@
             </div>
             <div>
               <div class="flex items-center gap-x-4 text-xs">
-                <time datetime="2020-03-16" class="text-gray-500">{{dateFmt(video.date)}}</time>
-                <span v-for="tag in video.tags" class="relative z-10 rounded-full bg-gray-50 dark:bg-gray-900 py-1.5 px-3 font-medium text-gray-600 dark:text-gray-300">
+                <time datetime="2020-03-16" class="text-gray-500 dark:text-gray-400">{{dateFmt(video.date)}}</time>
+                <span v-for="tag in video.tags" class="relative z-10 rounded-full bg-gray-50 dark:bg-gray-800 py-1.5 px-3 font-medium text-gray-600 dark:text-gray-300">
                   {{ tag }}
                 </span>
               </div>
@@ -26,7 +26,7 @@
                   </a>
                 </h3>
                 <div class="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-400">
-                  <div class="prose">
+                  <div class="prose dark:prose-invert">
                     <MarkdownComponent type="videos" :doc="video" :group="group" />
                   </div>
                 </div>

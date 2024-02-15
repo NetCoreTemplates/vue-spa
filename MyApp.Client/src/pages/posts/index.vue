@@ -8,13 +8,13 @@
     </div>
     <div class="relative my-4 mx-auto max-w-7xl">
       <div class="flex flex-wrap justify-center">
-        <a v-for="tag in allTags" :href="tagLink(tag)" class="mr-2 mb-2 text-xs leading-5 font-semibold bg-slate-400/10 rounded-full py-1 px-3 flex items-center space-x-2 hover:bg-slate-400/20 dark:highlight-white/5">{{tag}}</a>
+        <RouterLink v-for="tag in allTags" :to="tagLink(tag)" class="mr-2 mb-2 text-xs leading-5 font-semibold bg-slate-400/10 dark:bg-slate-400/30 rounded-full py-1 px-3 flex items-center space-x-2 hover:bg-slate-400/20 dark:hover:bg-slate-400/40 dark:highlight-white/5">{{tag}}</RouterLink>
       </div>
     </div>
     <div class="relative mb-8 mx-auto max-w-7xl">
       <div class="flex flex-wrap justify-center">
         <b class="text-sm font-semibold">{{ thisYear }}</b>
-        <a v-for="year in allYears.filter(x => x != thisYear)" class="ml-3 text-sm text-indigo-700 font-semibold hover:underline" :href="yearLink(year)">{{year}}</a>
+        <RouterLink v-for="year in allYears.filter(x => x != thisYear)" class="ml-3 text-sm text-indigo-700 dark:text-indigo-300 font-semibold hover:underline" :to="yearLink(year)">{{year}}</RouterLink>
       </div>
     </div>
     <div class="relative mx-auto max-w-7xl">

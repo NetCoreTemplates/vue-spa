@@ -24,10 +24,10 @@
         <div class="flex max-w-3xl mx-auto justify-between">
           <div>
             <div class="mb-4 flex flex-wrap">
-              <RouterLink v-for="tag in post.tags" :to="tagLink(tag)" class="mr-2 text-xs leading-5 font-semibold bg-slate-400/10 rounded-full py-1 px-3 flex items-center space-x-2 hover:bg-slate-400/20 dark:highlight-white/5">{{tag}}</RouterLink>
+              <RouterLink v-for="tag in post.tags" :to="tagLink(tag)" class="mr-2 mb-2 text-xs leading-5 font-semibold bg-slate-400/10 dark:bg-slate-400/30 rounded-full py-1 px-3 flex items-center space-x-2 hover:bg-slate-400/20 dark:hover:bg-slate-400/40 dark:highlight-white/5">{{tag}}</RouterLink>
             </div>
             <div v-if="post.date" class="max-w-3xl mx-auto">
-              <div class="mb-6 text-lg text-gray-500">
+              <div class="mb-6 text-lg text-gray-500 dark:text-gray-400">
                 <time :datetime="dateTimestamp(post.date)">{{dateLabel(post.date)}}</time>
                 <span class="px-1" aria-hidden="true">&middot;</span>
                 <span>{{post.wordCount}} min read</span>
@@ -36,14 +36,14 @@
           </div>
         </div>
         <div class="max-w-3xl mx-auto">
-          <div id="post" class="prose lg:prose-xl max-w-none mb-32">
+          <div id="post" class="prose dark:prose-invert lg:prose-xl max-w-none mb-32">
             <MarkdownComponent type="blog" :doc="post" />
           </div>
         </div>
       </article>
     </div>
 
-    <div v-if="author && authorPosts.length" class="bg-gray-50 py-20">
+    <div v-if="author && authorPosts.length" class="bg-gray-50 dark:bg-gray-900 py-20">
       <div class="max-w-3xl mx-auto">
         <div class="flex justify-between">
           <div>
@@ -53,7 +53,7 @@
             <div class="mt-2 font-medium text-2xl">
               Written by {{author.name}}
             </div>
-            <div class="text-gray-600">
+            <div class="text-gray-600 dark:text-gray-300">
               {{author.bio}}
             </div>
           </div>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="mt-4 border-t">
-          <div class="py-8 text-lg text-gray-700 font-medium">
+          <div class="py-8 text-lg text-gray-700 dark:text-gray-200 font-medium">
             More from {{author.name}}
           </div>
           <div class="grid grid-cols-2 gap-8">
@@ -82,7 +82,7 @@
                       <p class="text-xl font-semibold text-gray-900 dark:text-gray-50 whitespace-nowrap overflow-hidden text-ellipsis" :title="authorPost.title">
                         {{authorPost.title}}
                       </p>
-                      <p class="mt-3 text-base text-gray-500">{{authorPost.summary}}</p>
+                      <p class="mt-3 text-base text-gray-500 dark:text-gray-400">{{authorPost.summary}}</p>
                     </RouterLink>
                   </div>
                   <div class="mt-6 flex items-center">
@@ -91,11 +91,11 @@
                       <img class="h-10 w-10 rounded-full" :src="authorProfileUrl" :alt="`${authorPost.title} background`">
                     </div>
                     <div class="ml-3">
-                      <p class="text-sm font-medium text-gray-900">
+                      <p class="text-sm font-medium text-gray-900 dark:text-gray-50">
                         <RouterLink v-if="authorLink(authorPost.author)" :to="authorLink(authorPost.author)!" class="hover:underline">{{authorPost.author}}</RouterLink>
                         <span v-else>{{authorPost.author}}</span>
                       </p>
-                      <div class="flex space-x-1 text-sm text-gray-500">
+                      <div class="flex space-x-1 text-sm text-gray-500 dark:text-gray-400">
                         <time :datetime="dateTimestamp(authorPost.date)">{{dateLabel(authorPost.date)}}</time>
                         <span class="px-1" aria-hidden="true">&middot;</span>
                         <span>{{authorPost.minutesToRead}} min read</span>
