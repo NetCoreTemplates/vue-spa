@@ -49,6 +49,9 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 
 const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
     env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'https://localhost:5001';
+const baseUrl = process.env.NODE_ENV === 'development'
+    ? "https://locahost:5173"
+    : process.env.DEPLOY_HOST ? `https://${process.env.DEPLOY_HOST}` : undefined
 
 export function configureMarkdown(md:MarkdownIt) {
     function copy({cls,box,icon,txt}:any) {
@@ -133,7 +136,10 @@ export default defineConfig({
             include: [/\.vue$/, /\.md$/],
         }),
 
-        Press(),
+        Press({
+            baseUrl,
+            metadataPath:'public/api'
+        }),
         Layouts(),
         svgLoader(),
 

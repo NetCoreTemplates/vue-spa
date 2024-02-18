@@ -1,6 +1,7 @@
 <template>
   <component v-if="MarkdownComponent" :is="MarkdownComponent" :name="doc.slug" :frontmatter="{ nowrap:true }" />
-  <div v-else v-html="doc.preview"></div>
+  <div v-else-if="doc.preview" v-html="doc.preview"></div>
+  <pre v-else v-html="doc.content"></pre>
 </template>
 
 <script setup lang="ts">

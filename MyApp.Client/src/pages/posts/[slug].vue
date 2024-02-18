@@ -66,6 +66,7 @@
             More from {{author.name}}
           </div>
           <div class="grid grid-cols-2 gap-8">
+            
             <div v-for="authorPost in authorPosts as Post[]">
               <div class="flex flex-col overflow-hidden">
                 <div class="flex-shrink-0">
@@ -105,8 +106,10 @@
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
+        
       </div>
     </div>
   </template>

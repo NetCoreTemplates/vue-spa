@@ -74,7 +74,7 @@
       </div>
     </section>
 
-    <section v-if="remainingPosts" class="mt-24 flex justify-center">
+    <section v-if="remainingPosts.length" class="mt-24 flex justify-center">
       <div class="flex max-w-screen-lg">
         <div class="w-2/3">
           <div v-for="post in remainingPosts as Post[]" class="border-b pb-4 mb-4">
@@ -88,7 +88,7 @@
                   <div class="flex-shrink-0">
                     <span>
                         <span class="sr-only">{{post.author}}</span>
-                        <img class="h-10 w-10 rounded-full" :src="authorProfileUrl(post.author)" alt="@post.Title background">
+                        <img class="h-10 w-10 rounded-full" :src="authorProfileUrl(post.author)" :alt="`${post.title} background`">
                     </span>
                   </div>
                   <div class="ml-3">

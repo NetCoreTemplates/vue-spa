@@ -30,7 +30,7 @@
 
     <h4 class="py-6 text-center text-xl">Run .NET Project</h4>
     <ShellCommand class="mb-2">dotnet watch</ShellCommand>
-  </div>      
+  </div>
 </template>
 
 <script setup lang="ts">
