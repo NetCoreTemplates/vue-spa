@@ -58,7 +58,7 @@
     <div class="pb-20">
       <h4 class="mt-20 text-center text-xl">
         Manage Bookings in
-        <a class="font-semibold" :href="apiUrl('/admin/#Bookings')">Admin</a>,
+        <RouterLink class="font-semibold" to="/admin/bookings">Admin</RouterLink>,
         <a class="font-semibold" :href="apiUrl('/locode/QueryBookings')">Locode</a> or
         <a class="font-semibold" :href="apiUrl('/ui/QueryBookings')">API Explorer</a>
       </h4>
@@ -72,10 +72,10 @@
           <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery-crud">AutoQuery CRUD</RouterLink>,
           allowing for rapid development of typed CRUD Services using only declarative POCO DTOs, enabling
           developing entire
-          <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery-crud#advanced-crud-example">audited</RouterLink>
-          &amp; <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery-audit-log">verifiable</RouterLink>
+          <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery/crud#advanced-crud-example">audited</RouterLink>
+          &amp; <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery/audit-log">verifiable</RouterLink>
           data-driven systems in mins
-          <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery-crud-bookings">more...</RouterLink>
+          <RouterLink class="font-semibold" to="https://docs.servicestack.net/autoquery/bookings-crud">more...</RouterLink>
         </p>
         <iframe class="mt-4 w-full aspect-video" src="https://www.youtube.com/embed/rSFiikDjGos" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>

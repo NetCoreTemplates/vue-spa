@@ -8,13 +8,14 @@ export const formatCurrency = (n?:number) => n ? formatter.format(n) : ''
 export const formatDate = (s?:string) => s ? toDateFmt(s) : ''
 
 export const dateInputFormat = (d:Date) => dateFmt(d).replace(/\//g,'-')
+const isoDateRegex = /^\d{2,4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}/
 
 export function sanitizeForUi(dto:any) {
     if (!dto) return {}
     Object.keys(dto).forEach(key => {
         let value = dto[key]
         if (typeof value == 'string') {
-            if (value.startsWith('/Date'))
+            if (value.startsWith('/Date') || value.match(isoDateRegex))
                 dto[key] = dateInputFormat(toDate(value))
         }
     })
