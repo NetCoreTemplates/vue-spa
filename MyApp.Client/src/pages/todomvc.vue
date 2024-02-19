@@ -13,7 +13,7 @@
           <div class="relative flex items-start" @click="store.toggleTodo(todo.id)">
             <div class="flex items-center h-6">
               <Iconify v-if="todo.isFinished" icon="mdi:check-circle" class="text-green-600" />
-              <Iconify v-else icon="mdi/checkbox-blank-circle-outline" />
+              <Iconify v-else icon="mdi:checkbox-blank-circle-outline" />
             </div>
             <div class="ml-3 flex-grow">
               <label :class="{'line-through':todo.isFinished}">{{ todo.text }}</label>
