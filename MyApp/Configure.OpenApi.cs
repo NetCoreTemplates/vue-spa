@@ -8,7 +8,7 @@ public class ConfigureOpenApi : IHostingStartup
 {
     public void Configure(IWebHostBuilder builder) => builder
         .ConfigureServices((context, services) => {
-            // if (context.HostingEnvironment.IsDevelopment())
+            if (context.HostingEnvironment.IsDevelopment())
             {
                 services.AddEndpointsApiExplorer();
                 services.AddSwaggerGen();
