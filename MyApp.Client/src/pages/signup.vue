@@ -8,7 +8,7 @@
         <form @submit.prevent="onSubmit">
           <div>
             <ErrorSummary except="userName,password,rememberMe"/>
-            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div class="px-4 py-5 bg-white dark:bg-black space-y-6 sm:p-6">
               <h3 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100 leading-tight">Create a new
                 account.</h3>
 

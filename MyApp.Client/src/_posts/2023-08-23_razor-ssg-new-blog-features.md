@@ -213,19 +213,19 @@ Most of [VitePress Markdown Containers](https://vitepress.dev/guide/markdown#cus
 are also available in Razor SSG websites for enabling rich, wrist-friendly consistent markup in your Markdown pages, e.g:
 
 ```md
-::: info
+:::info
 This is an info box.
 :::
 
-::: tip
+:::tip
 This is a tip.
 :::
 
-::: warning
+:::warning
 This is a warning.
 :::
 
-::: danger
+:::danger
 This is a dangerous warning.
 :::
 
@@ -234,19 +234,19 @@ Copy Me!
 :::
 ```
 
-::: info
+:::info
 This is an info box.
 :::
 
-::: tip
+:::tip
 This is a tip.
 :::
 
-::: warning
+:::warning
 This is a warning.
 :::
 
-::: danger
+:::danger
 This is a dangerous warning.
 :::
 

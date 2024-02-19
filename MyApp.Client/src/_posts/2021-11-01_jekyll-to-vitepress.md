@@ -244,7 +244,7 @@ VitePress only ignores these if they are in a code fence using the triple tilda 
 Since some of our documentation used handlebar syntax in example code, we needed a way for Jekyll to ignore these statements and just present our code.
 `raw` and `endraw` were used which were usually wrapping code blocks. VitePress doesn't have a problem with this syntax which means the `{% raw %}` statements were included in our page which we didn't want.
 
-This was a matter of finding where these were used in all our documents and replace them with `::: v-pre` blocks as needed.
+This was a matter of finding where these were used in all our documents and replace them with `:::v-pre` blocks as needed.
 
 ## Sidebar
 

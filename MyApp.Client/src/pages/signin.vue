@@ -8,7 +8,7 @@
         <form @submit.prevent="onSubmit">
           <div>
             <ErrorSummary except="userName,password,rememberMe"/>
-            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div class="px-4 py-5 bg-white dark:bg-black space-y-6 sm:p-6">
               <div class="flex flex-col gap-y-4">
                 <TextInput id="userName" placeholder="Email" help="Email you signed up with" v-model="username"/>
                 <TextInput id="password" type="password" help="6 characters or more" v-model="password"/>
