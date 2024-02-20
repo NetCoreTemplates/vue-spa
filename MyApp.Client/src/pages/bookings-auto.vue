@@ -5,7 +5,7 @@
 
     <AutoQueryGrid type="Booking" :visible-from="{ name:'xl', bookingStartDate:'sm', bookingEndDate:'xl', createdBy:'2xl' }">
       <template #id="{ id }">
-        <span class="text-gray-900" v-html="id"></span>
+        <span class="font-semibold text-gray-900 dark:text-gray-50" v-html="id"></span>
       </template>
 
       <template #name="{ name }">{{name}}</template>

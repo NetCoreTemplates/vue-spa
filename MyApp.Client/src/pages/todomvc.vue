@@ -7,8 +7,8 @@
                  @keyup.enter.stop="store.addTodo()" />
     </div>
 
-    <div class="bg-white shadow overflow-hidden rounded-md">
-      <ul role="list" class="divide-y divide-gray-200">
+    <div class="bg-white dark:bg-black shadow overflow-hidden rounded-md">
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
         <li v-for="todo in store.filteredTodos" :key="todo.id" class="px-6 py-4">
           <div class="relative flex items-start" @click="store.toggleTodo(todo.id)">
             <div class="flex items-center h-6">
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="mt-4 text-center text-gray-400 flex justify-center -ml-6">
+    <div class="mt-4 text-center text-gray-400 dark:text-gray-500 flex justify-center -ml-6">
       <SrcLink href="/MyApp.Client/src/stores/todos.ts">
         <Iconify icon="noto:pineapple" class="w-5 h-5 inline-flex" />
       </SrcLink>
@@ -70,8 +70,8 @@ store.refreshTodos()
 const FilterTab = (props:{ filter:Filter }, context:SetupContext) => {
   return h('a', {
     href: '#',
-    'class': `border-gray-200 text-sm font-medium px-4 py-2 hover:bg-gray-100 
-      focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 
+    'class': `border-gray-200 dark:border-gray-700 text-sm font-medium px-4 py-2 hover:bg-gray-100 
+      focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 
       dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white
       ${props.filter == store.filter ? 'text-blue-700 dark:bg-blue-600' : 'text-gray-900 hover:text-blue-700 dark:bg-gray-700'}`,
     onClick: (e:MouseEvent) => {
