@@ -54,7 +54,7 @@
       <SrcLink href="/MyApp.Client/src/stores/todos.ts">
         <Iconify icon="noto:pineapple" class="w-5 h-5 inline-flex" />
       </SrcLink>
-      <SrcPage path="pages/todomvc.vue" />
+      <SrcPage path="todomvc.vue" />
     </div>
   </div>
 </template>

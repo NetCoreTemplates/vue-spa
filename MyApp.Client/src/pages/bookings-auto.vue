@@ -46,7 +46,7 @@
     <div>
       <div class="mt-5 flex justify-between gap-x-4">
         <div>
-          <SrcPage path="pages/bookings-auto.vue" />
+          <SrcPage path="bookings-auto.vue" />
         </div>
         <div>
           <RouterLink class="text-gray-400 hover:text-gray-600" to="/bookings-data">Bookings DataGrid</RouterLink>

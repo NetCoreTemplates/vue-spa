@@ -26,7 +26,7 @@
   </div>
 
   <div class="my-8 flex justify-center gap-x-4">
-    <SrcPage path="pages/admin/index.vue" />
+    <SrcPage path="admin/index.vue" />
   </div>
 </template>
 

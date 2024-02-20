@@ -7,7 +7,7 @@
     <PrimaryButton @click="incrementCount">Click me</PrimaryButton>
 
     <div class="mt-8 flex justify-center gap-x-4">
-      <SrcPage path="pages/counter.vue" />
+      <SrcPage path="counter.vue" />
     </div>
 
   </div>
