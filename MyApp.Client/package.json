@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "dtos": "x ts",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
