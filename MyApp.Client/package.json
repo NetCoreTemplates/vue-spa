@@ -18,6 +18,7 @@
   "dependencies": {
     "@servicestack/client": "^2.1.1",
     "@servicestack/vue": "^3.0.88",
+    "@unhead/vue": "^1.8.10",
     "@vueuse/core": "^10.7.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
@@ -31,7 +32,6 @@
     "@tsconfig/node20": "^20.1.2",
     "@types/markdown-it-container": "^2.0.9",
     "@types/node": "^20.11.10",
-    "@unhead/vue": "^1.8.10",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/tsconfig": "^0.5.1",
