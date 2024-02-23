@@ -30,7 +30,7 @@
               <div class="mb-6 text-lg text-gray-500 dark:text-gray-400">
                 <time :datetime="dateTimestamp(post.date)">{{dateLabel(post.date)}}</time>
                 <span class="px-1" aria-hidden="true">&middot;</span>
-                <span>{{post.minutesRead}} min read</span>
+                <span>{{post.minutesToRead}} min read</span>
               </div>
             </div>
           </div>
