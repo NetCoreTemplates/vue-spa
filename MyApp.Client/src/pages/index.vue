@@ -32,6 +32,22 @@
 
   <div class="flex justify-center my-20 py-20 bg-slate-100 dark:bg-slate-800">
     <div class="text-center">
+      <Iconify icon="mdi:feature-highlight" class="text-green-600 w-36 h-36 inline-block" />
+      <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
+        Features
+      </h1>
+    </div>
+  </div>
+
+  <div class="text-center text-xl">
+    Opinionated Vue template for a productive out-of-the-box development UX
+  </div>
+  <div class="prose dark:prose-invert lg:prose-xl mx-auto">
+    <Include src="features.md" />
+  </div>
+
+  <div class="flex justify-center my-20 py-20 bg-slate-100 dark:bg-slate-800">
+    <div class="text-center">
       <Iconify icon="material-symbols:hangout-video" class="text-green-600 w-36 h-36 inline-block" />
       <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
         Videos

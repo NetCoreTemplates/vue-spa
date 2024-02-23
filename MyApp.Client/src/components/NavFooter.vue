@@ -7,10 +7,6 @@
       </div>
 
       <div class="pb-6">
-        <RouterLink to="/features" class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50">Features</RouterLink>
-      </div>
-
-      <div class="pb-6">
         <RouterLink to="/deploy" class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50">Deploy</RouterLink>
       </div>
 

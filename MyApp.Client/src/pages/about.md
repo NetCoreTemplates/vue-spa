@@ -1,19 +1,71 @@
 ---
-title: About this Vue App
+title: Template Features
 ---
 
-## .NET 8 Vue SPA Template
+This template contains our essential recommendations for a modern Vue Single Page App optimal for both 
+productivity and performance.
 
-ServiceStack's new .NET 8 Vue SPA Template enhances the default ASP.NET Vue App templates with several modern, high-productivity features, including:
+:::include features.md:::
 
- - [Vue.js](https://vuejs.org) - Enhance your statically rendered Blazor Apps with Vue.js for all your interactive UIs
- - [Tailwind CSS](https://tailwindcss.com) - Style your Blazor Apps with the modern popular utility-first CSS framework for creating beautiful, maintainable responsive UIs with DarkMode support
- - [ServiceStack Vue Components](https://blazor-gallery.jamstacks.net) - Rapidly develop beautiful Blazor Apps integrated with Rich high-productivity UI Tailwind Components like [AutoQueryGrid](https://docs.servicestack.net/vue/autoquerygrid) and [AutoForms](https://docs.servicestack.net/vue/autoform)
- - [ASP .NET Identity Auth](https://learn.microsoft.com/en-us/aspnet/core/blazor/security/) - Use the same ASP .NET Identity Auth used in ASP.NET's .NET 8 Blazor Apps, with all Identity Pages upgraded with beautiful Tailwind CSS styling
- - [Entity Framework](https://learn.microsoft.com/ef/) & [OrmLite](https://docs.servicestack.net/ormlite/) - Choose the Best ORM to build each App feature, with a unified solution that sees [OrmLite's Code-First DB Migrations](https://docs.servicestack.net/ormlite/db-migrations) run both EF and OrmLite migrations, inc. Seed Data with a single command at Development or Deployment
- - [AutoQuery](https://docs.servicestack.net/autoquery/) - Rapidly developing data-driven APIs, UIs and CRUD Apps
- - [Auto Admin Pages](https://youtu.be/wlRA4_owEsc) - Quickly develop your back-office CRUD Admin UIs to manage your App's Database tables at [/admin](/admin)
- - [Markdown](https://docs.servicestack.net/razor-press/syntax) - Maintain SEO-friendly documentation and content-rich pages like this one with just Markdown, beautifully styled with [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
- - [Built-in UIs](https://servicestack.net/auto-ui) - Use ServiceStack's Auto UIs to [Explore your APIs](https://docs.servicestack.net/api-explorer) at **/ui/** 
-   or Query your [App's Database Tables](https://docs.servicestack.net/admin-ui-database) at [/admin-ui/database](/admin-ui/database) 
- - [Built-in Docker Deployments](/deploy) - Use the built-in GitHub Actions to effortlessly deploy .NET 8 containerized Blazor Apps with Docker and GitHub Registry via SSH to any Linux Server
+## Vue Plugins
+
+The Vite plugins registered in `vite.config.ts` improves productivity by adopting popular conventions that automating-away manual tasks & configurations.
+
+### [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+
+For Auto Registering Vue Components, either `.vue` SFC's, `.md` Markdown components or Iconify's icons as Vue3 components.
+
+```ts
+Components({
+    // allow auto load markdown components under `./src/components/`
+    extensions: ['vue', 'md'],
+
+    // allow auto import and register components used in markdown
+    include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+
+    dts: 'src/components.d.ts',
+})
+```
+
+### [Iconify for Vue](https://iconify.design/docs/icon-components/vue/)
+
+For accessing [thousands of Iconfigy's SVG icons](https://icon-sets.iconify.design) as Vue components **on-demand** universally.
+
+```ts
+import { Icon } from '@iconify/vue'
+```
+
+#### Usage
+
+```html
+<Icon icon="mdi-light:home" />
+```
+
+### [unplugin-vue-router](https://github.com/posva/unplugin-vue-router)
+
+For auto generating vue routing configurations for each Vue 3 component from 
+[NuxtJS inspired File System Routing](https://github.com/posva/unplugin-vue-router?tab=readme-ov-file#routes-folder-structure) conventions.
+
+```ts
+VueRouter({
+    extensions: ['.vue', '.md'],
+})
+```
+
+### [unplugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown)
+
+For enabling Markdown Support by converting each `.md` document into a Vue Component that's rendered using 
+[markdown-it](https://github.com/markdown-it/markdown-it).
+
+```ts
+Markdown({
+    markdownItOptions: {
+        // html: true,
+    },
+    markdownItSetup(md) {
+        //md.use(markdownPlugin)
+    },
+    wrapperComponent: 'MarkdownPage'
+})
+```
+

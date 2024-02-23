@@ -63,7 +63,7 @@ export default defineComponent({
         },
         title: {
             type: String,
-            required: true,
+            required: false,
         },
         activatedClass: {
             type: String,

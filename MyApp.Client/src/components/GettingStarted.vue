@@ -25,6 +25,7 @@
       </div>
     </section>
 
+    <h4 class="pb-4 text-center text-xl">or</h4>
     <ShellCommand class="mb-2">dotnet tool install -g x</ShellCommand>
     <ShellCommand class="mb-2">x new {{template}} {{project}}</ShellCommand>
 
