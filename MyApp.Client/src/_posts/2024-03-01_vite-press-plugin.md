@@ -23,13 +23,35 @@ The **vite-press-plugin** currently powers the markdown features in the followin
 
 #### Vite Templates with vite-press-plugin
 
- - [press-vue](https://press-vue.web-templates.io) - Vite Vue App
- - [press-react](https://press-react.web-templates.io) - Vite React App
+- [press-vue](https://press-vue.web-templates.io) - Vite Vue App
+- [press-react](https://press-react.web-templates.io) - Vite React App
+
+<div class="not-prose mt-8 grid grid-cols-2 gap-4">
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://press-vue.servicestack.net">
+        <img class="p-2" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/press-vue.png" />
+        <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">press-vue.servicestack.net</div>
+    </a>
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://press-react.servicestack.net">
+        <img class="p-2" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/press-react.png" />
+        <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">press-react.servicestack.net</div>
+    </a>
+</div>
 
 #### .NET 8 API backend with Vite Vue & React SPA frontend
 
  - [vue-spa](https://vue-spa.web-templates.io) - .NET 8 API with Vite Vue SPA frontend
  - [react-spa](https://react-spa.web-templates.io) - .NET 8 API with Vite React SPA frontend
+
+<div class="not-prose mt-8 grid grid-cols-2 gap-4">
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://vue-spa.web-templates.io">
+        <img class="p-2" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vue-spa.png" />
+        <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">vue-spa.web-templates.io</div>
+    </a>
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://react-spa.web-templates.io">
+        <img class="p-2" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/react-spa.png" />
+        <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">react-spa.web-templates.io</div>
+    </a>
+</div>
 
 The **vite-press-plugin** makes the Markdown features available to the Vite App, whilst the markdown rendering itself is optimally
 implemented in:
@@ -45,19 +67,30 @@ and rendered with [Markdig](https://github.com/xoofx/markdig) and either Razor P
 #### .NET 8 Razor SSG and Blazor SSR Templates
 
  - [razor-ssg](https://razor-ssg.web-templates.io) - .NET Razor SSG Blog and Marketing Website with **Markdig**
- - [razor-press](https://razor-press.web-templates.io) - .NET Razor SSG Documentation Website with **Markdig**
  - [blazor-vue](https://blazor-vue.web-templates.io) - .NET 8 Blazor Server Rendered Website with **Markdig**
+ - [razor-press](https://razor-press.web-templates.io) - .NET Razor SSG Documentation Website with **Markdig**
+
+<div class="not-prose mt-8 grid grid-cols-2 gap-4">
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://razor-ssg.web-templates.io">
+        <img class="p-2" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/razor-ssg.png" />
+        <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">razor-ssg.web-templates.io</div>
+    </a>
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://blazor-vue.web-templates.io">
+        <img class="p-2" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/blazor-vue.png" />
+        <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">blazor-vue.web-templates.io</div>
+    </a>
+</div>
 
 ### Markdown Feature Folders
 
 The content for each Markdown feature is maintained within its own feature folder with a `_` prefix:
 
-<FileLayout :files="{
-    _includes: {},
-    _posts: {},
-    _videos: {},
-    _whatsnew: {},
-}"/>
+```files
+/_includes
+/_posts
+/_videos
+/_whatsnew
+```
 
 #### Markdown Document Structure
 
@@ -146,14 +179,12 @@ This `VirtualPress` metadata is used to power all markdown features.
 The blog maintains its markdown posts in a flat  [/_posts](https://github.com/NetCoreTemplates/vue-spa/tree/main/MyApp.Client/src/_posts) 
 folder which each Markdown post containing its publish date and URL slug it should be published under, e.g:
 
-<FileLayout :files="{
-    _posts: { _: [
-      '...',
-      '2023-01-21_start.md',
-      '2024-02-11_jwt-identity-auth.md',
-      '2024-03-01_vite-press-plugin.md',
-    ]},
-}"/>
+```files
+/_posts
+  2023-01-21_start.md
+  2024-02-11_jwt-identity-auth.md
+  2024-03-01_vite-press-plugin.md
+```
 
 Supporting all Blog features requires several different pages to render each of its view:
 
@@ -217,13 +248,15 @@ The [/whatsnew](/whatsnew) page is an example of creating a custom Markdown feat
 where a new folder is created per release, containing both release date and release or project name, with all features in that release 
 maintained markdown content sorted in alphabetical order:
 
-<FileLayout :files="{
-  _whatsnew: {
-    '2023-03-08_Animaginary': { _: ['feature1.md'] },
-    '2023-03-18_OpenShuttle': { _: ['feature1.md'] },
-    '2023-03-28_Planetaria':  { _: ['feature1.md'] },
-  }
-}"/>
+```files
+/_whatsnew
+  /2023-03-08_Animaginary
+    feature1.md
+  /2023-03-18_OpenShuttle
+    feature1.md
+  /2023-03-28_Planetaria
+    feature1.md
+```
 
 What's New follows the same structure as Pages feature which is rendered in:
 
@@ -234,16 +267,17 @@ What's New follows the same structure as Pages feature which is rendered in:
 
 The videos feature maintained in the `_videos` folder allows grouping of related videos into different folder groups, e.g:
 
-<FileLayout :files="{
-  _videos: {
-    'vue': {
-       _: ['admin.md','autoquerygrid.md','components.md']
-    },
-    'react': {
-       _: ['locode.md','bookings.md','nextjs.md']
-    },
-  }
-}"/>
+```files
+/_videos
+  /vue
+    admin.md
+    autoquerygrid.md
+    components.md
+  /react
+    locode.md
+    bookings.md
+    nextjs.md
+```
 
 These can then be rendered as UI fragments using the `<VideoGroup>` component, e.g:
 
@@ -259,15 +293,13 @@ These can then be rendered as UI fragments using the `<VideoGroup>` component, e
 
 The includes feature allows maintaining reusable markdown fragments in the `_includes` folder, e.g:
 
-<FileLayout :files="{
-  _includes: {
-    'features': {
-       _: ['videos.md','whatsnew.md']
-    },
-    _: ['privacy.md']
-  }
-}"/>
-
+```files
+/_includes
+  /features
+    videos.md
+    whatsnew.md
+  privacy.md
+```
 
 Which can be included in other Markdown files with:
 
@@ -303,14 +335,23 @@ export default defineConfig({
 This will publish all the content of each content type in the year they were published in, along with an `all.json` containing
 all content published in that year as well aso for all time, e.g:
 
-<FileLayout :files="{
-  meta: {
-    2022: { _: ['all.json','posts.json','videos.json'] },
-    2023: { _: ['all.json','posts.json'] },
-    2024: { _: ['all.json','posts.json','videos.json','whatsnew.json'] },
-    _: ['all.json','index.json']
-  }
-}"/>
+```files
+/meta
+  /2022
+    all.json
+    posts.json
+    videos.json
+  /2023
+    all.json
+    posts.json
+  /2024
+    all.json
+    posts.json
+    videos.json
+    whatsnew.json
+  all.json
+  index.json
+```
 
 With this you can fetch the metadata of all the new **Blog Posts** added in **2023** from:
 
@@ -327,53 +368,6 @@ Or **ALL** the website metadata content from:
 This feature makes it possible to support use-cases like CreatorKit's
 [Generating Newsletters](https://servicestack.net/creatorkit/portal-mailruns#generating-newsletters) feature which generates 
 a Monthly Newsletter Email with all new content added within a specified period.
-
-## Components in Markdown Pages
-
-The [Simple, Modern JavaScript](/posts/javascript) blog post is a good example showing how you can import and reference components in Markdown pages:
-
-```tsx
-<script setup>
-import Hello from "./components/Hello.vue";
-import Counter from "./components/Counter.vue";
-import Plugin from "./components/Plugin.vue";
-import HelloApi from "./components/HelloApi.vue";
-import VueComponentGallery from "./components/VueComponentGallery.vue";
-import VueComponentLibrary from "./components/VueComponentLibrary.vue";
-</script>
-
-<hello name="Vue 3"></hello>
-<counter></counter>
-```
-
-As well as use Global Components which don't need to be imported, e.g:
-
-```xml
-<FileLayout :files="{
-  _videos: {
-    'vue': {
-       _: ['admin.md','autoquerygrid.md']
-    },
-    'react': {
-       _: ['locode.md','bookings.md']
-    },
-  }
-}" />
-```
-
-#### Output
-
-<FileLayout :files="{
-  _videos: {
-    'vue': {
-       _: ['admin.md','autoquerygrid.md']
-    },
-    'react': {
-       _: ['locode.md','bookings.md']
-    },
-  }
-}" />
-
 
 ## Markdown Containers
 
@@ -422,11 +416,9 @@ You can specify a custom title by appending the text right after the container t
 
 #### Input
 
-```markdown
-:::danger STOP
-Danger zone, do not proceed
-:::
-```
+    :::danger STOP
+    Danger zone, do not proceed
+    :::
 
 #### Output
 
@@ -455,9 +447,11 @@ HTML or XML fragments can also be copied by escaping them first:
 
 #### Input
 
-    :::copy
-    `<PackageReference Include="ServiceStack" Version="8.*" />`
-    :::
+```md
+:::copy
+`<PackageReference Include="ServiceStack" Version="8.*" />`
+:::
+```
 
 #### Output
 
@@ -472,13 +466,13 @@ Similarly the **sh** container is ideal for displaying and copying shell command
 #### Input
 
     :::sh
-    npm run prerender
+    npm run dev
     :::
 
 #### Output
 
 :::sh
-npm run prerender
+npm run dev
 :::
 
 ### YouTube
@@ -492,3 +486,47 @@ For embedding YouTube Videos, optimally rendered using the `<LiteYouTube>` compo
 #### Output
 
 :::youtube YIa0w6whe2U:::
+
+## Markdown Fenced Code Blocks
+
+For more flexibility you can utilize custom fenced components like the `files` fenced code block which can 
+be used to capture ascii representation of a structured documentation like a folder & file structure, e.g:
+
+    ```files
+    /_videos
+      /vue
+        admin.md
+        autoquerygrid.md
+        components.md
+      /react
+        locode.md
+        bookings.md
+        nextjs.md
+    ```
+
+That we can render into a more UX-friendly representation by calling the `Files` component with the body
+of the code-block to convert the structured ascii layout into a more familiar GUI layout:
+
+```files
+/_videos
+  /vue
+    admin.md
+    autoquerygrid.md
+    components.md
+  /react
+    locode.md
+    bookings.md
+    nextjs.md
+```
+
+The benefit of this approach of marking up documentation is that the markdown content still remains in an optimal 
+human-readable form even when the markdown renderer lacks the custom fenced components to render the richer UI.
+
+## Components In Markdown
+
+Up till now all above features will let you render the same markdown content in all available Vue, React, Razor or Blazor
+templates. At the cost of reduced portability, you're also able to embed rich Interactive Vue or React components directly in 
+markdown.
+
+:::include component-links.md:::
+
