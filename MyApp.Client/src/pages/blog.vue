@@ -111,6 +111,9 @@
               </div>
             </div>
           </div>
+          <div v-if="remainingPosts.length >= 15" class="mt-8 text-center">
+            <a class="text-sm font-semibold hover:underline" href="/posts/">view all posts</a>
+          </div>
         </div>
         <div class="w-1/3">
           <div class="pl-8">

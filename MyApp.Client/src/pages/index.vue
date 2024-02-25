@@ -7,7 +7,7 @@
         <span class="block text-green-600 dark:text-green-500 xl:inline">Vue SPA</span>
       </h1>
       <p class="mx-auto mt-3 max-w-md text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
-        Welcome to your new Vue SPA App, checkout links below to get started:
+        Welcome to your new Vue SPA App
       </p>
       <div class="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
         <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
