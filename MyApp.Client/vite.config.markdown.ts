@@ -1,8 +1,11 @@
 import MarkdownIt from "markdown-it"
 import container from "markdown-it-container"
 import prism from "markdown-it-prism"
+import Prism from 'prismjs'
 
-export default function(md:MarkdownIt) {
+const FencedComponents = ['files']
+
+export default function(md:MarkdownIt, options: { fencedComponents?:string[] } = {}) {
     function copy({cls,box,icon,txt}:any) {
         return ({
             render(tokens:any, idx:any) {
@@ -71,6 +74,25 @@ export default function(md:MarkdownIt) {
     
     md.linkify.set({ fuzzyLink: false })
     md.use(prism)
+    md.use((md:any) => {
+        const allComponents = [...(options.fencedComponents || []), ...FencedComponents]
+        allComponents.forEach(name => {
+            Prism.languages[name] = {}
+        })
+
+        const prismFence = md.renderer.rules.fence
+        md.renderer.rules.fence = function (tokens:any, idx:any, options:any, env:any, slf:any) {
+            const token = tokens[idx]
+            const info = token.info ? md.utils.unescapeAll(token.info).trim() : ''
+            const langName = info.split(/\s+/g)[0]
+            if (allComponents.includes(langName)) {
+                const tag = langName
+                const body = token.content.replace(/"/g, '&quot;').replace(/`/g, '&lt;').replace(/>/g, '&gt;').replace(/`/g,'\\`')
+                return '<' + tag + ' :body="`' + body + '`" />'
+            }
+            return prismFence(tokens, idx, options, env, slf)
+        }
+    })
     md.use(container, 'tip', alert({}))
     md.use(container, 'info', alert({title:'INFO',cls:'info'}))
     md.use(container, 'warning', alert({title:'WARNING',cls:'warning'}))
