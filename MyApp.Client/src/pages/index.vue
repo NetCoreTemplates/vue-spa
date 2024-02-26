@@ -30,6 +30,39 @@
     </div>
   </section>
 
+  <div class="container mx-auto px-5 mt-24 mb-24">
+    <section v-if="primaryPost">
+      <div class="mb-8 md:mb-16">
+        <div class="sm:mx-0">
+          <RouterLink :aria-label="primaryPost.title" :to="postLink(primaryPost)">
+            <img :src="primaryPost.image" :alt="`Cover Image for ${primaryPost.title}`" class="shadow-sm hover:shadow-2xl transition-shadow duration-200">
+          </RouterLink>
+        </div>
+      </div>
+      <div class="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+        <div>
+          <h3 class="mb-4 text-4xl lg:text-6xl leading-tight">
+            <RouterLink class="hover:underline" :to="postLink(primaryPost)">{{primaryPost.title}}</RouterLink>
+          </h3>
+          <div class="mb-4 md:mb-0 text-lg">
+            <time :datetime="dateTimestamp(primaryPost.date)">{{dateLabel(primaryPost.date)}}</time>
+          </div>
+        </div>
+        <div>
+          <p class="text-lg leading-relaxed mb-4">{{primaryPost.summary}}</p>
+          <RouterLink v-if="authorLink(primaryPost.author)" class="flex items-center text-xl font-bold" :to="authorLink(primaryPost.author)!">
+            <img :src="authorProfileUrl(primaryPost.author)" class="w-12 h-12 rounded-full mr-4" alt="Author">
+            <span>{{postAuthor}}</span>
+          </RouterLink>
+          <span v-else class="flex items-center text-xl font-bold">
+              <img :src="authorProfileUrl(primaryPost.author)" class="w-12 h-12 rounded-full mr-4" alt="Author">
+              <span>{{postAuthor}}</span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <div class="flex justify-center my-20 py-20 bg-slate-100 dark:bg-slate-800">
     <div class="text-center">
       <Iconify icon="mdi:feature-highlight" class="text-green-600 w-36 h-36 inline-block" />
@@ -66,3 +99,31 @@
   </div>
 
 </template>
+
+
+<script setup lang="ts">
+import type { VirtualPress, Post } from "vite-plugin-press"
+import { inject } from "vue"
+import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
+
+const press:VirtualPress = inject('press')!
+
+function authorLink(name:any) {
+  return name && press.blog.authors.some((x:any) => x.name.toLowerCase() == name.toLowerCase())
+      ? `/posts/author/${generateSlug(name)}`
+      : null
+}
+function postLink(post:any) {
+  return `/posts/${post.slug}`
+}
+function author(name:string) {
+  return name ? press.blog.authors.filter((x:any) => x.name.toLowerCase() == name.toLowerCase())[0] : null
+}
+function authorProfileUrl(name:string) {
+  return author(name)?.profileUrl ?? "/img/profiles/user1.svg"
+}
+
+const posts:Post[] = press.blog.posts
+const primaryPost:Post = posts[0]
+const postAuthor = primaryPost.author
+</script>

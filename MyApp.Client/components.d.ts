@@ -12,6 +12,7 @@ declare module 'vue' {
     BlogPosts: typeof import('./src/components/BlogPosts.vue')['default']
     BlogTitle: typeof import('./src/components/BlogTitle.vue')['default']
     FileLayout: typeof import('./src/components/FileLayout.vue')['default']
+    Files: typeof import('./src/components/Files.vue')['default']
     FollowLinks: typeof import('./src/components/FollowLinks.vue')['default']
     GettingStarted: typeof import('./src/components/GettingStarted.vue')['default']
     Include: typeof import('./src/components/Include.vue')['default']
@@ -26,7 +27,6 @@ declare module 'vue' {
     ShellCommand: typeof import('./src/components/ShellCommand.vue')['default']
     SrcLink: typeof import('./src/components/SrcLink.vue')['default']
     SrcPage: typeof import('./src/components/SrcPage.vue')['default']
-    SrcVuePage: typeof import('./src/components/SrcVuePage.vue')['default']
     VideoGroup: typeof import('./src/components/VideoGroup.vue')['default']
   }
 }
