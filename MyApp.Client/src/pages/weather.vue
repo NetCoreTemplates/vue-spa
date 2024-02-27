@@ -40,7 +40,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useHead } from "@unhead/vue"
-import { ApiResult, createError } from "@servicestack/client"
+import { ApiResult } from "@servicestack/client"
 import { useClient } from "@servicestack/vue"
 import { GetWeatherForecast } from "@/dtos"
 
