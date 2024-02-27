@@ -1,6 +1,7 @@
 import MarkdownIt from "markdown-it"
 import container from "markdown-it-container"
 import prism from "markdown-it-prism"
+import anchor from "markdown-it-anchor"
 import Prism from 'prismjs'
 
 const FencedComponents = ['files']
@@ -73,6 +74,7 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
     }
     
     md.linkify.set({ fuzzyLink: false })
+    md.use(anchor, {permalink: anchor.permalink.headerLink()})
     md.use(prism)
     md.use((md:any) => {
         const allComponents = [...(options.fencedComponents || []), ...FencedComponents]
