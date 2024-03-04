@@ -30,6 +30,14 @@
     </div>
   </section>
 
+  <div class="relative">
+    <div class="mt-8 max-w-6xl mx-auto">
+      <div class="aspect-w-16 aspect-h-9">
+        <LiteYouTube id="JlUjWlVslRg" title="Productive ASP.NET Core Vite Vue SPA Tailwind Template with Identity Auth" />
+      </div>
+    </div>
+  </div>
+
   <div class="container mx-auto px-5 mt-24 mb-24">
     <section v-if="primaryPost">
       <div class="mb-8 md:mb-16">
