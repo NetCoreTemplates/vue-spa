@@ -9,6 +9,8 @@ AppHost.RegisterKey();
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
+services.AddDatabaseDeveloperPageExceptionFilter();
+
 services.AddAuthorization();
 services.AddIdentity<ApplicationUser, IdentityRole>(options => {
         //options.User.AllowedUserNameCharacters = null;
