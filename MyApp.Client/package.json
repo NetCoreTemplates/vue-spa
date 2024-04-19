@@ -16,13 +16,13 @@
     "module.d.ts"
   ],
   "dependencies": {
-    "@servicestack/client": "^2.1.1",
-    "@servicestack/vue": "^3.0.88",
+    "@servicestack/client": "^2.1.5",
+    "@servicestack/vue": "^3.0.89",
     "@unhead/vue": "^1.8.10",
     "@vueuse/core": "^10.7.2",
     "pinia": "^2.1.7",
-    "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.23",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.1",
@@ -46,7 +46,7 @@
     "npm-run-all2": "^6.1.1",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "typescript": "~5.3.0",
+    "typescript": "^5.4.5",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-markdown": "^0.26.0",
     "unplugin-vue-router": "^0.7.0",
