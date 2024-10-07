@@ -16,8 +16,8 @@
     "module.d.ts"
   ],
   "dependencies": {
-    "@servicestack/client": "^2.1.5",
-    "@servicestack/vue": "^3.0.102",
+    "@servicestack/client": "^2.1.6",
+    "@servicestack/vue": "^3.0.105",
     "@unhead/vue": "^1.10.4",
     "@vueuse/core": "^11.0.3",
     "pinia": "^2.2.2",
