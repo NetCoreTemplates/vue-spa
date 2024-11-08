@@ -35,11 +35,8 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
     if (0 !== child_process.spawnSync('dotnet', [
         'dev-certs',
         'https',
-        '--export-path',
-        certFilePath,
-        '--format',
-        'Pem',
-        '--no-password',
+        '--verbose',
+        '--trust'
     ], { stdio: 'inherit', }).status) {
         throw new Error("Could not create certificate.");
     }
