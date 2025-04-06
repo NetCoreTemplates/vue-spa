@@ -1,19 +1,10 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const { colors } = defaultTheme
+import { type Config } from 'tailwindcss'
 
-/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
-  content: [
-    "./index.html",
-    './*.ts',
-    "./src/**/*.{vue,js,ts,jsx,tsx,md}",
-    "./node_modules/@servicestack/vue/dist/servicestack-vue.mjs",
-  ],
   theme: {
     extend: {
       // https://github.com/tailwindlabs/tailwindcss-typography
-      typography: (theme) => ({
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
             'pre': {
@@ -37,9 +28,5 @@ export default {
         },
       }),
     },
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-  ],
-}
+  }
+} satisfies Config

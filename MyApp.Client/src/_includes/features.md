@@ -9,7 +9,7 @@
 | [Markdown](https://github.com/markdown-it/markdown-it)                     | Native Markdown integration                                  |
 | [plugin/press](https://github.com/ServiceStack/vite-plugin-press)          | Static markdown for creating blogs, videos and other content |
 | [plugin/vue-router](https://github.com/posva/unplugin-vue-router)          | Conventional file system based routing for Vue 3 on Vite     |
-| [plugin/layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) | Support for multiple page layouts                            |
+| [plugin/layouts](https://github.com/loicduong/vite-plugin-vue-layouts-next) | Support for multiple page layouts                            |
 | [plugin/components](https://github.com/antfu/unplugin-vue-components)      | Auto importing & registering of components on-demand         |
 | [plugin/svg](https://github.com/jpkleemans/vite-svg-loader)                | Load SVG files as Vue components                             |
 | [Iconify](https://iconify.design)                                          | Unified registry to access 100k+ high quality SVG icons      |

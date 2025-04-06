@@ -28,7 +28,6 @@ declare module 'vue-router/auto-routes' {
     '/bookings-auto': RouteRecordInfo<'/bookings-auto', '/bookings-auto', Record<never, never>, Record<never, never>>,
     '/bookings-data': RouteRecordInfo<'/bookings-data', '/bookings-data', Record<never, never>, Record<never, never>>,
     '/counter': RouteRecordInfo<'/counter', '/counter', Record<never, never>, Record<never, never>>,
-    '/deploy': RouteRecordInfo<'/deploy', '/deploy', Record<never, never>, Record<never, never>>,
     '/error': RouteRecordInfo<'/error', '/error', Record<never, never>, Record<never, never>>,
     '/forbidden': RouteRecordInfo<'/forbidden', '/forbidden', Record<never, never>, Record<never, never>>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,

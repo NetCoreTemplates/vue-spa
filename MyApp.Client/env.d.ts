@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
-/// <reference types="vite-plugin-vue-layouts/client" />
+/// <reference types="vite-plugin-vue-layouts-next/client" />
 /// <reference types="vite-plugin-press/client" />
 
 import type {Author, Post} from "@/meta";

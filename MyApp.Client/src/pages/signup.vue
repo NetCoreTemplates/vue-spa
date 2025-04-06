@@ -17,7 +17,6 @@
                 <TextInput id="userName" placeholder="Email" help="" v-model="username"/>
                 <TextInput id="password" type="password" help="6 characters or more" v-model="password"/>
                 <TextInput id="confirmPassword" type="password" v-model="confirmPassword"/>
-                <CheckboxInput id="autoLogin"/>
               </div>
 
               <div class="flex justify-end">
@@ -85,7 +84,6 @@ async function onSubmit(e: Event) {
     userName,
     password,
     confirmPassword,
-    autoLogin
   } = serializeToObject(e.currentTarget as HTMLFormElement)
   if (password !== confirmPassword) {
     client.setError({fieldName: 'confirmPassword', message: 'Passwords do not match'})
@@ -93,7 +91,7 @@ async function onSubmit(e: Event) {
   }
 
   loading.value = true
-  api.value = await client.api(new Register({displayName, email: userName, password, confirmPassword, autoLogin}))
+  api.value = await client.api(new Register({displayName, email: userName, password, confirmPassword }))
   loading.value = false
   if (api.value.succeeded) {
     await revalidate()

@@ -1,8 +1,8 @@
 import './assets/styles/main.css'
-import './assets/styles/index.css'
+import './assets/styles/style.css'
 
 import { createApp } from 'vue'
-import { createHead } from '@unhead/vue'
+import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 
 import ServiceStackVue from "@servicestack/vue"

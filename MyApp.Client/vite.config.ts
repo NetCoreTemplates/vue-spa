@@ -6,11 +6,12 @@ import child_process from 'child_process'
 import { env } from 'process'
 
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 import Vue from '@vitejs/plugin-vue'
 import Press, { matter } from 'vite-plugin-press'
 import Components from 'unplugin-vue-components/vite'
 import VueRouter from 'unplugin-vue-router/vite'
-import Layouts from 'vite-plugin-vue-layouts'
+import Layouts from 'vite-plugin-vue-layouts-next'
 import Markdown from 'unplugin-vue-markdown/vite'
 import svgLoader from 'vite-svg-loader'
 import configureMarkdown from './vite.config.markdown'
@@ -88,6 +89,7 @@ export default defineConfig({
         Vue({
             include: [/\.vue$/, /\.md$/],
         }),
+        tailwindcss(),
 
         Press({
             baseUrl,
