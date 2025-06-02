@@ -15,7 +15,7 @@ public class AppHost() : AppHostBase("MyApp"), IHostingStartup
                     ? "https://localhost:5173"  
                     : null,
                 ApiBaseUrl = context.HostingEnvironment.IsDevelopment()
-                    ? "https://localhost:5001"  
+                    ? "https://localhost:4001"  
                     : null,
             });
         });
