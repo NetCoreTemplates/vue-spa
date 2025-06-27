@@ -42,12 +42,12 @@ import { ref, onMounted } from 'vue'
 import { useHead } from "@unhead/vue"
 import { ApiResult } from "@servicestack/client"
 import { useClient } from "@servicestack/vue"
-import { GetWeatherForecast } from "@/dtos"
+import { Forecast, GetWeatherForecast } from "@/dtos"
 
 useHead({ title: 'Weather' })
 
 const client = useClient()
-const api = ref(new ApiResult())
+const api = ref(new ApiResult<Forecast[]>({ response:[] }))
 
 onMounted(async () => {
   api.value = await client.api(new GetWeatherForecast())

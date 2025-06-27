@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap justify-center">
-    <TextInput v-model="name" @keyup="update" />
+    <TextInput id="name" v-model="name" @keyup="update" />
     <div class="ml-3 mt-2 text-lg">{{ result }}</div>
   </div>
 </template>

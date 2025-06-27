@@ -12,7 +12,6 @@ declare module 'vue' {
     AuthorLinks: typeof import('./src/components/AuthorLinks.vue')['default']
     BlogPosts: typeof import('./src/components/BlogPosts.vue')['default']
     BlogTitle: typeof import('./src/components/BlogTitle.vue')['default']
-    DarkModeToggler: typeof import('./src/components/DarkModeToggler.vue')['default']
     FileLayout: typeof import('./src/components/FileLayout.vue')['default']
     Files: typeof import('./src/components/Files.vue')['default']
     FollowLinks: typeof import('./src/components/FollowLinks.vue')['default']
