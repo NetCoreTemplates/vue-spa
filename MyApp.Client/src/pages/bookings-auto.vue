@@ -36,7 +36,7 @@
 
       <template #discount="{ discount }">
         <TextLink v-if="discount" class="flex items-end" @click.stop="showCoupon(discount.id)" :title="discount.id">
-          <icon class="w-5 h-5 mr-1" type="Coupon" />
+          <Icon class="w-5 h-5 mr-1" type="Coupon" />
           <PreviewFormat :value="discount.description" />
         </TextLink>
       </template>
