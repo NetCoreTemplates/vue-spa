@@ -9,7 +9,9 @@ export function useApp() {
     async function load (force?:boolean) {
         const { loadMetadata } = useMetadata()
         await loadMetadata({
-            olderThan: location.search.includes('clear=metadata') ? 0 : 60 * 60 * 1000 //1hr 
+            olderThan: location.origin.includes('localhost') || location.search.includes('clear=metadata') 
+                ? 0 
+                : 60 * 60 * 1000 //1hr 
         })        
     }
     
