@@ -25,7 +25,9 @@ export function configRouter(router:Router)  {
     // Validate Route guards against Authenticated User's Attributes
     const validateRoute = (to:RouteLocationNormalized, next:NavigationGuardNext, attrs:string[]) => {
         for (let i=0; i<routes.length; i++) {
-            const { path, attr } = routes[i]
+            const route = routes[i]
+            if (!route) continue
+            const { path, attr } = route
             if (!to.path.startsWith(path)) continue
             if (attrs.indexOf(attr) === -1) {
                 const isAdmin = attrs.indexOf('role:Admin') >= 0

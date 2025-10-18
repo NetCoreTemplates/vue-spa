@@ -42,7 +42,7 @@ const taggedPosts = computed<Post[]>(() => selectedTag ? allPosts.filter((x:any)
 const allTags = [...new Set(allPosts.flatMap((x:any) => x.tags) as string[])]
 const tagCounts: {[tag:string]: number} = {}
 allTags.forEach(tag => tagCounts[tag] = allPosts.filter((x:any) => x.tags.includes(tag)).length)
-allTags.sort((a:string, b:string) => tagCounts[b] - tagCounts[a])
+allTags.sort((a:string, b:string) => (tagCounts[b] ?? 0) - (tagCounts[a] ?? 0))
 
 function tagLink(tag:string) {
   return `/posts/tagged/${generateSlug(tag)}`
