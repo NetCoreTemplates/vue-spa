@@ -33,12 +33,12 @@ const to = {
 function parseFileStructure(ascii:string, indent:number = 2) {
   const lines = ascii.split('\n')
   const root = { _: [] }
-  const stack = [root]
+  const stack: any[] = [root]
 
   for (const line of lines) {
     const depth = line.search(/\S/) / indent
     const name = line.trim()
-    const parent:{[name:string]:any} = stack[depth]
+    const parent:{[name:string]:any} = stack[depth]!
     const isDir = name.startsWith('/')
 
     if (isDir) {

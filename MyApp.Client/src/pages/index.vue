@@ -132,6 +132,6 @@ function authorProfileUrl(name:string) {
 }
 
 const posts:Post[] = press.blog.posts
-const primaryPost:Post = posts[0]
-const postAuthor = primaryPost.author
+const primaryPost:Post = posts[0]!
+const postAuthor = primaryPost?.author
 </script>

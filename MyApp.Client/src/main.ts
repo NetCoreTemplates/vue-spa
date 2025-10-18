@@ -6,7 +6,8 @@ import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 
 import ServiceStackVue from "@servicestack/vue"
-import { createRouter, createWebHistory } from 'vue-router/auto'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteLocationNormalized } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from "pinia"
@@ -33,7 +34,7 @@ routes.forEach((route:any) => {
 export const router = configRouter(createRouter({
     history: createWebHistory(),
     // Scroll to top on navigation
-    scrollBehavior(to, _from, savedPosition) {
+    scrollBehavior(to: RouteLocationNormalized, _from: RouteLocationNormalized, savedPosition: any) {
         if (savedPosition) {
             return savedPosition
         }
@@ -45,7 +46,7 @@ export const router = configRouter(createRouter({
             }, 1)
         }
     },
-    routes: setupLayouts(routes)
+    routes: setupLayouts(routes as any)
 }))
 // handle external links
 router.beforeEach((to, _from, next) => {

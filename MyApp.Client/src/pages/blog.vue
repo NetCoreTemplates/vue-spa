@@ -165,8 +165,8 @@ function authorProfileUrl(name:string) {
 }
 
 const posts:Post[] = press.blog.posts
-const primaryPost:Post = posts[0]
-const postAuthor = primaryPost.author
+const primaryPost:Post = posts[0]!
+const postAuthor = primaryPost?.author
 const gridPosts = posts.slice(1, 7)
 const remainingPosts = posts.slice(7, 22)
 </script>
