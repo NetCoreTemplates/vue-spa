@@ -1,8 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 
 import fs from 'fs'
-import path from 'path'
-import child_process from 'child_process'
 import { env } from 'process'
 
 import { defineConfig } from 'vite'
@@ -16,59 +14,23 @@ import Markdown from 'unplugin-vue-markdown/vite'
 import svgLoader from 'vite-svg-loader'
 import configureMarkdown from './vite.config.markdown'
 
-const baseFolder =
-    env.APPDATA !== undefined && env.APPDATA !== ''
-        ? `${env.APPDATA}/ASP.NET/https`
-        : `${env.HOME}/.aspnet/https`;
+const target = process.env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${process.env.ASPNETCORE_HTTPS_PORT}` :
+    process.env.ASPNETCORE_URLS ? process.env.ASPNETCORE_URLS.split(';')[0] : 'https://localhost:5001';
 
-const certificateArg = process.argv.map(arg => arg.match(/--name=(?<value>.+)/i)).filter(Boolean)[0];
-const certificateName = certificateArg ? certificateArg!.groups!.value : "myapp.client";
-if (!certificateName) {
-    console.error('Invalid certificate name. Run this script in the context of an npm/yarn script or pass --name=<<app>> explicitly.')
-    process.exit(-1);
-}
+const isProd = process.env.NODE_ENV === 'production'
+const buildLocal = process.env.MODE === 'local'
 
-const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
-const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
+// Define DEPLOY_API first
+const DEPLOY_API = process.env.KAMAL_DEPLOY_HOST
+    ? `https://${process.env.KAMAL_DEPLOY_HOST}`
+    : target
 
-console.log(`Certificate path: ${certFilePath}`);
-
-if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
-
-    // mkdir to fix dotnet dev-certs error 3 https://github.com/dotnet/aspnetcore/issues/58330
-    if (!fs.existsSync(baseFolder)) {
-        fs.mkdirSync(baseFolder, { recursive: true });
-    }
-    if (
-        0 !==
-        child_process.spawnSync(
-            "dotnet",
-            [
-                "dev-certs",
-                "https",
-                "--export-path",
-                certFilePath,
-                "--format",
-                "Pem",
-                "--no-password",
-            ],
-            { stdio: "inherit" }
-        ).status
-    ) {
-        throw new Error("Could not create certificate.");
-    }
-}
-
-const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
-    env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'https://localhost:5001';
-const apiUrl = process.env.NODE_ENV === 'development' ? target : ''
-const baseUrl = process.env.NODE_ENV === 'development'
-    ? "https://locahost:5173"
-    : process.env.DEPLOY_HOST ? `https://${process.env.DEPLOY_HOST}` : undefined
+// Now use it for API_URL
+const API_URL = isProd ? DEPLOY_API : (buildLocal ? '' : target)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    define: { API_URL: `"${apiUrl}"` },
+    define: { apiBaseUrl: `"${API_URL}"` },
     plugins: [
         // https://github.com/posva/unplugin-vue-router
         VueRouter({
@@ -92,7 +54,7 @@ export default defineConfig({
         tailwindcss(),
 
         Press({
-            baseUrl,
+            baseUrl:API_URL,
             metadataPath:'public/api'
         }),
         Layouts(),
@@ -132,16 +94,7 @@ export default defineConfig({
         }
     },
     server: {
-        proxy: {
-            '^/api': {
-                target,
-                secure: false
-            }
-        },
-        port: 5173,
-        https: {
-            key: fs.readFileSync(keyFilePath),
-            cert: fs.readFileSync(certFilePath),
-        }
+        host: true, // Listen on all interfaces (both IPv4 and IPv6)
+        open: false,
     }
 })

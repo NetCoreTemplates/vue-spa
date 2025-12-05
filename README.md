@@ -6,13 +6,10 @@
 
 > Browse [source code](https://github.com/NetCoreTemplates/vue-spa), view live demo [vue-spa.web-templates.io](http://vue-spa.web-templates.io):
 
-    $ dotnet tool install -g x
+```bash
+npx create-net vue-spa ProjectName
+```
 
-    $ x new vue-spa ProjectName
+## Jumpstart with Copilot
 
-Alternatively write new project files directly into an empty repository, using the Directory Name as the ProjectName:
-
-    $ git clone https://github.com/<User>/<ProjectName>.git
-    $ cd <ProjectName>
-    $ x new vue-spa
-
+Instantly [scaffold a new App with this template](https://github.com/new?template_name=vue-spa&template_owner=NetCoreTemplates) using GitHub Copilot, just describe the features you want and watch Copilot build it!

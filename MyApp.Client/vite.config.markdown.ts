@@ -31,6 +31,21 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
             }
         })
     }
+    function shell() {
+        return ({
+            // Render ::: sh or ::: shell containers as <ShellCommand>...</ShellCommand>
+            render(tokens: any, idx: any) {
+                const token = tokens[idx]
+                if (token.nesting === 1) {
+                    // open tag
+                    return `<ShellCommand>`
+                } else {
+                    // close tag
+                    return `</ShellCommand>`
+                }
+            }
+        })
+    }
     function alert({title,cls}:any) {
         return ({
             render(tokens:any, idx:any) {
@@ -87,6 +102,16 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
             const token = tokens[idx]
             const info = token.info ? md.utils.unescapeAll(token.info).trim() : ''
             const langName = info.split(/\s+/g)[0]
+            // Special-case: render shell fenced blocks with ShellCommand Vue component
+            if (langName === 'shell' || langName === 'sh') {
+                const body = token.content
+                    .replace(/`/g, '\\`')
+                    .replace(/\$/g, '\\$')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                return '<ShellCommand :text="`' + body + '`" />\n'
+            }
             if (allComponents.includes(langName)) {
                 const tag = langName
                 const body = token.content.replace(/"/g, '&quot;').replace(/`/g, '&lt;').replace(/>/g, '&gt;').replace(/`/g,'\\`')
@@ -100,7 +125,10 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
     md.use(container, 'warning', alert({title:'WARNING',cls:'warning'}))
     md.use(container, 'danger', alert({title:'DANGER',cls:'danger'}))
     md.use(container, 'copy', copy({cls:'not-prose copy cp', icon:'bg-sky-500'}))
-    md.use(container, 'sh', copy({cls:'not-prose sh-copy cp', box:'bg-gray-800', icon:'bg-green-600', txt:'whitespace-pre text-base text-gray-100'}))
+    // Support legacy ::: sh and ::: shell containers by rendering <ShellCommand> wrapper
+    md.use(container, 'sh', shell())
+    md.use(container, 'shell', shell())
+    // Additionally, fenced blocks ```shell or ```sh render <ShellCommand/> via fence rule above
     md.use(container, 'include', include())
     md.use(container, 'youtube', youtube())
     md.use(container, 'dynamic', {

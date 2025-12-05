@@ -26,8 +26,7 @@
     </section>
 
     <h4 class="pb-4 text-center text-xl">or</h4>
-    <ShellCommand class="mb-2">dotnet tool install -g x</ShellCommand>
-    <ShellCommand class="mb-2">x new {{template}} {{project}}</ShellCommand>
+    <ShellCommand class="mb-2">npx create-net {{template}} {{project}}</ShellCommand>
 
     <h4 class="py-6 text-center text-xl">Run .NET Project</h4>
     <ShellCommand class="mb-2">dotnet watch</ShellCommand>
@@ -40,7 +39,7 @@ import { ref, computed } from "vue"
 defineProps<{
   template: string
 }>()
-const project = ref('ProjectName')
+const project = ref('MyProject')
 const projectZip = computed(() => (project.value || 'MyApp') + '.zip')
 const zipUrl = (template:string) =>
     `https://account.servicestack.net/archive/${template}?Name=${project.value || 'MyApp'}`

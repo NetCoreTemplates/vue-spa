@@ -1,4 +1,4 @@
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using ServiceStack;
@@ -19,9 +19,9 @@ public class CustomUserSession : AuthUserSession
 /// Add additional claims to the Identity Auth Cookie
 /// </summary>
 public class AdditionalUserClaimsPrincipalFactory(
-        UserManager<ApplicationUser> userManager,
-        RoleManager<IdentityRole> roleManager,
-        IOptions<IdentityOptions> optionsAccessor)
+    UserManager<ApplicationUser> userManager,
+    RoleManager<IdentityRole> roleManager,
+    IOptions<IdentityOptions> optionsAccessor)
     : UserClaimsPrincipalFactory<ApplicationUser,IdentityRole>(userManager, roleManager, optionsAccessor)
 {
     public override async Task<ClaimsPrincipal> CreateAsync(ApplicationUser user)
@@ -35,7 +35,7 @@ public class AdditionalUserClaimsPrincipalFactory(
         {
             claims.Add(new Claim(JwtClaimTypes.Picture, user.ProfileUrl));
         }
-
+        
         identity.AddClaims(claims);
         return principal;
     }

@@ -3,7 +3,8 @@
 
     <h1 class="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">Bookings AutoQueryGrid</h1>
 
-    <AutoQueryGrid type="Booking" :visible-from="{ name:'xl', bookingStartDate:'sm', bookingEndDate:'xl', createdBy:'2xl' }">
+    <AutoQueryGrid type="Booking" :hide="['copyApiUrl','downloadCsv']" 
+                   :visible-from="{ name:'xl', bookingStartDate:'sm', bookingEndDate:'xl', createdBy:'2xl' }">
       <template #id="{ id }">
         <span class="font-semibold text-gray-900 dark:text-gray-50" v-html="id"></span>
       </template>
@@ -33,15 +34,7 @@
       <template #createdBy="{ createdBy }">
         {{createdBy}}
       </template>
-
-      <template #discount="{ discount }">
-        <TextLink v-if="discount" class="flex items-end" @click.stop="showCoupon(discount.id)" :title="discount.id">
-          <Icon class="w-5 h-5 mr-1" type="Coupon" />
-          <PreviewFormat :value="discount.description" />
-        </TextLink>
-      </template>
     </AutoQueryGrid>
-    <AutoEditForm v-if="coupon" type="UpdateCoupon" v-model="coupon" v-on:done="close" v-on:save="close" />
 
     <div>
       <div class="mt-5 flex justify-between gap-x-4">
@@ -59,8 +52,8 @@
       <h4 class="mt-20 text-center text-xl">
         Manage Bookings in
         <RouterLink class="font-semibold" to="/admin/bookings">Admin</RouterLink>,
-        <a class="font-semibold" :href="apiUrl('/locode/QueryBookings')">Locode</a> or
-        <a class="font-semibold" :href="apiUrl('/ui/QueryBookings')">API Explorer</a>
+        <a class="font-semibold" href="/locode/QueryBookings">Locode</a> or
+        <a class="font-semibold" href="/ui/QueryBookings">API Explorer</a>
       </h4>
 
       <div class="mt-20 mx-auto text-gray-500 max-w-screen-lg">
@@ -97,21 +90,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
-import { useClient, useFormatters } from "@servicestack/vue"
-import { QueryCoupons } from "@/dtos"
-import { apiUrl } from "@/api"
 import { useHead } from "@unhead/vue"
+import { useFormatters } from "@servicestack/vue"
 useHead({ title: 'Bookings AutoQueryGrid' })
-
-const client = useClient()
-const coupon = ref()
 const { currency } = useFormatters()
-async function showCoupon(id:string) {
-  const api = await client.api(new QueryCoupons({ id }))
-  if (api.succeeded) {
-    coupon.value = api.response!.results[0]
-  }
-}
-const close = () => coupon.value = null
 </script>

@@ -2,10 +2,9 @@
   <header class="border-b border-gray-200 dark:border-gray-800 pr-3">
     <div class="flex flex-wrap items-center">
       <div class="absolute z-10 top-2 left-2 sm:static flex-shrink flex-grow-0">
-        <div class="cursor-pointer">
+        <div class="p-4 cursor-pointer">
           <RouterLink to="/" class="navbar-brand flex items-center">
-            <Logo class="w-8 h-8 sm:ml-2 sm:w-12 sm:h-12" alt="MyApp logo" />
-            <span class="hidden ml-2 sm:block text-2xl font-semibold">My App</span>
+            <Logo class="size-8" alt="MyApp logo" />
           </RouterLink>
         </div>
       </div>

@@ -5,9 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <SpaRoot>..\MyApp.Client</SpaRoot>
-    <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:5173</SpaProxyServerUrl>
     <RootNamespace>MyApp</RootNamespace>
     <PublishProfile>DefaultContainer</PublishProfile>
   </PropertyGroup>
@@ -22,15 +19,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="10.*" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.*" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.*" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.*" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.*" />
     <PackageReference Include="ServiceStack" Version="10.*" />
+    <PackageReference Include="ServiceStack.Mvc" Version="10.*" />
     <PackageReference Include="ServiceStack.Server" Version="10.*" />
-    <PackageReference Include="ServiceStack.Jobs" Version="10.*" />
+    <PackageReference Include="ServiceStack.Extensions" Version="10.*" />
     <PackageReference Include="ServiceStack.Ormlite.Sqlite.Data" Version="10.*" />
+    <PackageReference Include="ServiceStack.Jobs" Version="10.*" />
+    <PackageReference Include="ServiceStack.AI.Chat" Version="10.*" />
     <PackageReference Include="ServiceStack.OpenApi.Swashbuckle" Version="10.*" />
   </ItemGroup>
 
@@ -39,6 +38,10 @@
     <ProjectReference Include="..\MyApp.ServiceModel\MyApp.ServiceModel.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);App_Data\**;node_modules\**</DefaultItemExcludes>
+  </PropertyGroup>
+
   <Target Name="CreateWwwrootFolderBuild" AfterTargets="AfterBuild">
     <MakeDir Directories="$(BuildDir)wwwroot" Condition="!Exists('$(BuildDir)wwwroot')" />
   </Target>
@@ -46,12 +49,14 @@
   <Target Name="CreateAppDataFolder" BeforeTargets="Publish">
     <MakeDir Directories="$(PublishDir)App_Data" Condition="!Exists('$(PublishDir)App_Data')" />
     <Exec Command="npm run build" WorkingDirectory="../MyApp.Client" />
+    <Exec Command="npm install" />
+    <Exec Command="npm run ui:build" />
     <RemoveDir Directories="$(PublishDir)wwwroot" />
     <ItemGroup>
       <CopyDist Include="../MyApp.Client/dist/**/*.*" />
+      <CopyDist Include="./wwwroot/**/*.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(CopyDist)"
-      DestinationFiles="@(CopyDist->'$(PublishDir)wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(CopyDist)" DestinationFiles="@(CopyDist->'$(PublishDir)wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
 
 </Project>

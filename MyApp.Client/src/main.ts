@@ -15,7 +15,7 @@ import press from "virtual:press"
 import { Icon } from '@iconify/vue'
 
 import LiteYoutube from "@/components/LiteYouTube"
-import { configRouter} from "@/routing"
+import { configRouter, isServerRoute } from "@/routing"
 import { client } from "@/api"
 
 const app = createApp(App)
@@ -50,7 +50,9 @@ export const router = configRouter(createRouter({
 }))
 // handle external links
 router.beforeEach((to, _from, next) => {
-    if (to.path.startsWith('/http'))
+    if (isServerRoute(to.path))
+        location.href = to.path
+    else if (to.path.startsWith('/http'))
         location.href = to.path.substring(1)
     else next()
 })

@@ -2,6 +2,21 @@ import { attrs, loading } from "./auth"
 import type { NavigationGuardNext, RouteLocationNormalized, Router } from "vue-router"
 import { nextTick, watchEffect } from "vue"
 
+const serverRoutePaths = [
+    '/Identity',
+    '/metadata',
+    '/api',
+    '/ui',
+    '/chat',
+    '/admin-ui',
+    '/swagger',
+    '/scalar',
+]
+
+export function isServerRoute(path:string) {
+    return serverRoutePaths.some(x => path.startsWith(x))
+}
+
 // Typed Routes used in Components
 export const Routes = {
     signin: (redirectTo?:string) => redirectTo ? `/signin?redirect=${redirectTo}` : `/signin`,

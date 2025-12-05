@@ -4,10 +4,10 @@
     <div class="text-center">
       <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl">
         <span class="block xl:inline">Welcome to </span>
-        <span class="block text-green-600 dark:text-green-500 xl:inline">Vue SPA</span>
+        <span class="block text-green-600 dark:text-green-500 xl:inline">Vue</span>
       </h1>
       <p class="mx-auto mt-3 max-w-md text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
-        Welcome to your new Vue SPA App
+        Welcome to your new Vue App
       </p>
       <div class="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
         <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
@@ -29,14 +29,6 @@
       </div>
     </div>
   </section>
-
-  <div class="relative">
-    <div class="mt-8 max-w-6xl mx-auto">
-      <div class="aspect-w-16 aspect-h-9">
-        <LiteYouTube id="JlUjWlVslRg" title="Productive ASP.NET Core Vite Vue SPA Tailwind Template with Identity Auth" />
-      </div>
-    </div>
-  </div>
 
   <div class="container mx-auto px-5 mt-24 mb-24">
     <section v-if="primaryPost">

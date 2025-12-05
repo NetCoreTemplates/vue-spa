@@ -34,9 +34,3 @@ export async function logout() {
     const { signOut } = useAuth()
     signOut()
 }
-
-declare var API_URL:string //defined in vite.config.ts
-
-export function apiUrl(path:string) {
-    return combinePaths(API_URL,path)
-}

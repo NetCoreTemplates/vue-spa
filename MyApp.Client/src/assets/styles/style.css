@@ -93,6 +93,7 @@ code[class*=language-], pre[class*=language-] {
     bottom: 0;
     left: 0;
 }
+[type='button'],button[type='submit'],button[href]{cursor:pointer}
 
 /*typography*/
 .prose pre::-webkit-scrollbar, .prose code::-webkit-scrollbar {
