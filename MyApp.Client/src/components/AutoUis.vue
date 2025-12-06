@@ -126,7 +126,7 @@ const isAutoPlaying = ref(true)
 const direction = ref<'left' | 'right'>('right')
 let intervalId: number | null = null
 
-const currentSlide = computed(() => slides[currentIndex.value] || slides[0])
+const currentSlide = computed((): Slide => slides[currentIndex.value] ?? slides[0]!)
 
 const goToNext = () => {
     direction.value = 'right'
