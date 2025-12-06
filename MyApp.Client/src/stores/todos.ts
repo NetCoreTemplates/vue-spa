@@ -1,7 +1,7 @@
 import { ref, computed } from "vue"
 import { acceptHMRUpdate, defineStore } from "pinia"
 import { ResponseStatus } from "@servicestack/client"
-import { client } from "@/api"
+import { client } from "@/gateway"
 import { CreateTodo, DeleteTodo, DeleteTodos, QueryTodos, Todo, UpdateTodo } from "@/dtos"
 
 export type Filter = "all" | "finished" | "unfinished"

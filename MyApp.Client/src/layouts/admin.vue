@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
 import NavHeader from '@/components/NavHeader.vue'
-import { useApp } from "@/api"
+import { useApp } from "@/gateway"
 import Logo from "@/assets/img/logo.svg"
 import { useRouter } from "vue-router"
 

@@ -1,6 +1,6 @@
 import { ref, computed } from "vue"
 import { useAuth } from "@servicestack/vue"
-import { checkAuth, logout } from "./api"
+import { checkAuth, logout } from "./gateway"
 
 export function createAttrs(auth?: { roles?: string[] | undefined; permissions?: string[] | undefined } | null) {
     return auth ? [

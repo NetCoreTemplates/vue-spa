@@ -1,4 +1,4 @@
-import { JsonServiceClient, combinePaths } from "@servicestack/client"
+import { JsonServiceClient } from "@servicestack/client"
 import { useMetadata, useAuth } from "@servicestack/vue"
 import { Authenticate } from "./dtos"
 
@@ -8,13 +8,9 @@ export function useApp() {
 
     async function load (force?:boolean) {
         const { loadMetadata } = useMetadata()
-        await loadMetadata({
-            olderThan: location.origin.includes('localhost') || location.search.includes('clear=metadata') 
-                ? 0 
-                : 60 * 60 * 1000 //1hr 
-        })        
+        await loadMetadata({ olderThan: 0 })
     }
-    
+
     return {
         load,
         client,

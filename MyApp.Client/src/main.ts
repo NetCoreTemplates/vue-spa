@@ -16,7 +16,7 @@ import { Icon } from '@iconify/vue'
 
 import LiteYoutube from "@/components/LiteYouTube"
 import { configRouter, isServerRoute } from "@/routing"
-import { client } from "@/api"
+import { client } from "@/gateway"
 
 const app = createApp(App)
 const head = createHead()
