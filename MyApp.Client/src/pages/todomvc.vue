@@ -16,7 +16,7 @@
               <Iconify v-else icon="mdi:checkbox-blank-circle-outline" />
             </div>
             <div class="ml-3 flex-grow">
-              <label :class="{'line-through':todo.isFinished}">{{ todo.text }}</label>
+              <label :class="[todo.isFinished ? 'line-through' : '']">{{ todo.text }}</label>
             </div>
             <div>
               <Iconify v-if="todo.isFinished" icon="mdi:trash-can-outline" class="cursor-pointer" @click="store.removeTodo(todo.id)" />
@@ -44,7 +44,7 @@
       </div>
 
       <div class="leading-8 ml-4">
-        <a href="#" :class="{ invisible: store.finishedTodos.length === 0 }" @click.prevent="store.removeFinishedTodos()">
+        <a href="#" :class="[store.finishedTodos.length === 0 ? 'invisible' : '']" @click.prevent="store.removeFinishedTodos()">
           clear <span class="hidden sm:inline">completed</span>
         </a>
       </div>
