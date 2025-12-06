@@ -6,7 +6,7 @@ import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 
 import ServiceStackVue from "@servicestack/vue"
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouterLink } from 'vue-router'
 import type { RouteLocationNormalized } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -16,8 +16,7 @@ import { Icon } from '@iconify/vue'
 
 import LiteYoutube from "@/components/LiteYouTube"
 import { configRouter } from "@/lib/auth"
-import { isServerRoute } from "@/lib/gateway"
-import { client } from "@/lib/gateway"
+import { isServerRoute, useApp } from "@/lib/gateway"
 
 const app = createApp(App)
 const head = createHead()
@@ -58,15 +57,20 @@ router.beforeEach((to, _from, next) => {
     else next()
 })
 
+ServiceStackVue.component('RouterLink', RouterLink)
+const { client, load } = useApp()
+
 const pinia = createPinia()
 
-app
-    .use(head)
-    .use(router)
-    .use(pinia)
-    .use(ServiceStackVue)
-    .provide('client', client)
-    .provide('press', press)
-    .component('LiteYouTube', LiteYoutube)
-    .component('Iconify', Icon)
-    .mount('#app')
+load().then(() => {
+    app
+        .use(head)
+        .use(router)
+        .use(pinia)
+        .use(ServiceStackVue)
+        .provide('client', client)
+        .provide('press', press)
+        .component('LiteYouTube', LiteYoutube)
+        .component('Iconify', Icon)
+        .mount('#app')
+})

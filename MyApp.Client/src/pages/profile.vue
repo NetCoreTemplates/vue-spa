@@ -17,9 +17,9 @@
     <PrimaryButton class="mt-8" href="/Identity/Account/Manage">
       Identity Auth Account
     </PrimaryButton>
-    <TextLink class="mt-8" href="/">
+    <SecondaryButton class="mt-8" href="/">
       🏠 Home
-    </TextLink>
+    </SecondaryButton>
   </div>
 </template>
 

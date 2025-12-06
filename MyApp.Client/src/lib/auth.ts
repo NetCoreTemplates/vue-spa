@@ -31,11 +31,6 @@ const { user, hasRole, hasPermission, signIn, signOut } = useAuth()
 
 export { user, hasRole, hasPermission }
 
-checkAuth().then(auth => {
-    if (auth) signIn(auth)
-    else signOut()
-})
-
 export async function revalidate() {
     loading.value = true
     const auth = await checkAuth()
@@ -55,25 +50,15 @@ export const signout = async (router:any, redirectTo?: string) => {
     await router.replace({ path: redirectTo ?? router?.currentRoute?.value.path, force: true })
 }
 
-
-// Use Route Guards to guard against access to pages 
-type RouteGuard = { path:string, attr:string }
-const routes:RouteGuard[] = [
-    { path:'/profile',       attr:'auth' },
-    { path:'/admin',         attr:'role:Admin' },
-    { path:'/bookings',      attr:'role:Employee' },
-    { path:'/bookings-crud', attr:'role:Employee' },
-]
-
 export function configRouter(router:Router)  {
-    const invalidAttrRedirect = (to:RouteLocationNormalized, guardAttr:string, userAttrs:string[]) => userAttrs.indexOf('auth') === -1
+    const invalidAttrRedirect = (to:RouteLocationNormalized, _:string, userAttrs:string[]) => userAttrs.indexOf('auth') === -1
         ? Routes.signin(to.path)
         : Routes.forbidden()
 
     // Validate Route guards against Authenticated User's Attributes
     const validateRoute = (to:RouteLocationNormalized, next:NavigationGuardNext, attrs:string[]) => {
-        for (let i=0; i<routes.length; i++) {
-            const route = routes[i]
+        for (let i=0; i<Routes.guards.length; i++) {
+            const route = Routes.guards[i]
             if (!route) continue
             const { path, attr } = route
             if (!to.path.startsWith(path)) continue
@@ -82,6 +67,7 @@ export function configRouter(router:Router)  {
                 const allowAdmin = isAdmin && (attr.startsWith('role:') || attr.startsWith('perm:'))
                 if (!allowAdmin) {
                     const goTo = invalidAttrRedirect(to, attr, attrs)
+                    console.debug(`Redirecting to ${goTo} as missing required '${attr}' to access '${to.path}'`)
                     next(goTo)
                     return
                 }
@@ -90,7 +76,7 @@ export function configRouter(router:Router)  {
         next()
     }
 
-    router.beforeEach((to:RouteLocationNormalized,from:RouteLocationNormalized,next:NavigationGuardNext) => {
+    router.beforeEach((to:RouteLocationNormalized,_:RouteLocationNormalized,next:NavigationGuardNext) => {
         if (loading) {
             const stop = watchEffect(() => {
                 validateRoute(to, next, attrs.value)
