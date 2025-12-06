@@ -58,13 +58,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/admin/coupons': RouteRecordInfo<
-      '/admin/coupons',
-      '/admin/coupons',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/blog': RouteRecordInfo<
       '/blog',
       '/blog',
@@ -245,12 +238,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/admin/bookings.vue': {
       routes:
         | '/admin/bookings'
-      views:
-        | never
-    }
-    'src/pages/admin/coupons.vue': {
-      routes:
-        | '/admin/coupons'
       views:
         | never
     }

@@ -67,9 +67,6 @@ const sections: {[name:string]:any} = {
   bookings: {
     type: 'Booking',
   },
-  coupons: {
-    type: 'Coupon',
-  },
 }
 function getIcon(id:string) {
   const section = sections[id]
