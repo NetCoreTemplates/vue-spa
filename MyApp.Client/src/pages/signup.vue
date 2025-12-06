@@ -51,7 +51,7 @@ import {ApiResult, leftPart, rightPart, serializeToObject, toPascalCase} from "@
 import {useClient, useAuth} from "@servicestack/vue"
 import {Register,type RegisterResponse} from "@/dtos"
 import {revalidate} from "@/auth"
-import {getRedirect} from "@/routing"
+import {getRedirect} from "@/gateway"
 
 const client = useClient()
 const {user} = useAuth()

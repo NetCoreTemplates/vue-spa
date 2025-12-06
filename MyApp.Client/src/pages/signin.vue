@@ -58,7 +58,7 @@ import {serializeToObject} from "@servicestack/client"
 import {useClient, useAuth} from "@servicestack/vue"
 import {Authenticate} from "@/dtos"
 import {revalidate} from "@/auth"
-import {getRedirect} from "@/routing"
+import {getRedirect} from "@/gateway"
 
 const client = useClient()
 const {user, signIn} = useAuth()
