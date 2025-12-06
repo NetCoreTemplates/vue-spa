@@ -30,6 +30,8 @@
     </div>
   </section>
 
+  <AutoUis className="mt-40 max-w-7xl mx-auto" />
+
   <div class="container mx-auto px-5 mt-24 mb-24">
     <section v-if="primaryPost">
       <div class="mb-8 md:mb-16">

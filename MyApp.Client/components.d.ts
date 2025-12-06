@@ -13,6 +13,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Author: typeof import('./src/components/Author.vue')['default']
     AuthorLinks: typeof import('./src/components/AuthorLinks.vue')['default']
+    AutoUis: typeof import('./src/components/AutoUis.vue')['default']
     BlogPosts: typeof import('./src/components/BlogPosts.vue')['default']
     BlogTitle: typeof import('./src/components/BlogTitle.vue')['default']
     FileLayout: typeof import('./src/components/FileLayout.vue')['default']
