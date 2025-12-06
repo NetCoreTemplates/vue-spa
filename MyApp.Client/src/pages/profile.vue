@@ -4,8 +4,8 @@
 
     <Iconify icon="mdi:shield-account" v-if="hasRole('Admin')" class="w-36 h-36 text-gray-700 inline-block" />
     <Iconify icon="mdi:account-circle" v-else class="w-36 h-36 text-gray-700 inline-block" />
-    <div>{{ (user as AuthenticateResponse).displayName }}</div>
-    <div>{{ (user as AuthenticateResponse).userName }}</div>
+    <div>{{ user!.displayName }}</div>
+    <div>{{ user!.userName }}</div>
     <div class="mt-2">
       <span v-for="role in roles"
             :key="role"
@@ -26,10 +26,6 @@
 <script setup lang="ts">
 import { useAuth } from "@servicestack/vue"
 import { signout } from "@/lib/auth"
-import { useHead } from "@unhead/vue"
-import type { AuthenticateResponse } from "@/lib/dtos"
-
-useHead({ title: 'My Profile' })
 
 const { user, hasRole } = useAuth()
 const roles = user.value?.roles ?? []
