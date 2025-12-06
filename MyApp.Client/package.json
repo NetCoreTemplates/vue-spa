@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@servicestack/client": "^2.1.13",
-    "@servicestack/vue": "^3.1.2",
+    "@servicestack/vue": "^3.1.4",
     "@unhead/vue": "^2.0.19",
     "@vueuse/core": "^14.1.0",
     "pinia": "^3.0.4",
