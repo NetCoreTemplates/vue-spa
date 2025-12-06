@@ -42,7 +42,7 @@ import { ref, onMounted } from 'vue'
 import { useHead } from "@unhead/vue"
 import { ApiResult } from "@servicestack/client"
 import { useClient } from "@servicestack/vue"
-import { Forecast, GetWeatherForecast } from "@/dtos"
+import { Forecast, GetWeatherForecast } from "@/lib/dtos"
 
 useHead({ title: 'Weather' })
 

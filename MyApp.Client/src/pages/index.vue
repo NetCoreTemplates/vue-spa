@@ -106,7 +106,7 @@
 <script setup lang="ts">
 import type { VirtualPress, Post } from "vite-plugin-press"
 import { inject } from "vue"
-import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
+import { generateSlug, dateLabel, dateTimestamp } from "@/lib/utils"
 
 const press:VirtualPress = inject('press')!
 

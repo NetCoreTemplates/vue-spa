@@ -15,9 +15,9 @@ import press from "virtual:press"
 import { Icon } from '@iconify/vue'
 
 import LiteYoutube from "@/components/LiteYouTube"
-import { configRouter } from "@/auth"
-import { isServerRoute } from "@/gateway"
-import { client } from "@/gateway"
+import { configRouter } from "@/lib/auth"
+import { isServerRoute } from "@/lib/gateway"
+import { client } from "@/lib/gateway"
 
 const app = createApp(App)
 const head = createHead()

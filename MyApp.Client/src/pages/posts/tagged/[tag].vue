@@ -29,7 +29,7 @@ import type { VirtualPress, Post } from "vite-plugin-press"
 import { inject, computed, onMounted } from "vue"
 import { useHead } from "@unhead/vue"
 import { useRoute } from "vue-router"
-import { generateSlug } from "@/utils"
+import { generateSlug } from "@/lib/utils"
 
 const route = useRoute()
 const tag = computed(() => (route.params as any)?.tag)

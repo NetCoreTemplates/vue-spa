@@ -2,8 +2,8 @@ import { ref, computed } from "vue"
 import { useAuth } from "@servicestack/vue"
 import type { NavigationGuardNext, RouteLocationNormalized, Router } from "vue-router"
 import { nextTick, watchEffect } from "vue"
-import { Authenticate } from "./dtos"
-import { client, Routes } from "./gateway"
+import { Authenticate } from "@/lib/dtos"
+import { client, Routes } from "@/lib/gateway"
 
 export async function checkAuth() {
     try {

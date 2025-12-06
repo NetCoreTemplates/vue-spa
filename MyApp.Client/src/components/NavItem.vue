@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 
-import { attrs } from "@/auth"
+import { attrs } from "@/lib/auth"
 import { computed } from "vue";
 
 const props = defineProps<{

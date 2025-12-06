@@ -49,9 +49,9 @@ import {ref, watchEffect, nextTick} from "vue"
 import {useRouter} from "vue-router"
 import {ApiResult, leftPart, rightPart, serializeToObject, toPascalCase} from "@servicestack/client"
 import {useClient, useAuth} from "@servicestack/vue"
-import {Register,type RegisterResponse} from "@/dtos"
-import {revalidate} from "@/auth"
-import {getRedirect} from "@/gateway"
+import {Register,type RegisterResponse} from "@/lib/dtos"
+import {revalidate} from "@/lib/auth"
+import {getRedirect} from "@/lib/gateway"
 
 const client = useClient()
 const {user} = useAuth()

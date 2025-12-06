@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import type { VirtualPress, Post, Author } from "vite-plugin-press"
 import { inject } from "vue"
-import { generateSlug } from "@/utils"
+import { generateSlug } from "@/lib/utils"
 import { useHead } from "@unhead/vue"
 import { useRoute } from "vue-router"
 

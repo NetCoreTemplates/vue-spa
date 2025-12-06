@@ -25,9 +25,9 @@
 
 <script setup lang="ts">
 import { useAuth } from "@servicestack/vue"
-import { signout } from "@/auth"
+import { signout } from "@/lib/auth"
 import { useHead } from "@unhead/vue"
-import type { AuthenticateResponse } from "@/dtos"
+import type { AuthenticateResponse } from "@/lib/dtos"
 
 useHead({ title: 'My Profile' })
 

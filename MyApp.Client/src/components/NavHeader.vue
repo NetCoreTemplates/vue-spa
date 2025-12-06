@@ -84,5 +84,5 @@ import Logo from "@/assets/img/logo.svg"
 import { useAuth } from "@servicestack/vue"
 const { user, hasRole } = useAuth()
 
-import { signout } from "@/auth"
+import { signout } from "@/lib/auth"
 </script>

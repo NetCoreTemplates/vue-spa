@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { useClient } from "@servicestack/vue"
-import { Hello } from "@/dtos"
+import { Hello } from "@/lib/dtos"
 
 const props = defineProps<{ value:string }>()
 

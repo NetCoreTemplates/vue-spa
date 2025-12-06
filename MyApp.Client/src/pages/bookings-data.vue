@@ -54,7 +54,7 @@
 <script setup lang="ts">
 import { computed, ref, watch, onMounted } from "vue"
 import { useClient, useAuth, useFormatters } from "@servicestack/vue"
-import { Booking, QueryBookings } from "@/dtos"
+import { Booking, QueryBookings } from "@/lib/dtos"
 import { useHead } from "@unhead/vue"
 useHead({ title: 'Bookings DataGrid' })
 

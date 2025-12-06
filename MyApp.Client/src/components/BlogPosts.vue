@@ -46,7 +46,7 @@
 import type { VirtualPress, Post, Author } from "vite-plugin-press"
 import { ref, inject } from "vue"
 import { useHead } from "@unhead/vue"
-import { generateSlug, dateLabel, dateTimestamp } from "@/utils"
+import { generateSlug, dateLabel, dateTimestamp } from "@/lib/utils"
 
 defineProps<{
   posts: Post[]
