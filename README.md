@@ -508,7 +508,8 @@ The AI will understand your App's ServiceStack conventions, React setup, and pro
 
 ## Learn More
 
-- [ServiceStack Vue Components](https://docs.servicestack.net/vue/)
+- [.NET Vue Project Templates](https://docs.servicestack.net/templates/vue)
+- [Vue Components](https://docs.servicestack.net/vue/)
 - [ServiceStack Documentation](https://docs.servicestack.net)
 - [Vite Documentation](https://vite.dev)
 - [Vue Documentation](https://vuejs.org)
