@@ -1,9 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 
 import fs from 'fs'
-import { env } from 'process'
-
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import tailwindcss from '@tailwindcss/vite'
 import Vue from '@vitejs/plugin-vue'
 import Press, { matter } from 'vite-plugin-press'
@@ -96,5 +94,9 @@ export default defineConfig({
     server: {
         host: true, // Listen on all interfaces (both IPv4 and IPv6)
         open: false,
-    }
+  },
+  test: {
+    environment: 'happy-dom',
+    globals: true,
+  }
 })
