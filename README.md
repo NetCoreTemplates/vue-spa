@@ -92,6 +92,7 @@ Durable job processing with ServiceStack's Background Jobs:
 - **Email Queue** - SMTP email sending via background jobs
 - **Recurring Jobs** - Scheduled task execution
 - **Job Dashboard** - Monitor jobs at `/admin-ui/jobs`
+- Uses monthly rolling Sqlite databases by default - [Upgrade to PostgreSQL/SQL Server/MySQL](#upgrading-to-enterprise-database)
 
 ### 🤖 AI Chat Integration
 
@@ -257,6 +258,7 @@ npm run test        # Run tests in watch mode
 npm run test:ui     # Run tests with UI
 npm run test:run    # Run tests once
 ```
+
 
 ## Configuration
 
@@ -454,6 +456,46 @@ These are inferred from the GitHub Action context and don't need to be configure
 - **SSL auto-certification** via Let's Encrypt
 - **GitHub Container Registry** integration
 - **Volume persistence** for App_Data including any SQLite database
+
+## AI-Assisted Development with CLAUDE.md
+
+As part of our objectives of improving developer experience and embracing modern AI-assisted development workflows - all new .NET SPA templates include a comprehensive `AGENTS.md` file designed to optimize AI-assisted development workflows.
+
+### What is CLAUDE.md?
+
+`CLAUDE.md` and [AGENTS.md](https://agents.md) onboards Claude (and other AI assistants) to your codebase by using a structured documentation file that provides it with complete context about your project's architecture, conventions, and technology choices. This enables more accurate code generation, better suggestions, and faster problem-solving.
+
+### What's Included
+
+Each template's `AGENTS.md` contains:
+
+- **Project Architecture Overview** - Technology stack, design patterns, and key architectural decisions
+- **Project Structure** - Gives Claude a map of the codebase
+- **ServiceStack Conventions** - DTO patterns, Service implementation, AutoQuery, Authentication, and Validation
+- **API Integration** - TypeScript DTO generation, API client usage, component patterns, and form handling
+- **Database Patterns** - OrmLite setup, migrations, and data access patterns
+- **Common Development Tasks** - Step-by-step guides for adding APIs, implementing features, and extending functionality
+- **Testing & Deployment** - Test patterns and deployment workflows
+
+### Extending with Project-Specific Details
+
+The existing `CLAUDE.md` serves as a solid foundation, but for best results, you should extend it with project-specific details like the purpose of the project, key parts and features of the project and any unique conventions you've adopted.
+
+### Benefits
+
+- **Faster Onboarding** - New developers (and AI assistants) understand project conventions immediately
+- **Consistent Code Generation** - AI tools generate code following your project's patterns
+- **Better Context** - AI assistants can reference specific ServiceStack patterns and conventions
+- **Reduced Errors** - Clear documentation of framework-specific conventions
+- **Living Documentation** - Keep it updated as your project evolves
+
+### How to Use
+
+Claude Code and most AI Assistants already support automatically referencing `CLAUDE.md` and `AGENTS.md` files, for others you can just include it in your prompt context when asking for help, e.g:
+
+> Using my project's AGENTS.md, can you help me add a new AutoQuery API for managing Products?
+
+The AI will understand your App's ServiceStack conventions, React setup, and project structure, providing more accurate and contextual assistance.
 
 ## Ideal Use Cases
 
