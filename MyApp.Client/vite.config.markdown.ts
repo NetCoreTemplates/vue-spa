@@ -120,18 +120,18 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
             return prismFence(tokens, idx, options, env, slf)
         }
     })
-    md.use(container, 'tip', alert({}))
-    md.use(container, 'info', alert({title:'INFO',cls:'info'}))
-    md.use(container, 'warning', alert({title:'WARNING',cls:'warning'}))
-    md.use(container, 'danger', alert({title:'DANGER',cls:'danger'}))
-    md.use(container, 'copy', copy({cls:'not-prose copy cp', icon:'bg-sky-500'}))
+    md.use(container as any, 'tip', alert({}))
+    md.use(container as any, 'info', alert({title:'INFO',cls:'info'}))
+    md.use(container as any, 'warning', alert({title:'WARNING',cls:'warning'}))
+    md.use(container as any, 'danger', alert({title:'DANGER',cls:'danger'}))
+    md.use(container as any, 'copy', copy({cls:'not-prose copy cp', icon:'bg-sky-500'}))
     // Support legacy ::: sh and ::: shell containers by rendering <ShellCommand> wrapper
-    md.use(container, 'sh', shell())
-    md.use(container, 'shell', shell())
+    md.use(container as any, 'sh', shell())
+    md.use(container as any, 'shell', shell())
     // Additionally, fenced blocks ```shell or ```sh render <ShellCommand/> via fence rule above
-    md.use(container, 'include', include())
-    md.use(container, 'youtube', youtube())
-    md.use(container, 'dynamic', {
+    md.use(container as any, 'include', include())
+    md.use(container as any, 'youtube', youtube())
+    md.use(container as any, 'dynamic', {
         validate: () => true,
         render: function (tokens:any, idx:any) {
             const token = tokens[idx];
