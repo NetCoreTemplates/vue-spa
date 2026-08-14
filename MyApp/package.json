@@ -1,4 +1,8 @@
 {
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.18",
+        "tailwindcss": "^4.1.18"
+    },
     "scripts": {
         "postinstall": "npm run migrate && node postinstall.js",
         "dtos": "cd ../MyApp.Client && npx get-dtos ts",
