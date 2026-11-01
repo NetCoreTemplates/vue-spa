@@ -1,0 +1,225 @@
+{
+    "blog": [
+        {
+            "slug": "net8-docker-containers",
+            "fileName": "net8-docker-containers.md",
+            "date": "2023-11-30",
+            "tags": [
+                "dotnet",
+                "github-actions",
+                "hosting",
+                "devops"
+            ],
+            "wordCount": 2790,
+            "lineCount": 343,
+            "title": "Docker Containerization in .NET 8",
+            "summary": ".NET 8 Docker Containers and GitHub Actions Deployments in new Project Templates",
+            "image": "https://images.unsplash.com/photo-1609884557151-1e356d32900c?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/net8-docker-containers"
+        },
+        {
+            "slug": "net8-identity-auth",
+            "fileName": "net8-identity-auth.md",
+            "date": "2023-11-28",
+            "tags": [
+                "c#",
+                "identity-auth",
+                "templates"
+            ],
+            "wordCount": 3904,
+            "lineCount": 700,
+            "title": "ASP.NET Core Identity Auth in .NET 8",
+            "summary": "ServiceStack has switched to ASP.NET Core Identity Auth in new .NET 8 Blazor, Razor and MVC Project Templates",
+            "image": "https://images.unsplash.com/photo-1635602739175-bab409a6e94c?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/net8-identity-auth"
+        },
+        {
+            "slug": "net8-best-blazor",
+            "fileName": "net8-best-blazor.md",
+            "date": "2023-11-22",
+            "tags": [
+                "c#",
+                "blazor",
+                "servicestack"
+            ],
+            "wordCount": 4094,
+            "lineCount": 503,
+            "title": ".NET 8's Best Blazor is not Blazor as we know it",
+            "summary": "We explore the exciting new potential of Blazor in .NET 8 to develop fast, interactive Web Apps without compromise",
+            "image": "https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Gayle Smith",
+            "url": "https://localhost:5001/posts/net8-best-blazor"
+        },
+        {
+            "slug": "net8-blazor-template",
+            "fileName": "net8-blazor-template.md",
+            "date": "2023-11-20",
+            "tags": [
+                "dotnet",
+                "blazor",
+                "templates"
+            ],
+            "wordCount": 1263,
+            "lineCount": 94,
+            "title": "New .NET 8 Blazor Tailwind Template",
+            "summary": "The new Blazor for .NET 8 template streamlines web UI development in C#.",
+            "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/net8-blazor-template"
+        },
+        {
+            "slug": "razor-ssg-new-blog-features",
+            "fileName": "razor-ssg-new-blog-features.md",
+            "date": "2023-08-23",
+            "tags": [
+                "razor",
+                "markdown",
+                "blog",
+                "dev"
+            ],
+            "wordCount": 1470,
+            "lineCount": 335,
+            "title": "New Blogging features in Razor SSG",
+            "summary": "Explore the new Blogging Features in Razor SSG",
+            "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/razor-ssg-new-blog-features"
+        },
+        {
+            "slug": "razor-ssg",
+            "fileName": "razor-ssg.md",
+            "date": "2023-03-30",
+            "tags": [
+                "razor",
+                "markdown",
+                "blog",
+                "dev"
+            ],
+            "wordCount": 3362,
+            "lineCount": 597,
+            "title": "Introducing Razor SSG",
+            "summary": "Create fast, beautiful statically rendered Razor Websites & Blogs",
+            "image": "https://images.unsplash.com/photo-1579767684138-a57e917d30aa?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/razor-ssg"
+        },
+        {
+            "slug": "javascript",
+            "fileName": "javascript.md",
+            "date": "2023-02-01",
+            "tags": [
+                "js",
+                "dev"
+            ],
+            "wordCount": 3576,
+            "lineCount": 675,
+            "title": "Simple, Modern JavaScript",
+            "summary": "Learn about JS Modules, Vue 3 and available rich UI Components",
+            "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/javascript"
+        }
+    ],
+    "videos": [
+        {
+            "slug": "autoquerygrid",
+            "fileName": "autoquerygrid.md",
+            "date": "2023-03-16",
+            "tags": [
+                "vue",
+                "autoquery"
+            ],
+            "wordCount": 51,
+            "lineCount": 4,
+            "title": "Instantly Manage your data using AutoQueryGrid Vue",
+            "url": "https://youtu.be/znCoC-Ct0Ps",
+            "order": 1,
+            "group": "vue"
+        },
+        {
+            "slug": "components",
+            "fileName": "components.md",
+            "date": "2023-02-14",
+            "tags": [
+                "vue",
+                "autoquery"
+            ],
+            "wordCount": 53,
+            "lineCount": 3,
+            "title": "Vue 3 Tailwind Components Library",
+            "url": "https://youtu.be/YIa0w6whe2U",
+            "order": 2,
+            "group": "vue"
+        },
+        {
+            "slug": "admin",
+            "fileName": "admin.md",
+            "date": "2023-06-14",
+            "tags": [
+                "vue",
+                "autoquery"
+            ],
+            "wordCount": 46,
+            "lineCount": 4,
+            "title": "Build beautiful custom .NET Admin UIs in minutes",
+            "url": "https://youtu.be/wlRA4_owEsc",
+            "order": 3,
+            "group": "vue"
+        },
+        {
+            "slug": "modern",
+            "fileName": "modern.md",
+            "date": "2023-02-08",
+            "tags": [
+                "vue",
+                "razor"
+            ],
+            "wordCount": 46,
+            "lineCount": 4,
+            "title": "Modern Razor Pages & MVC .NET Tailwind templates",
+            "url": "https://youtu.be/SyppvQB7IPs",
+            "order": 4,
+            "group": "vue"
+        }
+    ],
+    "whatsNew": [
+        {
+            "slug": "feature1",
+            "fileName": "feature1.md",
+            "date": "2023-03-28",
+            "tags": [],
+            "wordCount": 130,
+            "lineCount": 9,
+            "title": "Planetaria",
+            "url": "http://planetaria.tech",
+            "image": "https://localhost:5001/assets/img/whatsnew/planetaria.svg",
+            "group": "Planetaria"
+        },
+        {
+            "slug": "feature1",
+            "fileName": "feature1.md",
+            "date": "2023-03-18",
+            "tags": [],
+            "wordCount": 115,
+            "lineCount": 8,
+            "title": "OpenShuttle",
+            "url": "https://example.org",
+            "image": "https://localhost:5001/assets/img/whatsnew/open-shuttle.svg",
+            "group": "OpenShuttle"
+        },
+        {
+            "slug": "feature1",
+            "fileName": "feature1.md",
+            "date": "2023-03-08",
+            "tags": [],
+            "wordCount": 86,
+            "lineCount": 7,
+            "title": "Animaginary",
+            "url": "https://localhost:5001/blog",
+            "image": "https://localhost:5001/assets/img/whatsnew/animaginary.svg",
+            "group": "Animaginary"
+        }
+    ]
+}

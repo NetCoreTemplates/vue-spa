@@ -1,0 +1,570 @@
+{
+    "blog": [
+        {
+            "slug": "openapi-net10",
+            "fileName": "openapi-net10.md",
+            "date": "2025-12-03",
+            "tags": [
+                ".net10",
+                "openapi",
+                "swagger",
+                "scalar"
+            ],
+            "wordCount": 694,
+            "lineCount": 103,
+            "title": ".NET 10's new OpenAPI Scalar + Swagger UIs",
+            "summary": "ServiceStack v10 adds first-class .NET 10 support and new OpenAPI for Swagger and Scalar UIs.",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/openapi-net10/bg.webp",
+            "url": "https://localhost:5001/posts/openapi-net10"
+        },
+        {
+            "slug": "ai-chat-explorer",
+            "fileName": "ai-chat-explorer.md",
+            "date": "2025-11-25",
+            "tags": [
+                "llms",
+                "ai",
+                "openai",
+                "chat"
+            ],
+            "wordCount": 1701,
+            "lineCount": 287,
+            "title": "Creating a custom Explorer UI for OpenAIs Chat API",
+            "summary": "Learning how to create a customized API Explorer API UIs like ChatCompletion's UI",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/ai-chat-explorer/bg.webp",
+            "url": "https://localhost:5001/posts/ai-chat-explorer"
+        },
+        {
+            "slug": "ai-chat-servicestack",
+            "fileName": "ai-chat-servicestack.md",
+            "date": "2025-11-21",
+            "tags": [
+                "llms",
+                "ai",
+                "chat",
+                "admin-ui",
+                "analytics"
+            ],
+            "wordCount": 762,
+            "lineCount": 157,
+            "title": "FREE Gemini, Minimax M2, GLM 4.6, Kimi K2",
+            "summary": "The best OSS language models, now available for FREE in AI Chat!",
+            "author": "Gayle Smith",
+            "image": "https://images.unsplash.com/photo-1640011655323-a14d80feac25?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/ai-chat-servicestack"
+        },
+        {
+            "slug": "ai-chat-analytics",
+            "fileName": "ai-chat-analytics.md",
+            "date": "2025-11-20",
+            "tags": [
+                "llms",
+                "ai",
+                "chat",
+                "admin-ui",
+                "analytics"
+            ],
+            "wordCount": 542,
+            "lineCount": 76,
+            "title": "AI Chat history persistence and Admin Analytics UI",
+            "summary": "Maintain a persistant history of all AI Chat requests and responses",
+            "author": "Brandon Foley",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/ai-chat-analytics"
+        },
+        {
+            "slug": "ai-chat",
+            "fileName": "ai-chat.md",
+            "date": "2025-11-17",
+            "tags": [
+                "llms",
+                "ai",
+                "openai",
+                "chat"
+            ],
+            "wordCount": 3664,
+            "lineCount": 797,
+            "title": "AI Chat - A Simple OpenAI Chat Completions API, UI & Client LLM Gateway",
+            "summary": "Unlock the value of OpenAI Chat APIs using a simple, serializable ChatCompletion DTO that works everywhere",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/ai-chat/bg.webp",
+            "url": "https://localhost:5001/posts/ai-chat"
+        },
+        {
+            "slug": "react",
+            "fileName": "react.md",
+            "date": "2025-11-13",
+            "tags": [
+                "react",
+                "autoquery",
+                "admin"
+            ],
+            "wordCount": 2137,
+            "lineCount": 284,
+            "title": "React + Tailwind + TypeScript for AI-First Development",
+            "summary": "First-class React support optimized for AI-assisted development with new React component library & project templates",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/react/bg.webp",
+            "url": "https://localhost:5001/posts/react"
+        },
+        {
+            "slug": "typesense-ai-search",
+            "fileName": "typesense-ai-search.md",
+            "date": "2025-11-12",
+            "tags": [
+                "llms",
+                "ai",
+                "docs"
+            ],
+            "wordCount": 778,
+            "lineCount": 119,
+            "title": "Ask ServiceStack Docs - Introducing AI Search",
+            "summary": "Learn about the new AI Search feature - Typesense Conversational RAG for ServiceStack Docs",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/typesense-ai-search/bg.webp",
+            "url": "https://localhost:5001/posts/typesense-ai-search"
+        },
+        {
+            "slug": "apikey_auth_apis",
+            "fileName": "apikey_auth_apis.md",
+            "date": "2025-10-27",
+            "tags": [
+                "apikeys",
+                "identity-auth",
+                "auth"
+            ],
+            "wordCount": 704,
+            "lineCount": 143,
+            "title": "Protect same APIs with API Keys or Identity Auth",
+            "summary": "Learn how to create ServiceStack APIs that can be protected with API Keys or Identity Auth",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/identityauth-claims-roles/bg.webp",
+            "url": "https://localhost:5001/posts/apikey_auth_apis"
+        },
+        {
+            "slug": "rdbms_jobs",
+            "fileName": "rdbms_jobs.md",
+            "date": "2025-10-23",
+            "tags": [
+                "db",
+                "ormlite",
+                "jobs"
+            ],
+            "wordCount": 4994,
+            "lineCount": 1054,
+            "title": "RDBMS Background Jobs",
+            "summary": "Run Background Jobs and Scheduled Tasks in PostgreSQL, SQL Server or MySQL",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/background-jobs/bg.webp",
+            "url": "https://localhost:5001/posts/rdbms_jobs"
+        },
+        {
+            "slug": "rdbms_analytics",
+            "fileName": "rdbms_analytics.md",
+            "date": "2025-10-21",
+            "tags": [
+                "analytics",
+                "admin-ui",
+                "apis",
+                "postgresql",
+                "sqlserver",
+                "mysql"
+            ],
+            "wordCount": 2064,
+            "lineCount": 339,
+            "title": "In Depth Interactive API Analytics for PostgreSQL, SQL Server & MySQL",
+            "summary": "Comprehensive and Interactive RDBMS API Analytics in Admin UI, deep insights into API usage, performance, users, API Keys & IPs",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/analytics/bg.webp",
+            "url": "https://localhost:5001/posts/rdbms_analytics"
+        },
+        {
+            "slug": "ormlite-async-task-builder",
+            "fileName": "ormlite-async-task-builder.md",
+            "date": "2025-10-20",
+            "tags": [
+                "db",
+                "ormlite"
+            ],
+            "wordCount": 674,
+            "lineCount": 154,
+            "title": "RDBMS Async Tasks Builder",
+            "summary": "Effortlessly run multiple async DB Requests in parallel with OrmLite's new Async Tasks Builder",
+            "author": "Lucy Bates",
+            "image": "https://servicestack.net/img/posts/ormlite-async-task-builder/bg.webp",
+            "url": "https://localhost:5001/posts/ormlite-async-task-builder"
+        },
+        {
+            "slug": "ormlite-new-configuration",
+            "fileName": "ormlite-new-configuration.md",
+            "date": "2025-10-15",
+            "tags": [
+                "db",
+                "ormlite"
+            ],
+            "wordCount": 2152,
+            "lineCount": 475,
+            "title": "OrmLite new Configuration Model and Defaults",
+            "summary": "Learn about OrmLite's new fluent Configuration Model, new defaults & features",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/ormlite-new-configuration/bg.webp",
+            "url": "https://localhost:5001/posts/ormlite-new-configuration"
+        },
+        {
+            "slug": "vite-press-plugin",
+            "fileName": "vite-press-plugin.md",
+            "date": "2024-03-01",
+            "tags": [
+                "docs",
+                "markdown"
+            ],
+            "wordCount": 2417,
+            "lineCount": 528,
+            "title": "Vite Press Plugin",
+            "summary": "Introducing the Vite Press Plugin for Vite Vue & React Apps",
+            "author": "Lucy Bates",
+            "image": "https://images.unsplash.com/photo-1524668951403-d44b28200ce0?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/vite-press-plugin"
+        },
+        {
+            "slug": "markdown-components-in-vue",
+            "fileName": "markdown-components-in-vue.md",
+            "date": "2024-02-28",
+            "tags": [
+                "docs",
+                "markdown"
+            ],
+            "wordCount": 981,
+            "lineCount": 293,
+            "title": "Vue Components in Markdown",
+            "summary": "How to reference and Import Vue Components in Markdown",
+            "author": "Lucy Bates",
+            "image": "https://images.unsplash.com/photo-1700427296131-0cc4c4610fc6?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/markdown-components-in-vue"
+        },
+        {
+            "slug": "jwt-identity-auth",
+            "fileName": "jwt-identity-auth.md",
+            "date": "2024-02-11",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "auth"
+            ],
+            "wordCount": 1002,
+            "lineCount": 231,
+            "title": "ASP.NET Core JWT Identity Auth",
+            "summary": "Learn about integration and value added features of ASP.NET Core JWT Identity Auth",
+            "image": "https://images.unsplash.com/photo-1618482914248-29272d021005?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/jwt-identity-auth"
+        },
+        {
+            "slug": "identity-auth-admin-ui",
+            "fileName": "identity-auth-admin-ui.md",
+            "date": "2024-02-10",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "auth"
+            ],
+            "wordCount": 619,
+            "lineCount": 159,
+            "title": "Built-In Identity Auth Admin UI",
+            "summary": "Explore the new Identity Auth Admin UI for creating and managing Identity Auth users in .NET 8",
+            "image": "https://images.unsplash.com/photo-1563920443079-783e5c786b83?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/identity-auth-admin-ui"
+        },
+        {
+            "slug": "system-text-json-apis",
+            "fileName": "system-text-json-apis.md",
+            "date": "2024-02-09",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "json",
+                "apis"
+            ],
+            "wordCount": 919,
+            "lineCount": 206,
+            "title": "System.Text.Json ServiceStack APIs",
+            "summary": "ServiceStack .NET 8+ APIs can now be configured to use high-performance async System.Text.Json serialization",
+            "image": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Gayle Smith",
+            "url": "https://localhost:5001/posts/system-text-json-apis"
+        },
+        {
+            "slug": "openapi-v3",
+            "fileName": "openapi-v3.md",
+            "date": "2024-02-08",
+            "tags": [
+                "openapi",
+                ".net8"
+            ],
+            "wordCount": 1165,
+            "lineCount": 194,
+            "title": "OpenAPI v3 and Swagger UI",
+            "summary": "A walkthrough of the new OpenAPI v3 support in ServiceStack 8.1",
+            "image": "https://images.unsplash.com/photo-1496478981722-3ae516118a04?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/openapi-v3"
+        },
+        {
+            "slug": "servicestack-endpoint-routing",
+            "fileName": "servicestack-endpoint-routing.md",
+            "date": "2024-02-07",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "apis"
+            ],
+            "wordCount": 3215,
+            "lineCount": 604,
+            "title": "ServiceStack Endpoint Routing",
+            "summary": "ServiceStack .NET 8 is now more integrated then ever with support for ASP.NET Core Endpoint Routing and IOC",
+            "image": "https://images.unsplash.com/photo-1510022151265-1bb84d406531?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/servicestack-endpoint-routing"
+        },
+        {
+            "slug": "net8-docker-containers",
+            "fileName": "net8-docker-containers.md",
+            "date": "2023-11-30",
+            "tags": [
+                "dotnet",
+                "github-actions",
+                "hosting",
+                "devops"
+            ],
+            "wordCount": 2790,
+            "lineCount": 343,
+            "title": "Docker Containerization in .NET 8",
+            "summary": ".NET 8 Docker Containers and GitHub Actions Deployments in new Project Templates",
+            "image": "https://images.unsplash.com/photo-1609884557151-1e356d32900c?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/net8-docker-containers"
+        },
+        {
+            "slug": "net8-identity-auth",
+            "fileName": "net8-identity-auth.md",
+            "date": "2023-11-28",
+            "tags": [
+                "c#",
+                "identity-auth",
+                "templates"
+            ],
+            "wordCount": 3904,
+            "lineCount": 700,
+            "title": "ASP.NET Core Identity Auth in .NET 8",
+            "summary": "ServiceStack has switched to ASP.NET Core Identity Auth in new .NET 8 Blazor, Razor and MVC Project Templates",
+            "image": "https://images.unsplash.com/photo-1635602739175-bab409a6e94c?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/net8-identity-auth"
+        },
+        {
+            "slug": "net8-best-blazor",
+            "fileName": "net8-best-blazor.md",
+            "date": "2023-11-22",
+            "tags": [
+                "c#",
+                "blazor",
+                "servicestack"
+            ],
+            "wordCount": 4094,
+            "lineCount": 503,
+            "title": ".NET 8's Best Blazor is not Blazor as we know it",
+            "summary": "We explore the exciting new potential of Blazor in .NET 8 to develop fast, interactive Web Apps without compromise",
+            "image": "https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Gayle Smith",
+            "url": "https://localhost:5001/posts/net8-best-blazor"
+        },
+        {
+            "slug": "net8-blazor-template",
+            "fileName": "net8-blazor-template.md",
+            "date": "2023-11-20",
+            "tags": [
+                "dotnet",
+                "blazor",
+                "templates"
+            ],
+            "wordCount": 1263,
+            "lineCount": 94,
+            "title": "New .NET 8 Blazor Tailwind Template",
+            "summary": "The new Blazor for .NET 8 template streamlines web UI development in C#.",
+            "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/net8-blazor-template"
+        },
+        {
+            "slug": "razor-ssg-new-blog-features",
+            "fileName": "razor-ssg-new-blog-features.md",
+            "date": "2023-08-23",
+            "tags": [
+                "razor",
+                "markdown",
+                "blog",
+                "dev"
+            ],
+            "wordCount": 1470,
+            "lineCount": 335,
+            "title": "New Blogging features in Razor SSG",
+            "summary": "Explore the new Blogging Features in Razor SSG",
+            "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/razor-ssg-new-blog-features"
+        },
+        {
+            "slug": "razor-ssg",
+            "fileName": "razor-ssg.md",
+            "date": "2023-03-30",
+            "tags": [
+                "razor",
+                "markdown",
+                "blog",
+                "dev"
+            ],
+            "wordCount": 3362,
+            "lineCount": 597,
+            "title": "Introducing Razor SSG",
+            "summary": "Create fast, beautiful statically rendered Razor Websites & Blogs",
+            "image": "https://images.unsplash.com/photo-1579767684138-a57e917d30aa?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/razor-ssg"
+        },
+        {
+            "slug": "javascript",
+            "fileName": "javascript.md",
+            "date": "2023-02-01",
+            "tags": [
+                "js",
+                "dev"
+            ],
+            "wordCount": 3576,
+            "lineCount": 675,
+            "title": "Simple, Modern JavaScript",
+            "summary": "Learn about JS Modules, Vue 3 and available rich UI Components",
+            "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/javascript"
+        }
+    ],
+    "videos": [
+        {
+            "slug": "vue-spa",
+            "fileName": "vue-spa.md",
+            "date": "2024-03-05",
+            "tags": [
+                "vue",
+                "autoquery",
+                "identity-auth"
+            ],
+            "wordCount": 44,
+            "lineCount": 3,
+            "title": "Productive ASP.NET Core Vite Vue SPA Tailwind Template with Identity Auth",
+            "url": "https://youtu.be/JlUjWlVslRg",
+            "order": 1,
+            "group": "vue"
+        },
+        {
+            "slug": "autoquerygrid",
+            "fileName": "autoquerygrid.md",
+            "date": "2023-03-16",
+            "tags": [
+                "vue",
+                "autoquery"
+            ],
+            "wordCount": 51,
+            "lineCount": 4,
+            "title": "Instantly Manage your data using AutoQueryGrid Vue",
+            "url": "https://youtu.be/znCoC-Ct0Ps",
+            "order": 1,
+            "group": "vue"
+        },
+        {
+            "slug": "components",
+            "fileName": "components.md",
+            "date": "2023-02-14",
+            "tags": [
+                "vue",
+                "autoquery"
+            ],
+            "wordCount": 53,
+            "lineCount": 3,
+            "title": "Vue 3 Tailwind Components Library",
+            "url": "https://youtu.be/YIa0w6whe2U",
+            "order": 2,
+            "group": "vue"
+        },
+        {
+            "slug": "admin",
+            "fileName": "admin.md",
+            "date": "2023-06-14",
+            "tags": [
+                "vue",
+                "autoquery"
+            ],
+            "wordCount": 46,
+            "lineCount": 4,
+            "title": "Build beautiful custom .NET Admin UIs in minutes",
+            "url": "https://youtu.be/wlRA4_owEsc",
+            "order": 3,
+            "group": "vue"
+        },
+        {
+            "slug": "modern",
+            "fileName": "modern.md",
+            "date": "2023-02-08",
+            "tags": [
+                "vue",
+                "razor"
+            ],
+            "wordCount": 46,
+            "lineCount": 4,
+            "title": "Modern Razor Pages & MVC .NET Tailwind templates",
+            "url": "https://youtu.be/SyppvQB7IPs",
+            "order": 4,
+            "group": "vue"
+        }
+    ],
+    "whatsNew": [
+        {
+            "slug": "feature1",
+            "fileName": "feature1.md",
+            "date": "2023-03-28",
+            "tags": [],
+            "wordCount": 130,
+            "lineCount": 9,
+            "title": "Planetaria",
+            "url": "http://planetaria.tech",
+            "image": "https://localhost:5001/assets/img/whatsnew/planetaria.svg",
+            "group": "Planetaria"
+        },
+        {
+            "slug": "feature1",
+            "fileName": "feature1.md",
+            "date": "2023-03-18",
+            "tags": [],
+            "wordCount": 115,
+            "lineCount": 8,
+            "title": "OpenShuttle",
+            "url": "https://example.org",
+            "image": "https://localhost:5001/assets/img/whatsnew/open-shuttle.svg",
+            "group": "OpenShuttle"
+        },
+        {
+            "slug": "feature1",
+            "fileName": "feature1.md",
+            "date": "2023-03-08",
+            "tags": [],
+            "wordCount": 86,
+            "lineCount": 7,
+            "title": "Animaginary",
+            "url": "https://localhost:5001/blog",
+            "image": "https://localhost:5001/assets/img/whatsnew/animaginary.svg",
+            "group": "Animaginary"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "slug": "vue-spa",
+        "fileName": "vue-spa.md",
+        "date": "2024-03-05",
+        "tags": [
+            "vue",
+            "autoquery",
+            "identity-auth"
+        ],
+        "wordCount": 44,
+        "lineCount": 3,
+        "title": "Productive ASP.NET Core Vite Vue SPA Tailwind Template with Identity Auth",
+        "url": "https://youtu.be/JlUjWlVslRg",
+        "order": 1,
+        "group": "vue"
+    }
+]

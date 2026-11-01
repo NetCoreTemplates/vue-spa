@@ -1,0 +1,140 @@
+{
+    "blog": [
+        {
+            "slug": "vite-press-plugin",
+            "fileName": "vite-press-plugin.md",
+            "date": "2024-03-01",
+            "tags": [
+                "docs",
+                "markdown"
+            ],
+            "wordCount": 2417,
+            "lineCount": 528,
+            "title": "Vite Press Plugin",
+            "summary": "Introducing the Vite Press Plugin for Vite Vue & React Apps",
+            "author": "Lucy Bates",
+            "image": "https://images.unsplash.com/photo-1524668951403-d44b28200ce0?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/vite-press-plugin"
+        },
+        {
+            "slug": "markdown-components-in-vue",
+            "fileName": "markdown-components-in-vue.md",
+            "date": "2024-02-28",
+            "tags": [
+                "docs",
+                "markdown"
+            ],
+            "wordCount": 981,
+            "lineCount": 293,
+            "title": "Vue Components in Markdown",
+            "summary": "How to reference and Import Vue Components in Markdown",
+            "author": "Lucy Bates",
+            "image": "https://images.unsplash.com/photo-1700427296131-0cc4c4610fc6?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/markdown-components-in-vue"
+        },
+        {
+            "slug": "jwt-identity-auth",
+            "fileName": "jwt-identity-auth.md",
+            "date": "2024-02-11",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "auth"
+            ],
+            "wordCount": 1002,
+            "lineCount": 231,
+            "title": "ASP.NET Core JWT Identity Auth",
+            "summary": "Learn about integration and value added features of ASP.NET Core JWT Identity Auth",
+            "image": "https://images.unsplash.com/photo-1618482914248-29272d021005?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/jwt-identity-auth"
+        },
+        {
+            "slug": "identity-auth-admin-ui",
+            "fileName": "identity-auth-admin-ui.md",
+            "date": "2024-02-10",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "auth"
+            ],
+            "wordCount": 619,
+            "lineCount": 159,
+            "title": "Built-In Identity Auth Admin UI",
+            "summary": "Explore the new Identity Auth Admin UI for creating and managing Identity Auth users in .NET 8",
+            "image": "https://images.unsplash.com/photo-1563920443079-783e5c786b83?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/identity-auth-admin-ui"
+        },
+        {
+            "slug": "system-text-json-apis",
+            "fileName": "system-text-json-apis.md",
+            "date": "2024-02-09",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "json",
+                "apis"
+            ],
+            "wordCount": 919,
+            "lineCount": 206,
+            "title": "System.Text.Json ServiceStack APIs",
+            "summary": "ServiceStack .NET 8+ APIs can now be configured to use high-performance async System.Text.Json serialization",
+            "image": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Gayle Smith",
+            "url": "https://localhost:5001/posts/system-text-json-apis"
+        },
+        {
+            "slug": "openapi-v3",
+            "fileName": "openapi-v3.md",
+            "date": "2024-02-08",
+            "tags": [
+                "openapi",
+                ".net8"
+            ],
+            "wordCount": 1165,
+            "lineCount": 194,
+            "title": "OpenAPI v3 and Swagger UI",
+            "summary": "A walkthrough of the new OpenAPI v3 support in ServiceStack 8.1",
+            "image": "https://images.unsplash.com/photo-1496478981722-3ae516118a04?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Brandon Foley",
+            "url": "https://localhost:5001/posts/openapi-v3"
+        },
+        {
+            "slug": "servicestack-endpoint-routing",
+            "fileName": "servicestack-endpoint-routing.md",
+            "date": "2024-02-07",
+            "tags": [
+                "servicestack",
+                ".net8",
+                "apis"
+            ],
+            "wordCount": 3215,
+            "lineCount": 604,
+            "title": "ServiceStack Endpoint Routing",
+            "summary": "ServiceStack .NET 8 is now more integrated then ever with support for ASP.NET Core Endpoint Routing and IOC",
+            "image": "https://images.unsplash.com/photo-1510022151265-1bb84d406531?crop=entropy&fit=crop&h=1000&w=2000",
+            "author": "Lucy Bates",
+            "url": "https://localhost:5001/posts/servicestack-endpoint-routing"
+        }
+    ],
+    "videos": [
+        {
+            "slug": "vue-spa",
+            "fileName": "vue-spa.md",
+            "date": "2024-03-05",
+            "tags": [
+                "vue",
+                "autoquery",
+                "identity-auth"
+            ],
+            "wordCount": 44,
+            "lineCount": 3,
+            "title": "Productive ASP.NET Core Vite Vue SPA Tailwind Template with Identity Auth",
+            "url": "https://youtu.be/JlUjWlVslRg",
+            "order": 1,
+            "group": "vue"
+        }
+    ],
+    "whatsNew": []
+}

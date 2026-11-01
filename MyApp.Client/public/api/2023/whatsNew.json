@@ -1,0 +1,38 @@
+[
+    {
+        "slug": "feature1",
+        "fileName": "feature1.md",
+        "date": "2023-03-28",
+        "tags": [],
+        "wordCount": 130,
+        "lineCount": 9,
+        "title": "Planetaria",
+        "url": "http://planetaria.tech",
+        "image": "https://localhost:5001/assets/img/whatsnew/planetaria.svg",
+        "group": "Planetaria"
+    },
+    {
+        "slug": "feature1",
+        "fileName": "feature1.md",
+        "date": "2023-03-18",
+        "tags": [],
+        "wordCount": 115,
+        "lineCount": 8,
+        "title": "OpenShuttle",
+        "url": "https://example.org",
+        "image": "https://localhost:5001/assets/img/whatsnew/open-shuttle.svg",
+        "group": "OpenShuttle"
+    },
+    {
+        "slug": "feature1",
+        "fileName": "feature1.md",
+        "date": "2023-03-08",
+        "tags": [],
+        "wordCount": 86,
+        "lineCount": 7,
+        "title": "Animaginary",
+        "url": "https://localhost:5001/blog",
+        "image": "https://localhost:5001/assets/img/whatsnew/animaginary.svg",
+        "group": "Animaginary"
+    }
+]
