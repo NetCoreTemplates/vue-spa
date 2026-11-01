@@ -1,20 +1,20 @@
-import MarkdownIt from "markdown-it"
-import container from "markdown-it-container"
-import prism from "markdown-it-prism"
-import anchor from "markdown-it-anchor"
+import MarkdownIt from 'markdown-it'
+import container from 'markdown-it-container'
+import prism from 'markdown-it-prism'
+import anchor from 'markdown-it-anchor'
 import Prism from 'prismjs'
 
 const FencedComponents = ['files']
 
-export default function(md:MarkdownIt, options: { fencedComponents?:string[] } = {}) {
-    function copy({cls,box,icon,txt}:any) {
-        return ({
-            render(tokens:any, idx:any) {
+export default function (md: MarkdownIt, options: { fencedComponents?: string[] } = {}) {
+    function copy({ cls, box, icon, txt }: any) {
+        return {
+            render(tokens: any, idx: any) {
                 const token = tokens[idx]
                 if (token.nesting === 1) {
                     return `<div class="${cls} flex cursor-pointer mb-3" onclick="copy(this)">
-            <div class="flex-grow ${box||'bg-gray-700'}">
-                <div class="pl-4 py-1 pb-1.5 align-middle ${txt||'text-lg text-white'}">`
+            <div class="flex-grow ${box || 'bg-gray-700'}">
+                <div class="pl-4 py-1 pb-1.5 align-middle ${txt || 'text-lg text-white'}">`
                 } else {
                     return `</div>
             </div>
@@ -28,11 +28,11 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
             </div>
         </div>\n`
                 }
-            }
-        })
+            },
+        }
     }
     function shell() {
-        return ({
+        return {
             // Render ::: sh or ::: shell containers as <ShellCommand>...</ShellCommand>
             render(tokens: any, idx: any) {
                 const token = tokens[idx]
@@ -43,88 +43,83 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
                     // close tag
                     return `</ShellCommand>`
                 }
-            }
-        })
+            },
+        }
     }
-    function alert({title,cls}:any) {
-        return ({
-            render(tokens:any, idx:any) {
+    function alert({ title, cls }: any) {
+        return {
+            render(tokens: any, idx: any) {
                 const token = tokens[idx]
                 if (token.nesting === 1) {
-                    const useTitle = token.info.trim().substring(`${title} `.length).replace(/:+$/g,'') || title || 'TIP'
-                    return `<div class="${cls||'tip'} custom-block">
+                    const useTitle = token.info.trim().substring(`${title} `.length).replace(/:+$/g, '') || title || 'TIP'
+                    return `<div class="${cls || 'tip'} custom-block">
                                 <p class="custom-block-title">${useTitle}</p>`
                 } else {
                     return `</div>`
                 }
-            }
-        })
+            },
+        }
     }
     function include() {
-        return ({
-            validate(params:any) { 
-                return params.trim().match(/^include\s+(.*)$/) 
+        return {
+            validate(params: any) {
+                return params.trim().match(/^include\s+(.*)$/)
             },
-            render(tokens:any, idx:any) {
+            render(tokens: any, idx: any) {
                 const token = tokens[idx]
                 if (token.nesting === 1) {
-                    return `<Include src="${token.info.trim().substring('include '.length).replace(/:+$/g,'')}" />`
+                    return `<Include src="${token.info.trim().substring('include '.length).replace(/:+$/g, '')}" />`
                 } else {
                     return ``
                 }
-            }
-        })
+            },
+        }
     }
     function youtube() {
-        return ({
-            render(tokens:any, idx:any) {
+        return {
+            render(tokens: any, idx: any) {
                 const token = tokens[idx]
                 if (token.nesting === 1) {
-                    return `<LiteYouTube id="${token.info.trim().substring('youtube '.length).replace(/:+$/g,'')}" />`
+                    return `<LiteYouTube id="${token.info.trim().substring('youtube '.length).replace(/:+$/g, '')}" />`
                 } else {
                     return ``
                 }
-            }
-        })
+            },
+        }
     }
-    
+
     md.linkify.set({ fuzzyLink: false })
-    md.use(anchor, {permalink: anchor.permalink.headerLink()})
+    md.use(anchor, { permalink: anchor.permalink.headerLink() })
     md.use(prism)
-    md.use((md:any) => {
+    md.use((md: any) => {
         const allComponents = [...(options.fencedComponents || []), ...FencedComponents]
-        allComponents.forEach(name => {
+        allComponents.forEach((name) => {
             Prism.languages[name] = {}
         })
 
         const prismFence = md.renderer.rules.fence
-        md.renderer.rules.fence = function (tokens:any, idx:any, options:any, env:any, slf:any) {
+        md.renderer.rules.fence = function (tokens: any, idx: any, options: any, env: any, slf: any) {
             const token = tokens[idx]
             const info = token.info ? md.utils.unescapeAll(token.info).trim() : ''
             const langName = info.split(/\s+/g)[0]
             // Special-case: render shell fenced blocks with ShellCommand Vue component
             if (langName === 'shell' || langName === 'sh') {
-                const body = token.content
-                    .replace(/`/g, '\\`')
-                    .replace(/\$/g, '\\$')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;')
-                    .replace(/"/g, '&quot;')
+                const body = token.content.replace(/`/g, '\\`').replace(/\$/g, '\\$').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
                 return '<ShellCommand :text="`' + body + '`" />\n'
             }
             if (allComponents.includes(langName)) {
                 const tag = langName
-                const body = token.content.replace(/"/g, '&quot;').replace(/`/g, '&lt;').replace(/>/g, '&gt;').replace(/`/g,'\\`')
+                const body = token.content.replace(/"/g, '&quot;').replace(/`/g, '&lt;').replace(/>/g, '&gt;').replace(/`/g, '\\`')
                 return '<' + tag + ' :body="`' + body + '`" />'
             }
             return prismFence(tokens, idx, options, env, slf)
         }
     })
     md.use(container as any, 'tip', alert({}))
-    md.use(container as any, 'info', alert({title:'INFO',cls:'info'}))
-    md.use(container as any, 'warning', alert({title:'WARNING',cls:'warning'}))
-    md.use(container as any, 'danger', alert({title:'DANGER',cls:'danger'}))
-    md.use(container as any, 'copy', copy({cls:'not-prose copy cp', icon:'bg-sky-500'}))
+    md.use(container as any, 'info', alert({ title: 'INFO', cls: 'info' }))
+    md.use(container as any, 'warning', alert({ title: 'WARNING', cls: 'warning' }))
+    md.use(container as any, 'danger', alert({ title: 'DANGER', cls: 'danger' }))
+    md.use(container as any, 'copy', copy({ cls: 'not-prose copy cp', icon: 'bg-sky-500' }))
     // Support legacy ::: sh and ::: shell containers by rendering <ShellCommand> wrapper
     md.use(container as any, 'sh', shell())
     md.use(container as any, 'shell', shell())
@@ -133,11 +128,9 @@ export default function(md:MarkdownIt, options: { fencedComponents?:string[] } =
     md.use(container as any, 'youtube', youtube())
     md.use(container as any, 'dynamic', {
         validate: () => true,
-        render: function (tokens:any, idx:any) {
-            const token = tokens[idx];
-            return token.nesting === 1
-                ? '<div class="' + token.info.trim().replace(/[{}.]/g,'') + '">'
-                : '</div>'
+        render: function (tokens: any, idx: any) {
+            const token = tokens[idx]
+            return token.nesting === 1 ? '<div class="' + token.info.trim().replace(/[{}.]/g, '') + '">' : '</div>'
         },
     })
     return md

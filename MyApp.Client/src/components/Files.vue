@@ -1,12 +1,12 @@
 <template>
-  <FileLayout :files="files"/>
+    <FileLayout :files="files" />
 </template>
 
 <script setup lang="ts">
 import FileLayout from '@/components/FileLayout.vue'
 
 const props = defineProps<{
-  body: string
+    body: string
 }>()
 
 /* Takes an ascii string of indented folder and file paths:
@@ -30,28 +30,28 @@ const to = {
     }
 }
 */
-function parseFileStructure(ascii:string, indent:number = 2) {
-  const lines = ascii.split('\n')
-  const root = { _: [] }
-  const stack: any[] = [root]
+function parseFileStructure(ascii: string, indent: number = 2) {
+    const lines = ascii.split('\n')
+    const root = { _: [] }
+    const stack: any[] = [root]
 
-  for (const line of lines) {
-    const depth = line.search(/\S/) / indent
-    const name = line.trim()
-    const parent:{[name:string]:any} = stack[depth]!
-    const isDir = name.startsWith('/')
+    for (const line of lines) {
+        const depth = line.search(/\S/) / indent
+        const name = line.trim()
+        const parent: { [name: string]: any } = stack[depth]!
+        const isDir = name.startsWith('/')
 
-    if (isDir) {
-      const dirName = name.substring(1)
-      const dirContents = { _: [] }
-      parent[dirName] = dirContents
-      stack.length = depth + 1
-      stack.push(dirContents)
-    } else {
-      parent._.push(name)
+        if (isDir) {
+            const dirName = name.substring(1)
+            const dirContents = { _: [] }
+            parent[dirName] = dirContents
+            stack.length = depth + 1
+            stack.push(dirContents)
+        } else {
+            parent._.push(name)
+        }
     }
-  }
-  return root
+    return root
 }
 
 const txt = props.body?.trim() || ''

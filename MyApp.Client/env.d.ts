@@ -2,7 +2,7 @@
 /// <reference types="vite-plugin-vue-layouts-next/client" />
 /// <reference types="vite-plugin-press/client" />
 
-import type {Author, Post} from "@/meta";
+import type { Author, Post } from '@/meta'
 
 declare module '*.vue' {
     import type { DefineComponent } from 'vue'
@@ -18,6 +18,6 @@ declare module '*.md' {
 }
 
 declare module 'virtual:*' {
-    const component: any;
-    export default component;
+    const component: any
+    export default component
 }

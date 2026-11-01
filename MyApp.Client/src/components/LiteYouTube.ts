@@ -8,16 +8,10 @@
 import type { PropType } from 'vue'
 import { h as hDemi, computed, defineComponent, ref } from 'vue'
 
-export type ImageResolution =
-    | 'default'
-    | 'mqdefault'
-    | 'hqdefault'
-    | 'sddefault'
-    | 'maxresdefault'
+export type ImageResolution = 'default' | 'mqdefault' | 'hqdefault' | 'sddefault' | 'maxresdefault'
 
 function runCommand(iframe: HTMLIFrameElement | null, func: 'stopVideo' | 'pauseVideo' | 'playVideo') {
-    if (iframe === null)
-        throw new Error('iframe element not instantiated.')
+    if (iframe === null) throw new Error('iframe element not instantiated.')
 
     iframe.contentWindow?.postMessage(`{"event":"command","func":"${func}","args":""}`, '*')
 }
@@ -35,8 +29,7 @@ interface Options {
     on?: Record<any, any>
 }
 const adaptOnsV3 = (ons?: object) => {
-    if (!ons)
-        return null
+    if (!ons) return null
     return Object.entries(ons).reduce((ret, [key, handler]) => {
         key = key.charAt(0).toUpperCase() + key.slice(1)
         key = `on${key}`
@@ -152,35 +145,36 @@ export default defineComponent({
         const iframeElement = ref<HTMLIFrameElement | null>(null)
 
         const videoId = computed(() => encodeURIComponent(props.id))
-        const paramsImp = computed(() => props.params ? `&${props.params}` : '')
-        const mutedImp = computed(() => props.muted ? '&mute=1' : '')
-        const format = computed(() => props.webp ? 'webp' : 'jpg')
-        const vi = computed(() => props.webp ? 'vi_webp' : 'vi')
-        const videoPlaylistCoverId = computed(() => typeof props.playlistCoverId === 'string' ? encodeURIComponent(props.playlistCoverId) : null)
+        const paramsImp = computed(() => (props.params ? `&${props.params}` : ''))
+        const mutedImp = computed(() => (props.muted ? '&mute=1' : ''))
+        const format = computed(() => (props.webp ? 'webp' : 'jpg'))
+        const vi = computed(() => (props.webp ? 'vi_webp' : 'vi'))
+        const videoPlaylistCoverId = computed(() => (typeof props.playlistCoverId === 'string' ? encodeURIComponent(props.playlistCoverId) : null))
 
         const posterUrl = computed(() => {
-            return props.thumbnail || (!props.playlist
-                ? `https://i.ytimg.com/${vi.value}/${videoId.value}/${props.poster}.${format.value}`
-                : `https://i.ytimg.com/${vi.value}/${videoPlaylistCoverId.value}/${props.poster}.${format.value}`)
+            return (
+                props.thumbnail ||
+                (!props.playlist
+                    ? `https://i.ytimg.com/${vi.value}/${videoId.value}/${props.poster}.${format.value}`
+                    : `https://i.ytimg.com/${vi.value}/${videoPlaylistCoverId.value}/${props.poster}.${format.value}`)
+            )
         })
 
-        const ytUrl = computed(() => props.cookie
-            ? 'https://www.youtube.com'
-            : 'https://www.youtube-nocookie.com')
-        const iframeSrc = computed(() => !props.playlist
-            ? `${ytUrl.value}/embed/${videoId.value}?autoplay=1&enablejsapi=1&state=1${mutedImp.value}${paramsImp.value}`
-            : `${ytUrl.value}/embed/videoseries?autoplay=1&enablejsapi=1&list=${videoId.value}${mutedImp.value}${paramsImp.value}`)
+        const ytUrl = computed(() => (props.cookie ? 'https://www.youtube.com' : 'https://www.youtube-nocookie.com'))
+        const iframeSrc = computed(() =>
+            !props.playlist
+                ? `${ytUrl.value}/embed/${videoId.value}?autoplay=1&enablejsapi=1&state=1${mutedImp.value}${paramsImp.value}`
+                : `${ytUrl.value}/embed/videoseries?autoplay=1&enablejsapi=1&list=${videoId.value}${mutedImp.value}${paramsImp.value}`,
+        )
 
         function addIframe() {
-            if (iframe.value)
-                return
+            if (iframe.value) return
             iframe.value = true
             emit('iframeAdded')
         }
 
         function warmConnections() {
-            if (preconnected.value)
-                return
+            if (preconnected.value) return
             preconnected.value = true
         }
 
@@ -212,9 +206,7 @@ export default defineComponent({
             preconnected.value ? linkPreconnect(ytUrl.value) : null,
             preconnected.value ? linkPreconnect('https://www.google.com') : null,
             props.adNetwork ? linkPreconnect('https://static.doubleclick.net') : null,
-            props.adNetwork
-                ? linkPreconnect('https://googleads.g.doubleclick.net')
-                : null,
+            props.adNetwork ? linkPreconnect('https://googleads.g.doubleclick.net') : null,
             h(
                 'article',
                 {
@@ -225,7 +217,7 @@ export default defineComponent({
                     class: `${props.wrapperClass} ${iframe.value ? props.activatedClass : ''}`,
                     attrs: { 'data-title': props.title },
                     style: {
-                        'backgroundImage': `url(${posterUrl.value})`,
+                        backgroundImage: `url(${posterUrl.value})`,
                         '--aspect-ratio': `${(props.aspectHeight / props.aspectWidth) * 100}%`,
                     },
                 },
@@ -234,26 +226,25 @@ export default defineComponent({
                     h('button', {
                         class: props.playerClass,
                         attrs: {
-                            'type': 'button',
+                            type: 'button',
                             'aria-label': `${props.announce} ${props.title}`,
                         },
                     }),
                     // Iframe
                     iframe.value
                         ? h('iframe', {
-                            ref: iframeElement,
-                            class: props.iframeClass,
-                            attrs: {
-                                title: props.title,
-                                width: 560,
-                                height: 315,
-                                frameborder: 0,
-                                allow:
-                                    'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
-                                allowfullscreen: true,
-                                src: iframeSrc.value,
-                            },
-                        })
+                              ref: iframeElement,
+                              class: props.iframeClass,
+                              attrs: {
+                                  title: props.title,
+                                  width: 560,
+                                  height: 315,
+                                  frameborder: 0,
+                                  allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
+                                  allowfullscreen: true,
+                                  src: iframeSrc.value,
+                              },
+                          })
                         : null,
                 ],
             ),
