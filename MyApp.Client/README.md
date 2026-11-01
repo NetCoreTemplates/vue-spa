@@ -1,25 +1,20 @@
 # myapp.client
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 SPA frontend built with the [Vite+](https://viteplus.dev) toolchain: Vite 8 (Rolldown), Vitest, Oxlint and Oxfmt.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Open `MyApp.code-workspace` in the repository root with [VS Code](https://code.visualstudio.com/) and install the recommended
+[Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) and
+[Vite+ Extension Pack](https://marketplace.visualstudio.com/items?itemName=VoidZero.vite-plus-extension-pack) extensions.
 
 ## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+TypeScript can't type check `.vue` imports, so `vue-tsc` is used for type checking in `npm run build`, `npm run check` and `npm run typecheck`.
 
 ## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+All tool config (`lint`, `fmt`, `test`) lives in [vite.config.ts](vite.config.ts). See the [Vite+ Guide](https://viteplus.dev/guide/).
 
 ## Project Setup
 
@@ -39,8 +34,14 @@ npm run dev
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Format, Lint and Type-Check
 
 ```sh
-npm run lint
+npm run check
+```
+
+### Run Tests
+
+```sh
+npm run test:run
 ```

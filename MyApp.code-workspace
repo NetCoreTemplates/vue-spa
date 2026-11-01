@@ -1,0 +1,28 @@
+{
+  // Open with: File > Open Workspace from File... (or `code MyApp.code-workspace`)
+  // MyApp.Client is its own root so the Oxc extension can resolve its local vite-plus
+  "folders": [
+    { "name": "MyApp", "path": "." },
+    { "name": "MyApp.Client", "path": "MyApp.Client" }
+  ],
+  "settings": {
+    // Shown as its own root, so hide the duplicate under MyApp
+    "files.exclude": { "MyApp.Client": true },
+
+    // Oxfmt + Oxlint via `vp fmt --lsp` / `vp lint --lsp`, using vite.config.ts
+    // Scoped to JS/TS/Vue so C# and Razor files keep their own formatters
+    "[javascript][javascriptreact][typescript][typescriptreact][vue]": {
+      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.formatOnSave": true,
+      "editor.formatOnSaveMode": "file", // Oxfmt doesn't support partial formatting
+      "editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" }
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "VoidZero.vite-plus-extension-pack", // Oxc + Vitest
+      "Vue.volar", // .vue type checking and IntelliSense (vue-tsc)
+      "ms-dotnettools.csdevkit"
+    ]
+  }
+}
