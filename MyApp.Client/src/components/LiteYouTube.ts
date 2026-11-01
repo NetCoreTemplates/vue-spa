@@ -34,7 +34,7 @@ interface Options {
     attrs?: Record<any, any>
     on?: Record<any, any>
 }
-const adaptOnsV3 = (ons: Object) => {
+const adaptOnsV3 = (ons?: object) => {
     if (!ons)
         return null
     return Object.entries(ons).reduce((ret, [key, handler]) => {
@@ -43,7 +43,7 @@ const adaptOnsV3 = (ons: Object) => {
         return { ...ret, [key]: handler }
     }, {})
 }
-const h = (type: String | Record<any, any>, options: Options & any = {}, children?: any) => {
+const h = (type: string | Record<any, any>, options: Options & Record<string, any> = {}, children?: any) => {
     const { props, domProps, on, attrs, ...extraOptions } = options
     const ons = adaptOnsV3(on)
     const params = { ...extraOptions, ...props, ...domProps, ...ons, ...attrs }
@@ -152,7 +152,7 @@ export default defineComponent({
         const iframeElement = ref<HTMLIFrameElement | null>(null)
 
         const videoId = computed(() => encodeURIComponent(props.id))
-        const paramsImp = computed(() => `&${props.params}` || '')
+        const paramsImp = computed(() => props.params ? `&${props.params}` : '')
         const mutedImp = computed(() => props.muted ? '&mute=1' : '')
         const format = computed(() => props.webp ? 'webp' : 'jpg')
         const vi = computed(() => props.webp ? 'vi_webp' : 'vi')

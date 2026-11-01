@@ -62,7 +62,7 @@ const { client, load } = useApp()
 
 const pinia = createPinia()
 
-load().then(() => {
+void load().then(() => {
     app
         .use(head)
         .use(router)

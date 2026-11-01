@@ -67,6 +67,6 @@ function author(name:string) : Author | undefined {
   return name ? press.blog.authors.find((x:Author) => x.name.toLowerCase() == name.toLowerCase()) : undefined 
 }
 function authorProfileUrl(name:string) {
-  return author(name)?.profileUrl!
+  return author(name)?.profileUrl
 }
 </script>

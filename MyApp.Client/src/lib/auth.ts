@@ -8,7 +8,7 @@ import { client, Routes } from "@/lib/gateway"
 export async function checkAuth() {
     try {
         return await client.post(new Authenticate())
-    } catch (e) {
+    } catch {
         return undefined
     }
 }
@@ -43,11 +43,11 @@ export const loading = ref(false)
 
 export const attrs = computed(() => createAttrs(user.value))
 
-export const signout = async (router:any, redirectTo?: string) => {
+export const signout = async (router:Router, redirectTo?: string) => {
     signOut()
     await logout()
     // Always redirect to force re-running auth route guards
-    await router.replace({ path: redirectTo ?? router?.currentRoute?.value.path, force: true })
+    await router.replace({ path: redirectTo ?? router.currentRoute.value.path, force: true })
 }
 
 export function configRouter(router:Router)  {
@@ -77,10 +77,10 @@ export function configRouter(router:Router)  {
     }
 
     router.beforeEach((to:RouteLocationNormalized,_:RouteLocationNormalized,next:NavigationGuardNext) => {
-        if (loading) {
+        if (loading.value) {
             const stop = watchEffect(() => {
                 validateRoute(to, next, attrs.value)
-                nextTick(() => stop())
+                void nextTick(() => stop())
             })
         } else {
             validateRoute(to, next, attrs.value)
