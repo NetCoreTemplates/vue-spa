@@ -1,0 +1,218 @@
+{
+    "blog": [
+        {
+            "slug": "openapi-net10",
+            "fileName": "openapi-net10.md",
+            "date": "2025-12-03",
+            "tags": [
+                ".net10",
+                "openapi",
+                "swagger",
+                "scalar"
+            ],
+            "wordCount": 694,
+            "lineCount": 103,
+            "title": ".NET 10's new OpenAPI Scalar + Swagger UIs",
+            "summary": "ServiceStack v10 adds first-class .NET 10 support and new OpenAPI for Swagger and Scalar UIs.",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/openapi-net10/bg.webp",
+            "url": "https://localhost:5001/posts/openapi-net10"
+        },
+        {
+            "slug": "ai-chat-explorer",
+            "fileName": "ai-chat-explorer.md",
+            "date": "2025-11-25",
+            "tags": [
+                "llms",
+                "ai",
+                "openai",
+                "chat"
+            ],
+            "wordCount": 1701,
+            "lineCount": 287,
+            "title": "Creating a custom Explorer UI for OpenAIs Chat API",
+            "summary": "Learning how to create a customized API Explorer API UIs like ChatCompletion's UI",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/ai-chat-explorer/bg.webp",
+            "url": "https://localhost:5001/posts/ai-chat-explorer"
+        },
+        {
+            "slug": "ai-chat-servicestack",
+            "fileName": "ai-chat-servicestack.md",
+            "date": "2025-11-21",
+            "tags": [
+                "llms",
+                "ai",
+                "chat",
+                "admin-ui",
+                "analytics"
+            ],
+            "wordCount": 762,
+            "lineCount": 157,
+            "title": "FREE Gemini, Minimax M2, GLM 4.6, Kimi K2",
+            "summary": "The best OSS language models, now available for FREE in AI Chat!",
+            "author": "Gayle Smith",
+            "image": "https://images.unsplash.com/photo-1640011655323-a14d80feac25?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/ai-chat-servicestack"
+        },
+        {
+            "slug": "ai-chat-analytics",
+            "fileName": "ai-chat-analytics.md",
+            "date": "2025-11-20",
+            "tags": [
+                "llms",
+                "ai",
+                "chat",
+                "admin-ui",
+                "analytics"
+            ],
+            "wordCount": 542,
+            "lineCount": 76,
+            "title": "AI Chat history persistence and Admin Analytics UI",
+            "summary": "Maintain a persistant history of all AI Chat requests and responses",
+            "author": "Brandon Foley",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&fit=crop&h=1000&w=2000",
+            "url": "https://localhost:5001/posts/ai-chat-analytics"
+        },
+        {
+            "slug": "ai-chat",
+            "fileName": "ai-chat.md",
+            "date": "2025-11-17",
+            "tags": [
+                "llms",
+                "ai",
+                "openai",
+                "chat"
+            ],
+            "wordCount": 3664,
+            "lineCount": 797,
+            "title": "AI Chat - A Simple OpenAI Chat Completions API, UI & Client LLM Gateway",
+            "summary": "Unlock the value of OpenAI Chat APIs using a simple, serializable ChatCompletion DTO that works everywhere",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/ai-chat/bg.webp",
+            "url": "https://localhost:5001/posts/ai-chat"
+        },
+        {
+            "slug": "react",
+            "fileName": "react.md",
+            "date": "2025-11-13",
+            "tags": [
+                "react",
+                "autoquery",
+                "admin"
+            ],
+            "wordCount": 2137,
+            "lineCount": 284,
+            "title": "React + Tailwind + TypeScript for AI-First Development",
+            "summary": "First-class React support optimized for AI-assisted development with new React component library & project templates",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/react/bg.webp",
+            "url": "https://localhost:5001/posts/react"
+        },
+        {
+            "slug": "typesense-ai-search",
+            "fileName": "typesense-ai-search.md",
+            "date": "2025-11-12",
+            "tags": [
+                "llms",
+                "ai",
+                "docs"
+            ],
+            "wordCount": 778,
+            "lineCount": 119,
+            "title": "Ask ServiceStack Docs - Introducing AI Search",
+            "summary": "Learn about the new AI Search feature - Typesense Conversational RAG for ServiceStack Docs",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/typesense-ai-search/bg.webp",
+            "url": "https://localhost:5001/posts/typesense-ai-search"
+        },
+        {
+            "slug": "apikey_auth_apis",
+            "fileName": "apikey_auth_apis.md",
+            "date": "2025-10-27",
+            "tags": [
+                "apikeys",
+                "identity-auth",
+                "auth"
+            ],
+            "wordCount": 704,
+            "lineCount": 143,
+            "title": "Protect same APIs with API Keys or Identity Auth",
+            "summary": "Learn how to create ServiceStack APIs that can be protected with API Keys or Identity Auth",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/identityauth-claims-roles/bg.webp",
+            "url": "https://localhost:5001/posts/apikey_auth_apis"
+        },
+        {
+            "slug": "rdbms_jobs",
+            "fileName": "rdbms_jobs.md",
+            "date": "2025-10-23",
+            "tags": [
+                "db",
+                "ormlite",
+                "jobs"
+            ],
+            "wordCount": 4994,
+            "lineCount": 1054,
+            "title": "RDBMS Background Jobs",
+            "summary": "Run Background Jobs and Scheduled Tasks in PostgreSQL, SQL Server or MySQL",
+            "author": "Gayle Smith",
+            "image": "https://servicestack.net/img/posts/background-jobs/bg.webp",
+            "url": "https://localhost:5001/posts/rdbms_jobs"
+        },
+        {
+            "slug": "rdbms_analytics",
+            "fileName": "rdbms_analytics.md",
+            "date": "2025-10-21",
+            "tags": [
+                "analytics",
+                "admin-ui",
+                "apis",
+                "postgresql",
+                "sqlserver",
+                "mysql"
+            ],
+            "wordCount": 2064,
+            "lineCount": 339,
+            "title": "In Depth Interactive API Analytics for PostgreSQL, SQL Server & MySQL",
+            "summary": "Comprehensive and Interactive RDBMS API Analytics in Admin UI, deep insights into API usage, performance, users, API Keys & IPs",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/analytics/bg.webp",
+            "url": "https://localhost:5001/posts/rdbms_analytics"
+        },
+        {
+            "slug": "ormlite-async-task-builder",
+            "fileName": "ormlite-async-task-builder.md",
+            "date": "2025-10-20",
+            "tags": [
+                "db",
+                "ormlite"
+            ],
+            "wordCount": 674,
+            "lineCount": 154,
+            "title": "RDBMS Async Tasks Builder",
+            "summary": "Effortlessly run multiple async DB Requests in parallel with OrmLite's new Async Tasks Builder",
+            "author": "Lucy Bates",
+            "image": "https://servicestack.net/img/posts/ormlite-async-task-builder/bg.webp",
+            "url": "https://localhost:5001/posts/ormlite-async-task-builder"
+        },
+        {
+            "slug": "ormlite-new-configuration",
+            "fileName": "ormlite-new-configuration.md",
+            "date": "2025-10-15",
+            "tags": [
+                "db",
+                "ormlite"
+            ],
+            "wordCount": 2152,
+            "lineCount": 475,
+            "title": "OrmLite new Configuration Model and Defaults",
+            "summary": "Learn about OrmLite's new fluent Configuration Model, new defaults & features",
+            "author": "Brandon Foley",
+            "image": "https://servicestack.net/img/posts/ormlite-new-configuration/bg.webp",
+            "url": "https://localhost:5001/posts/ormlite-new-configuration"
+        }
+    ],
+    "videos": [],
+    "whatsNew": []
+}

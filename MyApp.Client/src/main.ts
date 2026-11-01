@@ -5,55 +5,55 @@ import { createApp } from 'vue'
 import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 
-import ServiceStackVue from "@servicestack/vue"
+import ServiceStackVue from '@servicestack/vue'
 import { createRouter, createWebHistory, RouterLink } from 'vue-router'
 import type { RouteLocationNormalized } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { setupLayouts } from 'virtual:generated-layouts'
-import { createPinia } from "pinia"
-import press from "virtual:press"
+import { createPinia } from 'pinia'
+import press from 'virtual:press'
 import { Icon } from '@iconify/vue'
 
-import LiteYoutube from "@/components/LiteYouTube"
-import { configRouter } from "@/lib/auth"
-import { isServerRoute, useApp } from "@/lib/gateway"
+import LiteYoutube from '@/components/LiteYouTube'
+import { configRouter } from '@/lib/auth'
+import { isServerRoute, useApp } from '@/lib/gateway'
 
 const app = createApp(App)
 const head = createHead()
 
-routes.forEach((route:any) => {
+routes.forEach((route: any) => {
     // Force all pages in /admin to use /layout/admin.vue
     if (route.path.startsWith('/admin')) {
-        (route.children ?? []).forEach((child:any) => {
+        ;(route.children ?? []).forEach((child: any) => {
             child.meta ??= {}
             child.meta.layout = 'admin'
         })
     }
 })
 
-export const router = configRouter(createRouter({
-    history: createWebHistory(),
-    // Scroll to top on navigation
-    scrollBehavior(to: RouteLocationNormalized, _from: RouteLocationNormalized, savedPosition: any) {
-        if (savedPosition) {
-            return savedPosition
-        }
-        if (to.hash) {
-            return { el: to.hash, behavior: 'smooth' }
-        } else {
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 1)
-        }
-    },
-    routes: setupLayouts(routes as any)
-}))
+export const router = configRouter(
+    createRouter({
+        history: createWebHistory(),
+        // Scroll to top on navigation
+        scrollBehavior(to: RouteLocationNormalized, _from: RouteLocationNormalized, savedPosition: any) {
+            if (savedPosition) {
+                return savedPosition
+            }
+            if (to.hash) {
+                return { el: to.hash, behavior: 'smooth' }
+            } else {
+                setTimeout(() => {
+                    window.scrollTo(0, 0)
+                }, 1)
+            }
+        },
+        routes: setupLayouts(routes as any),
+    }),
+)
 // handle external links
 router.beforeEach((to, _from, next) => {
-    if (isServerRoute(to.path))
-        location.href = to.path
-    else if (to.path.startsWith('/http'))
-        location.href = to.path.substring(1)
+    if (isServerRoute(to.path)) location.href = to.path
+    else if (to.path.startsWith('/http')) location.href = to.path.substring(1)
     else next()
 })
 
@@ -62,9 +62,8 @@ const { client, load } = useApp()
 
 const pinia = createPinia()
 
-load().then(() => {
-    app
-        .use(head)
+void load().then(() => {
+    app.use(head)
         .use(router)
         .use(pinia)
         .use(ServiceStackVue)

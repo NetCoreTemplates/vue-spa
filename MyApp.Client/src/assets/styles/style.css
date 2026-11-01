@@ -1,36 +1,35 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @source "../../../node_modules/@servicestack/vue/dist/servicestack-vue.mjs";
 
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
-@config "../../../tailwind.config.ts"; 
+@config "../../../tailwind.config.ts";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 @layer base {
     :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 221.2 83.2% 53.3%;
-      --radius: 0.5rem;
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 221.2 83.2% 53.3%;
+        --radius: 0.5rem;
     }
     :root.dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
     }
-      
+
     *,
     ::after,
     ::before,
     ::backdrop,
     ::file-selector-button {
-      border-color: hsl(var(--border));
+        border-color: hsl(var(--border));
     }
 }
 
@@ -38,30 +37,39 @@
     --default-ring-color: hsl(var(--ring));
 }
 
-
 /* Write your own custom base styles here */
-[v-cloak] {display:none}
+[v-cloak] {
+    display: none;
+}
 
 /* override element defaults */
-b, strong { font-weight:600; }
+b,
+strong {
+    font-weight: 600;
+}
 
 /*vue*/
-[v-cloak] {display:none}
+[v-cloak] {
+    display: none;
+}
 
 /*typography*/
-.prose pre::-webkit-scrollbar, .prose code::-webkit-scrollbar {
+.prose pre::-webkit-scrollbar,
+.prose code::-webkit-scrollbar {
     width: 8px;
     height: 8px;
     background: #2d3748;
 }
-.prose pre::-webkit-scrollbar-thumb, .prose code::-webkit-scrollbar-thumb {
+.prose pre::-webkit-scrollbar-thumb,
+.prose code::-webkit-scrollbar-thumb {
     background-color: rgb(100 116 139);
 }
-code[class*=language-], pre[class*=language-] {
-    background-color:#1f2937;
+code[class*='language-'],
+pre[class*='language-'] {
+    background-color: #1f2937;
     min-width: fit-content;
 }
-.dark .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *,pre code)) {
+.dark .prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *, pre code)) {
     background-color: #172554; /* blue-950 */
     color: #e5e7eb; /* gray-200 */
 }
@@ -69,7 +77,9 @@ code[class*=language-], pre[class*=language-] {
 /* dark mode autocomplete fields */
 .dark input:-webkit-autofill,
 .dark input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
+    transition:
+        background-color 600000s 0s,
+        color 600000s 0s;
 }
 .dark input[data-autocompleted] {
     background-color: transparent !important;
@@ -93,22 +103,34 @@ code[class*=language-], pre[class*=language-] {
     bottom: 0;
     left: 0;
 }
-[type='button'],button[type='submit'],button[href]{cursor:pointer}
+[type='button'],
+button[type='submit'],
+button[href] {
+    cursor: pointer;
+}
 
 /*typography*/
-.prose pre::-webkit-scrollbar, .prose code::-webkit-scrollbar {
+.prose pre::-webkit-scrollbar,
+.prose code::-webkit-scrollbar {
     width: 8px;
     height: 8px;
     background: #2d3748;
 }
-.prose pre::-webkit-scrollbar-thumb, .prose code::-webkit-scrollbar-thumb {
+.prose pre::-webkit-scrollbar-thumb,
+.prose code::-webkit-scrollbar-thumb {
     background-color: rgb(100 116 139);
 }
-code[class*=language-], pre[class*=language-] {
-    background-color:#1f2937;
+code[class*='language-'],
+pre[class*='language-'] {
+    background-color: #1f2937;
     min-width: fit-content;
 }
-.prose h1>a, .prose h2>a, .prose h3>a, .prose h4>a, .prose h5>a, .prose h6>a {
+.prose h1 > a,
+.prose h2 > a,
+.prose h3 > a,
+.prose h4 > a,
+.prose h5 > a,
+.prose h6 > a {
     color: inherit;
     text-decoration: none;
 }
@@ -116,63 +138,95 @@ code[class*=language-], pre[class*=language-] {
 /* dark mode autocomplete fields */
 .dark input:-webkit-autofill,
 .dark input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
+    transition:
+        background-color 600000s 0s,
+        color 600000s 0s;
 }
 .dark input[data-autocompleted] {
     background-color: transparent !important;
 }
 
 /*markdown containers*/
-.copy p, .copy p code { color:#fff }
-.sh-copy { max-height: 34px; }
-.copied { display: none}
-.copying .copied { display: block }
-.copying .nocopy { display: none }
+.copy p,
+.copy p code {
+    color: #fff;
+}
+.sh-copy {
+    max-height: 34px;
+}
+.copied {
+    display: none;
+}
+.copying .copied {
+    display: block;
+}
+.copying .nocopy {
+    display: none;
+}
 
-.cp p, .cp p code { margin:0; padding:0 }
+.cp p,
+.cp p code {
+    margin: 0;
+    padding: 0;
+}
 
-.sh-copy code { font-size: 16px }
-.sh-copy p, .sh-copy p code { color: rgb(243 244 246) }
-.sh-copy p::before { content:'$ '; color: rgb(156 163 175) }
-.sh-copy a { color: rgb(243 244 246) }
-.sh-copy a:hover { text-decoration: none }
+.sh-copy code {
+    font-size: 16px;
+}
+.sh-copy p,
+.sh-copy p code {
+    color: rgb(243 244 246);
+}
+.sh-copy p::before {
+    content: '$ ';
+    color: rgb(156 163 175);
+}
+.sh-copy a {
+    color: rgb(243 244 246);
+}
+.sh-copy a:hover {
+    text-decoration: none;
+}
 
 /* Custom Info Containers*/
-.custom-block.tip,.custom-block.info,.custom-block.warning,.custom-block.danger {
+.custom-block.tip,
+.custom-block.info,
+.custom-block.warning,
+.custom-block.danger {
     margin: 1rem 0;
-    border-left: .5rem solid;
-    padding: .1rem 1.5rem;
+    border-left: 0.5rem solid;
+    padding: 0.1rem 1.5rem;
     overflow-x: auto;
 }
 .custom-block.tip {
     background-color: #f3f5f7;
-    border-color: #007bff
+    border-color: #007bff;
 }
 .custom-block.info {
     background-color: #f3f5f7;
-    border-color: #476582
+    border-color: #476582;
 }
 .custom-block.warning {
     border-color: #e7c000;
     color: #6b5900;
-    background-color: #ffe5644d
+    background-color: #ffe5644d;
 }
 .custom-block.warning .custom-block-title {
-    color: #b29400
+    color: #b29400;
 }
 .custom-block.warning a {
-    color: #2c3e50
+    color: #2c3e50;
 }
 .custom-block.danger {
     border-color: #c00;
     color: #4d0000;
-    background-color: #ffe6e6
+    background-color: #ffe6e6;
 }
 .custom-block.danger .custom-block-title {
-    color: #900
+    color: #900;
 }
 .custom-block.danger a {
-    color: #2c3e50
+    color: #2c3e50;
 }
 .dark .custom-block {
     background: #111827;
@@ -183,21 +237,22 @@ code[class*=language-], pre[class*=language-] {
     border-radius: 2px;
     margin: 1.6em 0;
     padding: 1.6em;
-    background-color: #eee
+    background-color: #eee;
 }
 .custom-block.details h4 {
-    margin-top: 0
+    margin-top: 0;
 }
-.custom-block.details figure:last-child,.custom-block.details p:last-child {
+.custom-block.details figure:last-child,
+.custom-block.details p:last-child {
     margin-bottom: 0;
-    padding-bottom: 0
+    padding-bottom: 0;
 }
 .custom-block.details summary {
     outline: none;
-    cursor: pointer
+    cursor: pointer;
 }
 .custom-block-title {
-    margin-bottom: -.4rem;
+    margin-bottom: -0.4rem;
     font-weight: 600;
     text-transform: uppercase;
 }

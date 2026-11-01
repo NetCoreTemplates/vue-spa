@@ -1,0 +1,62 @@
+[
+    {
+        "slug": "autoquerygrid",
+        "fileName": "autoquerygrid.md",
+        "date": "2023-03-16",
+        "tags": [
+            "vue",
+            "autoquery"
+        ],
+        "wordCount": 51,
+        "lineCount": 4,
+        "title": "Instantly Manage your data using AutoQueryGrid Vue",
+        "url": "https://youtu.be/znCoC-Ct0Ps",
+        "order": 1,
+        "group": "vue"
+    },
+    {
+        "slug": "components",
+        "fileName": "components.md",
+        "date": "2023-02-14",
+        "tags": [
+            "vue",
+            "autoquery"
+        ],
+        "wordCount": 53,
+        "lineCount": 3,
+        "title": "Vue 3 Tailwind Components Library",
+        "url": "https://youtu.be/YIa0w6whe2U",
+        "order": 2,
+        "group": "vue"
+    },
+    {
+        "slug": "admin",
+        "fileName": "admin.md",
+        "date": "2023-06-14",
+        "tags": [
+            "vue",
+            "autoquery"
+        ],
+        "wordCount": 46,
+        "lineCount": 4,
+        "title": "Build beautiful custom .NET Admin UIs in minutes",
+        "url": "https://youtu.be/wlRA4_owEsc",
+        "order": 3,
+        "group": "vue"
+    },
+    {
+        "slug": "modern",
+        "fileName": "modern.md",
+        "date": "2023-02-08",
+        "tags": [
+            "vue",
+            "razor"
+        ],
+        "wordCount": 46,
+        "lineCount": 4,
+        "title": "Modern Razor Pages & MVC .NET Tailwind templates",
+        "url": "https://youtu.be/SyppvQB7IPs",
+        "order": 4,
+        "group": "vue"
+    }
+]

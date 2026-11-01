@@ -4,13 +4,13 @@ import NavFooter from '@/components/NavFooter.vue'
 </script>
 
 <template>
-  <NavHeader />
+    <NavHeader />
 
-  <div class="min-h-screen">
-    <main role="main">
-      <RouterView />
-    </main>
-  </div>
-  
-  <NavFooter />
+    <div class="min-h-screen">
+        <main role="main">
+            <RouterView />
+        </main>
+    </div>
+
+    <NavFooter />
 </template>

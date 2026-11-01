@@ -1,14 +1,14 @@
-import { ref, computed } from "vue"
-import { useAuth } from "@servicestack/vue"
-import type { NavigationGuardNext, RouteLocationNormalized, Router } from "vue-router"
-import { nextTick, watchEffect } from "vue"
-import { Authenticate } from "@/lib/dtos"
-import { client, Routes } from "@/lib/gateway"
+import { ref, computed } from 'vue'
+import { useAuth } from '@servicestack/vue'
+import type { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
+import { nextTick, watchEffect } from 'vue'
+import { Authenticate } from '@/lib/dtos'
+import { client, Routes } from '@/lib/gateway'
 
 export async function checkAuth() {
     try {
         return await client.post(new Authenticate())
-    } catch (e) {
+    } catch {
         return undefined
     }
 }
@@ -20,11 +20,7 @@ export async function logout() {
 }
 
 export function createAttrs(auth?: { roles?: string[] | undefined; permissions?: string[] | undefined } | null) {
-    return auth ? [
-        'auth',
-        ...(auth?.roles || []).map(role => `role:${role}`),
-        ...(auth?.permissions || []).map(perm => `perm:${perm}`),
-    ] : []
+    return auth ? ['auth', ...(auth?.roles || []).map((role) => `role:${role}`), ...(auth?.permissions || []).map((perm) => `perm:${perm}`)] : []
 }
 
 const { user, hasRole, hasPermission, signIn, signOut } = useAuth()
@@ -43,21 +39,20 @@ export const loading = ref(false)
 
 export const attrs = computed(() => createAttrs(user.value))
 
-export const signout = async (router:any, redirectTo?: string) => {
+export const signout = async (router: Router, redirectTo?: string) => {
     signOut()
     await logout()
     // Always redirect to force re-running auth route guards
-    await router.replace({ path: redirectTo ?? router?.currentRoute?.value.path, force: true })
+    await router.replace({ path: redirectTo ?? router.currentRoute.value.path, force: true })
 }
 
-export function configRouter(router:Router)  {
-    const invalidAttrRedirect = (to:RouteLocationNormalized, _:string, userAttrs:string[]) => userAttrs.indexOf('auth') === -1
-        ? Routes.signin(to.path)
-        : Routes.forbidden()
+export function configRouter(router: Router) {
+    const invalidAttrRedirect = (to: RouteLocationNormalized, _: string, userAttrs: string[]) =>
+        userAttrs.indexOf('auth') === -1 ? Routes.signin(to.path) : Routes.forbidden()
 
     // Validate Route guards against Authenticated User's Attributes
-    const validateRoute = (to:RouteLocationNormalized, next:NavigationGuardNext, attrs:string[]) => {
-        for (let i=0; i<Routes.guards.length; i++) {
+    const validateRoute = (to: RouteLocationNormalized, next: NavigationGuardNext, attrs: string[]) => {
+        for (let i = 0; i < Routes.guards.length; i++) {
             const route = Routes.guards[i]
             if (!route) continue
             const { path, attr } = route
@@ -76,11 +71,11 @@ export function configRouter(router:Router)  {
         next()
     }
 
-    router.beforeEach((to:RouteLocationNormalized,_:RouteLocationNormalized,next:NavigationGuardNext) => {
-        if (loading) {
+    router.beforeEach((to: RouteLocationNormalized, _: RouteLocationNormalized, next: NavigationGuardNext) => {
+        if (loading.value) {
             const stop = watchEffect(() => {
                 validateRoute(to, next, attrs.value)
-                nextTick(() => stop())
+                void nextTick(() => stop())
             })
         } else {
             validateRoute(to, next, attrs.value)

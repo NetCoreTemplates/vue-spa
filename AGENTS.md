@@ -18,7 +18,7 @@ This is a .NET 10.0 ServiceStack application with a Vue 3 SPA frontend. It demon
 
 **Frontend**:
 - Vue 3 + TypeScript
-- Vite 7 (build tool)
+- Vite+ toolchain (`vp` CLI): Vite 8 (Rolldown), Vitest, Oxlint, Oxfmt
 - Tailwind CSS 4
 - unplugin-vue-router (file-based routing)
 - unplugin-vue-markdown (markdown pages)
@@ -33,7 +33,8 @@ This is a .NET 10.0 ServiceStack application with a Vue 3 SPA frontend. It demon
 # Start both .NET and Vite dev servers (from project root)
 dotnet watch
 
-# After making changes to C# DTOs restart .NET before regenerating TypeScript DTOs by running:
+# After changing C# DTOs, restart .NET: TypeScript DTOs (dtos.ts) are regenerated on startup.
+# Manual regeneration is rarely needed (requires the .NET app to be running):
 cd MyApp.Client && npm run dtos
 ```
 
@@ -64,17 +65,45 @@ Terminal 2: `cd MyApp && npm run ui:dev` (Tailwind watch)
 cd MyApp.Tests && dotnet test
 ```
 
-### Frontend (Vue/Vite)
+**Frontend:**
 ```bash
-# Generate TypeScript DTOs from ServiceStack APIs
-npm run dtos  # Runs: x ts
-
-# Type checking
-npm run type-check
-
-# Lint with ESLint
-npm run lint
+# Frontend tests (Vitest via Vite+), import from 'vite-plus/test', mount components with @vue/test-utils
+cd MyApp.Client && npm run test        # Watch mode
+cd MyApp.Client && npm run test:ui     # UI mode
+cd MyApp.Client && npm run test:run    # Single run
 ```
+
+### Frontend (Vue/Vite+)
+
+The frontend uses the [Vite+](https://viteplus.dev) toolchain (`vp` CLI): Vite 8 (Rolldown), Vitest, Oxlint and Oxfmt.
+All tool config (`lint`, `fmt`, `test`) lives in [vite.config.ts](MyApp.Client/vite.config.ts). There is no ESLint or Prettier.
+
+```bash
+cd MyApp.Client && npm run build       # vue-tsc type check + Vite+ build
+cd MyApp.Client && npm run check       # Format + lint + type check (run before committing)
+cd MyApp.Client && npm run lint        # Lint + type check .ts files only (Oxlint)
+cd MyApp.Client && npm run typecheck   # Type check .ts and .vue files (vue-tsc)
+cd MyApp.Client && npm run fmt         # Format all files, inc. .vue SFCs (Oxfmt)
+```
+
+Oxlint lints the `<script>` blocks of `.vue` files, but its TypeScript Go type check doesn't understand `.vue` SFCs,
+so `npm run check` and `npm run build` also run `vue-tsc -b`. This keeps TypeScript on 6.x, since `vue-tsc` needs the
+TypeScript compiler API that TypeScript 7 doesn't ship.
+
+Generated files (`src/lib/dtos.ts`, `src/typed-router.d.ts`, `components.d.ts`) and markdown content (`src/**/*.md`)
+are excluded from lint and format.
+
+**Updating dependencies:**
+```bash
+cd MyApp.Client && npm run outdated    # List outdated packages
+cd MyApp.Client && npm run upgrade     # Bump to latest, then run check, test:run and build
+```
+
+`upgrade` holds back the Vite+ pins (`vite`, `vite-plus`, `@vitest/ui`), which are upgraded together with
+`npx --package=vite-plus@<version> vp migrate --no-interactive`, as well as `typescript` (TS 7 breaks `vue-tsc`),
+`vue-router` (`@servicestack/vue` depends on vue-router 4), `vue-tsc` (pinned to 3.3.13, see
+[vuejs/language-tools#6322](https://github.com/vuejs/language-tools/issues/6322)) and `unplugin-vue-markdown`
+(v30+ replaces markdown-it, used by [vite.config.markdown.ts](MyApp.Client/vite.config.markdown.ts)).
 
 ### Database Migrations
 ```bash
@@ -150,8 +179,8 @@ MyApp.Client/                  # Vue Frontend
 ├── assets/
 │   ├── img/                   # App images
 │   ├── styles/                # Tailwind CSS styles
-├── dtos.ts                    # Auto-generated from C# (via `npm run dtos`)
-└── vite.config.ts             # Vite configuration
+├── dtos.ts                    # Auto-generated from C# on .NET App startup
+└── vite.config.ts             # Vite+ config: dev/build, lint, fmt, test
 
 MyApp.ServiceModel/            # DTOs & API contracts
 ├── *.cs                       # C# Request/Response DTOs
@@ -318,12 +347,14 @@ ServiceStack's AutoQuery generates full CRUD APIs from declarative request DTOs.
 
 ### TypeScript DTO Generation
 
-After changing C# DTOs in `MyApp.ServiceModel/`, restart the .NET Server then run:
+`MyApp.Client/src/lib/dtos.ts` is regenerated automatically every time the .NET App starts (e.g. `dotnet run` or a `dotnet watch` restart).
+This is done by the `dtos` StartupTask registered in [Configure.StartupTasks.GenerateDtos.cs](MyApp/Configure.StartupTasks.GenerateDtos.cs).
+So after changing C# DTOs in `MyApp.ServiceModel/`, restarting the .NET Server is all that's needed, and the Vite dev server auto-reloads.
+
+Running `npm run dtos` manually is unnecessary, but it's available if needed. It calls the running .NET App's `/types/typescript` endpoint to update `dtos.ts`:
 ```bash
 cd MyApp.Client && npm run dtos
 ```
-
-This calls ServiceStack's `/types/typescript` endpoint and updates `dtos.ts` with type-safe client DTOs. The Vite dev server auto-reloads.
 
 ### Use dtos in Vue:
 
@@ -544,8 +575,8 @@ Configured in [Configure.BackgroundJobs.cs](MyApp/Configure.BackgroundJobs.cs) u
 
 1. **Start dev servers:** `dotnet watch` (starts both .NET and Vite)
 2. **Make backend changes:** Edit C# files in `MyApp.ServiceModel` or `MyApp.ServiceInterface`
-3. **Restart .NET Server**
-4. **Regenerate DTOs:** `cd MyApp.Client && npm run dtos`
+3. **Restart .NET Server:** this also regenerates `dtos.ts` (`npm run dtos` isn't needed)
+4. **Use updated DTOs** from `@/lib/dtos` in the frontend
 5. **Make frontend changes:** Edit Vue files in `MyApp.Client/src`
 6. **Add new CRUD feature:**
    - `npx okai init Feature`

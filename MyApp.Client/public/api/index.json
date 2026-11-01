@@ -1,0 +1,14 @@
+{
+    "blog": [
+        "https://localhost:5001/meta/2025/blog.json",
+        "https://localhost:5001/meta/2024/blog.json",
+        "https://localhost:5001/meta/2023/blog.json"
+    ],
+    "videos": [
+        "https://localhost:5001/meta/2024/videos.json",
+        "https://localhost:5001/meta/2023/videos.json"
+    ],
+    "whatsNew": [
+        "https://localhost:5001/meta/2023/whatsNew.json"
+    ]
+}

@@ -13,12 +13,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v7
 
-      # npm 10 can crash resolving Vitest's peer dependencies on a clean install.
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24.x
-
       - name: Setup dotnet
         uses: actions/setup-dotnet@v6
         with:
@@ -55,3 +49,29 @@ jobs:
           fi
         working-directory: ./MyApp.Tests
 
+  client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Vite+ and install npm dependencies
+        uses: voidzero-dev/setup-vp@v1.22.0
+        with:
+          node-version: '24'
+          working-directory: ./MyApp.Client
+          cache: true
+
+      # vp check + vue-tsc -b (tsgolint doesn't type check .vue SFCs)
+      - name: check (format, lint, type check)
+        run: npm run check
+        working-directory: ./MyApp.Client
+
+      - name: test
+        run: vp test run
+        working-directory: ./MyApp.Client
+
+      # vue-tsc -b && vp build
+      - name: build
+        run: npm run build
+        working-directory: ./MyApp.Client

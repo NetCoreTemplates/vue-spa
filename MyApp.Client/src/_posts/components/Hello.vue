@@ -1,7 +1,7 @@
 <template>
-  <b>Hello, {{name}}!</b>
+    <b>Hello, {{ name }}!</b>
 </template>
 
 <script setup lang="ts">
-defineProps<{ name:string }>()
+defineProps<{ name: string }>()
 </script>
